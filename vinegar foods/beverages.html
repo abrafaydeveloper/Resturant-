@@ -1,0 +1,3182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinegar | Premium Culinary Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ 
+
+</div>
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="top-links d-none d-md-flex">
+                    <a href="Aboutus.html" class="me-4">About</a>
+                    <a href="feedback.html" class="me-4">Awards</a>
+                    <a href="recipeofthemonth.html" class="me-4">Recipe of the month</a>
+                    <a href="catering.html" class="me-4">Catering</a>
+                </div>
+                <div class="top-contact">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+923283383722">+92 348729930</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@pizerbitsolutions.com">contact@vinegarfood.com</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-text">
+                    <span class="main-text">Vinegar</span>
+                    <span class="tagline">Food Restaurant</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="regularmeals.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Meals 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="regularmeals.html"><i class=" fa-code"></i> Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html"><i class=" fa-bullhorn"></i> Lunch</a></li>
+                            <li><a class="dropdown-item" href="snacks.html"><i class=" fa-paint-brush"></i>  Snacks</a></li>
+                            <li><a class="dropdown-item" href="desert.html"><i class=" fa-video"></i> Desert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html"><i class=" fa-video"></i> Bevarages</a></li>
+
+ </ul>
+                    </li>
+                    
+                    <!-- Blogs Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeofthemonth.html"> Recipe of the month</a>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Awards.html"> Feedback</a>
+                    </li>
+                </ul>
+                   <!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart" id="emptyCart">
+            <i class="fas fa-shopping-basket"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add items to get started</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <div class="cart-tax">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-grand-total">
+                <span>Total:</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i>
+            Proceed to Checkout
+        </button>
+        <button class="continue-shopping-btn" id="continueShopping">
+            <i class="fas fa-shopping-bag"></i>
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- Overlay for cart -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Cart Icon for Header (Add this to your navbar) -->
+<button class="cart-icon" id="openCart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
+                <!-- contact Button -->
+                <div class="d-flex">
+                    <a href="contact.html" class="nav-link appointment-btn"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+
+
+
+    <!-- Beverages Section -->
+<section class="beverages-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">Refreshing Beverages</h2>
+            <p class="section-subtitle">Quench your thirst with our handcrafted drinks</p>
+            <div class="beverage-filters">
+                <button class="filter-btn active" data-filter="all">All Drinks</button>
+                <button class="filter-btn" data-filter="hot">Hot Drinks</button>
+                <button class="filter-btn" data-filter="cold">Cold Drinks</button>
+                <button class="filter-btn" data-filter="mocktail">Mocktails</button>
+                <button class="filter-btn" data-filter="smoothie">Smoothies</button>
+                <button class="filter-btn" data-filter="fresh">Fresh Juice</button>
+            </div>
+        </div>
+
+        <!-- Temperature Toggle -->
+        <div class="temperature-toggle">
+            <div class="toggle-container">
+                <span class="toggle-label">🌡️ Filter by Temperature</span>
+                <div class="toggle-switch">
+                    <button class="temp-btn active" data-temp="all">All</button>
+                    <button class="temp-btn" data-temp="hot">Hot ☕</button>
+                    <button class="temp-btn" data-temp="cold">Cold 🧊</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beverage Stats -->
+        <div class="beverage-stats">
+            <div class="stat-card">
+                <div class="stat-icon">🥤</div>
+                <div class="stat-info">
+                    <h4>50+ Drinks</h4>
+                    <p>Variety of Beverages</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-info">
+                    <h4>5-10 mins</h4>
+                    <p>Preparation Time</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🌱</div>
+                <div class="stat-info">
+                    <h4>100% Fresh</h4>
+                    <p>Natural Ingredients</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-info">
+                    <h4>Customizable</h4>
+                    <p>As per your taste</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beverage Grid -->
+        <div class="beverage-grid">
+            <!-- Masala Chai -->
+            <div class="beverage-card" data-category="hot" data-temperature="hot">
+                <div class="beverage-badge bestseller">🔥 Best Seller</div>
+                <div class="beverage-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1730833407324-f5ef0c89891c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWFzYWxzYSUyMGNoYWl8ZW58MHx8MHx8fDA%3D" alt="Masala Chai" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="1">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Masala Chai</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(478)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Traditional Indian tea brewed with aromatic spices, milk, and sugar.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">☕</span>
+                            <span class="detail-text">Hot</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Spiced</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">5 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">49</span>
+                            <span class="size-info">250ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="1">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cold Coffee -->
+            <div class="beverage-card featured" data-category="cold" data-temperature="cold">
+                <div class="beverage-badge">Summer Special</div>
+                <div class="beverage-image">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Cold Coffee" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="2">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Iced Coffee</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(389)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Chilled coffee with milk, sugar, and ice cream topped with chocolate syrup.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🧊</span>
+                            <span class="detail-text">Cold</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🍦</span>
+                            <span class="detail-text">With Ice Cream</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">7 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">129</span>
+                            <span class="size-info">300ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="2">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fresh Orange Juice -->
+            <div class="beverage-card" data-category="fresh" data-temperature="cold">
+                <div class="beverage-image">
+                    <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Orange Juice" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="3">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Fresh Orange Juice</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(267)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Freshly squeezed orange juice with no added sugar or preservatives.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍊</span>
+                            <span class="detail-text">Fresh</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🧊</span>
+                            <span class="detail-text">Chilled</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">3 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">89</span>
+                            <span class="size-info">250ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="3">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virgin Mojito -->
+            <div class="beverage-card" data-category="mocktail" data-temperature="cold">
+                <div class="beverage-badge">Refreshing</div>
+                <div class="beverage-image">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Virgin Mojito" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="4">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Virgin Mojito</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(412)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Fresh lime, mint, soda, and sugar syrup - the perfect summer cooler.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍃</span>
+                            <span class="detail-text">Minty</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🧊</span>
+                            <span class="detail-text">Iced</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">8 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">139</span>
+                            <span class="size-info">350ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="4">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mango Smoothie -->
+            <div class="beverage-card" data-category="smoothie" data-temperature="cold">
+                <div class="beverage-image">
+                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mango Smoothie" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="5">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Mango Smoothie</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★★</span>
+<span class="rating-count">(325)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Blended ripe mangoes with yogurt, honey, and ice for a creamy delight.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🥭</span>
+                            <span class="detail-text">Fruity</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🥛</span>
+                            <span class="detail-text">Creamy</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">6 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">149</span>
+                            <span class="size-info">400ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="5">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hot Chocolate -->
+            <div class="beverage-card" data-category="hot" data-temperature="hot">
+                <div class="beverage-badge">Winter Special</div>
+                <div class="beverage-image">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hot Chocolate" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="6">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Hot Chocolate</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(278)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Rich, creamy hot chocolate topped with whipped cream and chocolate shavings.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍫</span>
+                            <span class="detail-text">Chocolatey</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">☕</span>
+                            <span class="detail-text">Hot</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">8 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">159</span>
+                            <span class="size-info">300ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="6">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lemon Iced Tea -->
+            <div class="beverage-card" data-category="cold" data-temperature="cold">
+                <div class="beverage-image">
+                    <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Lemon Iced Tea" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="7">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Lemon Iced Tea</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(234)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Refreshing iced tea with fresh lemon juice and a hint of mint.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍋</span>
+                            <span class="detail-text">Citrusy</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🧊</span>
+                            <span class="detail-text">Iced</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">5 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">99</span>
+                            <span class="size-info">350ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="7">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Berry Blast Mocktail -->
+            <div class="beverage-card" data-category="mocktail" data-temperature="cold">
+                <div class="beverage-badge">New</div>
+                <div class="beverage-image">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Berry Mocktail" class="drink-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="8">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="beverage-content">
+                    <div class="beverage-header">
+                        <h3 class="drink-title">Berry Blast Mocktail</h3>
+                        <div class="drink-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(167)</span>
+                        </div>
+                    </div>
+                    <p class="drink-description">Mixed berries blended with soda, lime, and a touch of honey.</p>
+                    <div class="drink-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍓</span>
+                            <span class="detail-text">Berry Mix</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🧊</span>
+                            <span class="detail-text">Chilled</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">9 mins</span>
+                        </div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-selector">
+                            <button class="size-btn active" data-size="regular">Regular</button>
+                            <button class="size-btn" data-size="large">Large</button>
+                        </div>
+                        <div class="size-price">
+                            <span class="price">169</span>
+                            <span class="size-info">400ml</span>
+                        </div>
+                    </div>
+                    <div class="beverage-footer">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="8">
+                            <span class="cart-icon">🛒</span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beverage Combos -->
+        <div class="beverage-combos">
+            <h3 class="combo-title">Beverage Combos</h3>
+            <p class="combo-subtitle">Perfect combinations for parties and gatherings</p>
+            <div class="combo-grid">
+                <div class="combo-card">
+                    <div class="combo-header">
+                        <div class="combo-icon">👫</div>
+                        <div class="combo-badge">Popular</div>
+                    </div>
+                    <h4>Couple's Combo</h4>
+                    <ul class="combo-items">
+                        <li>2 Cold Coffee</li>
+                        <li>2 Virgin Mojito</li>
+                        <li>Complimentary Cookies</li>
+                    </ul>
+                    <div class="combo-price">
+                        <span class="combo-original">536</span>
+                        <span class="combo-current">449</span>
+                        <span class="combo-save">Save 87</span>
+                    </div>
+                    <button class="combo-order-btn" data-combo="couple">Order Combo</button>
+                </div>
+                
+                <div class="combo-card featured">
+                    <div class="combo-header">
+                        <div class="combo-icon">👨‍👩‍👧‍👦</div>
+                        <div class="combo-badge">Best Value</div>
+                    </div>
+                    <h4>Family Refresher</h4>
+                    <ul class="combo-items">
+                        <li>4 Fresh Juices</li>
+                        <li>4 Mocktails</li>
+                        <li>4 Masala Chai</li>
+                        <li>Snack Platter</li>
+                    </ul>
+                    <div class="combo-price">
+                        <span class="combo-original">1,276</span>
+                        <span class="combo-current">999</span>
+                        <span class="combo-save">Save 277</span>
+                    </div>
+                    <button class="combo-order-btn" data-combo="family">Order Combo</button>
+                </div>
+                
+                <div class="combo-card">
+                    <div class="combo-header">
+                        <div class="combo-icon">🏢</div>
+                        <div class="combo-badge">Office Party</div>
+                    </div>
+                    <h4>Office Party Pack</h4>
+                    <ul class="combo-items">
+                        <li>10 Cold Coffees</li>
+                        <li>10 Mocktails</li>
+                        <li>10 Fresh Juices</li>
+                        <li>Assorted Snacks</li>
+                    </ul>
+                    <div class="combo-price">
+                        <span class="combo-original">3,970</span>
+                        <span class="combo-current">2,999</span>
+                        <span class="combo-save">Save 971</span>
+                    </div>
+                    <button class="combo-order-btn" data-combo="office">Order Combo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customization Options -->
+        <div class="customization-section">
+            <div class="customization-header">
+                <div class="custom-icon">⚙️</div>
+                <div class="custom-content">
+                    <h4>Customize Your Drink</h4>
+                    <p>We can adjust sugar level, ice, milk type, and add extra flavors as per your preference.</p>
+                </div>
+            </div>
+            <div class="custom-options">
+                <div class="custom-option">
+                    <span class="option-icon">🍬</span>
+                    <h5>Sugar Level</h5>
+                    <p>Adjust sweetness: No Sugar, Less, Normal, Extra</p>
+                </div>
+                <div class="custom-option">
+                    <span class="option-icon">🧊</span>
+                    <h5>Ice Level</h5>
+                    <p>Control ice: No Ice, Less, Normal, Extra</p>
+                </div>
+                <div class="custom-option">
+                    <span class="option-icon">🥛</span>
+                    <h5>Milk Type</h5>
+                    <p>Choose: Regular, Soy, Almond, Skim, No Milk</p>
+                </div>
+                <div class="custom-option">
+                    <span class="option-icon">✨</span>
+                    <h5>Extra Toppings</h5>
+                    <p>Add: Whipped Cream, Chocolate, Nuts, Fruits</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS Styles -->
+<style>
+    /* Base Styles */
+    .beverages-section {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        padding: 60px 20px;
+        color: #2c3e50;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Section Header */
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #345063, #a50d0dc9);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 15px;
+        letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    .beverage-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        background: white;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        margin-top: 20px;
+    }
+
+    .filter-btn {
+        padding: 10px 24px;
+        border: 2px solid #db4d34;
+        background: white;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #7f8c8d;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .filter-btn.active {
+        background: linear-gradient(135deg, #d41a1a, #db6515);
+        color: white;
+        border-color: #e6150e;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .filter-btn:hover:not(.active) {
+        background: #f0f8ff;
+        color: #2c3e50;
+        border-color: #9b59b6;
+        transform: translateY(-2px);
+    }
+
+    /* Temperature Toggle */
+    .temperature-toggle {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e0e6ed;
+    }
+
+    .toggle-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .toggle-label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2c3e50;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .toggle-switch {
+        display: flex;
+        gap: 10px;
+        background: #f8f9fa;
+        padding: 5px;
+        border-radius: 25px;
+    }
+
+    .temp-btn {
+        padding: 10px 20px;
+        border: none;
+        background: transparent;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #7f8c8d;
+    }
+
+    .temp-btn.active {
+        background: linear-gradient(135deg, #2683a0, #f03d1e);
+        color: white;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .temp-btn:hover:not(.active) {
+        background: #e3f2fd;
+        color: #e46612;
+    }
+
+    /* Beverage Stats */
+    .beverage-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .stat-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        border: 1px solid #f1f2f6;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-icon {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #a29bfe, #bb460f);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .stat-info h4 {
+        font-size: 1.4rem;
+        color: #2d3436;
+        margin-bottom: 5px;
+    }
+
+    .stat-info p {
+        color: #636e72;
+        font-size: 0.95rem;
+    }
+
+    /* Beverage Grid */
+    .beverage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    /* Beverage Card */
+    .beverage-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border: 1px solid #f1f2f6;
+    }
+
+    .beverage-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .beverage-card.featured {
+        border: 2px solid #d83b13;
+    }
+
+    .beverage-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: linear-gradient(135deg, #22d8df, #c0473e);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        z-index: 2;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .beverage-badge.bestseller {
+        background: linear-gradient(135deg, #e74c3c, #f39c12);
+    }
+
+    /* Beverage Image */
+    .beverage-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .drink-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .beverage-card:hover .drink-img {
+        transform: scale(1.1);
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(97, 96, 96, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .beverage-card:hover .image-overlay {
+        opacity: 1;
+    }
+
+    .quick-view {
+        background: white;
+        color:black;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .quick-view:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Beverage Content */
+    .beverage-content {
+        padding: 25px;
+    }
+
+    .beverage-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .drink-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .drink-rating {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .stars {
+        color: #b63b26;
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .rating-count {
+        font-size: 0.8rem;
+        color: #7f8c8d;
+        margin-top: 3px;
+    }
+
+    .drink-description {
+        color: #5d6d7e;
+        line-height: 1.6;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        height: 50px;
+        overflow: hidden;
+    }
+
+    .drink-details {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #e3f2fd;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        color: #3498db;
+    }
+
+    .detail-icon {
+        font-size: 1rem;
+    }
+
+    /* Size Options */
+    .size-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 12px;
+    }
+
+    .size-selector {
+        display: flex;
+        gap: 10px;
+    }
+
+    .size-btn {
+        padding: 8px 16px;
+        border: 2px solid #b32b19;
+        background: white;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #54575a;
+    }
+
+    .size-btn.active {
+        background: #991b1b;
+        color: white;
+    }
+
+    .size-btn:hover:not(.active) {
+        background: #e3f2fd;
+    }
+
+    .size-price {
+        text-align: right;
+    }
+
+    .size-price .price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #2c3e50;
+        display: block;
+    }
+
+    .size-info {
+        font-size: 0.85rem;
+        color: #7f8c8d;
+    }
+
+    /* Beverage Footer */
+    .beverage-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        border-top: 1px solid #f1f2f6;
+    }
+
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #f8f9fa;
+        padding: 5px;
+        border-radius: 25px;
+    }
+
+    .quantity-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid #d4521f;
+        background: white;
+        color: #db7134;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .quantity-btn:hover {
+        background: #bd2c12;
+        color: white;
+    }
+
+    .quantity-input {
+        width: 40px;
+        height: 30px;
+        text-align: center;
+        border: none;
+        background: transparent;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .add-to-cart-btn {
+        background: linear-gradient(135deg, #6e767a, #a51919e1);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+    }
+
+    .add-to-cart-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+        background: linear-gradient(135deg, #db2209, #7d5a8b);
+    }
+
+    .cart-icon {
+        font-size: 1rem;
+    }
+
+    /* Beverage Combos */
+    .beverage-combos {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
+    }
+
+    .combo-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .combo-subtitle {
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+    }
+
+    .combo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .combo-card {
+        background: #f0f8ff;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid #3498db;
+        position: relative;
+    }
+
+    .combo-card.featured {
+        background: white;
+        border-color: #9b59b6;
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(155, 89, 182, 0.1);
+    }
+
+    .combo-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .combo-card.featured:hover {
+        transform: scale(1.05) translateY(-10px);
+    }
+
+    .combo-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .combo-icon {
+        font-size: 2.5rem;
+    }
+
+    .combo-badge {
+        background: linear-gradient(135deg, #3498db, #9b59b6);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .combo-card h4 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    .combo-items {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 25px 0;
+        text-align: left;
+    }
+
+    .combo-items li {
+        padding: 8px 0;
+        border-bottom: 1px dashed #3498db;
+        color: #5d6d7e;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .combo-items li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #2ecc71;
+        font-weight: bold;
+    }
+
+    .combo-items li:last-child {
+        border-bottom: none;
+    }
+
+    .combo-price {
+        margin-bottom: 25px;
+    }
+
+    .combo-original {
+        display: block;
+        font-size: 1.2rem;
+        color: #95a5a6;
+        text-decoration: line-through;
+    }
+
+    .combo-current {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #2c3e50;
+        margin: 5px 0;
+    }
+
+    .combo-save {
+        display: block;
+        font-size: 0.9rem;
+        color: #2ecc71;
+        font-weight: 700;
+    }
+
+    .combo-order-btn {
+        background: linear-gradient(135deg, #da3215, #43e2e7);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+    }
+
+    .combo-order-btn:hover {
+        background: linear-gradient(135deg, #ee3c06, #2530ca);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+    }
+
+    /* Customization Section */
+    .customization-section {
+        background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+        padding: 40px;
+        border-radius: 20px;
+        border: 2px solid #3498db;
+    }
+
+    .customization-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .custom-icon {
+        font-size: 2.5rem;
+        background: #13558188;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .custom-content h4 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+
+    .custom-content p {
+        color: #5d6d7e;
+        line-height: 1.6;
+    }
+
+    .custom-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+    }
+
+    .custom-option {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .custom-option:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .option-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .custom-option h5 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .custom-option p {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .beverage-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .beverages-section {
+            padding: 40px 15px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+        }
+
+        .beverage-filters {
+            overflow-x: auto;
+            justify-content: flex-start;
+            padding: 15px;
+        }
+
+        .filter-btn {
+            flex-shrink: 0;
+        }
+
+        .beverage-grid {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .toggle-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .combo-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .combo-card.featured {
+            transform: none;
+        }
+
+        .combo-card.featured:hover {
+            transform: translateY(-10px);
+        }
+
+        .beverage-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .drink-rating {
+            align-items: flex-start;
+        }
+
+        .size-options {
+            flex-direction: column;
+            gap: 15px;
+            align-items: stretch;
+        }
+
+        .size-selector {
+            justify-content: center;
+        }
+
+        .size-price {
+            text-align: center;
+        }
+
+        .beverage-footer {
+            flex-direction: column;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .quantity-controls {
+            justify-content: center;
+        }
+
+        .add-to-cart-btn {
+            justify-content: center;
+        }
+
+        .customization-header {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .beverage-content {
+            padding: 20px;
+        }
+
+        .beverage-combos {
+            padding: 25px;
+        }
+
+        .combo-card {
+            padding: 20px;
+        }
+
+        .customization-section {
+            padding: 25px;
+        }
+
+        .custom-options {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize cart
+        let beverageCart = [];
+        let beverageCartCount = 0;
+        const beverageCartBadge = document.createElement('div');
+        beverageCartBadge.className = 'beverage-cart-badge';
+        beverageCartBadge.textContent = '0';
+        document.body.appendChild(beverageCartBadge);
+        
+        // Add cart badge styles
+        const cartStyles = document.createElement('style');
+        cartStyles.textContent = `
+            .beverage-cart-badge {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #3498db, #9b59b6);
+                color: white;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 0.8rem;
+                z-index: 1000;
+                box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+                animation: bounceIn 0.5s ease;
+            }
+            
+            @keyframes bounceIn {
+                0% { transform: scale(0); }
+                50% { transform: scale(1.2); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(cartStyles);
+
+        // Category filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const beverageCards = document.querySelectorAll('.beverage-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Filter cards
+                filterBeverages(filterValue);
+                showNotification(`Showing ${filterValue} drinks`, '#3498db');
+            });
+        });
+
+        // Temperature filter functionality
+        const tempButtons = document.querySelectorAll('.temp-btn');
+        
+        tempButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                tempButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const tempValue = this.getAttribute('data-temp');
+                
+                // Filter by temperature
+                filterByTemperature(tempValue);
+                showNotification(`${tempValue === 'all' ? 'All temperatures' : tempValue + ' drinks'}`, '#e74c3c');
+            });
+        });
+
+        // Size selector functionality
+        const sizeButtons = document.querySelectorAll('.size-btn');
+        
+        sizeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const sizeSelector = this.closest('.size-selector');
+                const sizeBtns = sizeSelector.querySelectorAll('.size-btn');
+                
+                // Remove active class from all buttons in this selector
+                sizeBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Update price based on size
+                updatePriceForSize(this);
+            });
+        });
+
+        // Quantity controls
+        const quantityControls = document.querySelectorAll('.quantity-controls');
+        
+        quantityControls.forEach(control => {
+            const minusBtn = control.querySelector('.minus');
+            const plusBtn = control.querySelector('.plus');
+            const quantityInput = control.querySelector('.quantity-input');
+            
+            minusBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                    animateQuantityChange(quantityInput, -1);
+                }
+            });
+            
+            plusBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (value < 10) {
+                    quantityInput.value = value + 1;
+                    animateQuantityChange(quantityInput, 1);
+                }
+            });
+        });
+
+        // Add to cart buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const beverageCard = this.closest('.beverage-card');
+                const beverageId = this.getAttribute('data-id');
+                const beverageTitle = beverageCard.querySelector('.drink-title').textContent;
+                const beveragePrice = parseInt(beverageCard.querySelector('.price').textContent.replace('₹', ''));
+                const beverageQuantity = parseInt(beverageCard.querySelector('.quantity-input').value);
+                const beverageSize = beverageCard.querySelector('.size-btn.active').textContent;
+                const beverageImage = beverageCard.querySelector('.drink-img').src;
+                
+                // Add animation to button
+                const originalText = this.innerHTML;
+                this.innerHTML = '<span class="cart-icon">⏳</span> Adding...';
+                this.style.background = 'linear-gradient(135deg, #636e72, #2d3436)';
+                this.style.transform = 'scale(0.95)';
+                
+                // Simulate API call
+                setTimeout(() => {
+                    addBeverageToCart(beverageId, beverageTitle, beveragePrice, beverageQuantity, beverageSize, beverageImage);
+                    
+                    // Reset button
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = 'linear-gradient(135deg, #3498db, #9b59b6)';
+                        this.style.transform = 'scale(1)';
+                        
+                        // Reset quantity
+                        beverageCard.querySelector('.quantity-input').value = '1';
+                    }, 1000);
+                }, 800);
+            });
+        });
+
+        // Quick view functionality
+        const quickViewButtons = document.querySelectorAll('.quick-view');
+        
+        quickViewButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const beverageCard = this.closest('.beverage-card');
+                const beverageId = this.getAttribute('data-id');
+                showQuickViewModal(beverageCard, beverageId);
+            });
+        });
+
+        // Combo order buttons
+        const comboButtons = document.querySelectorAll('.combo-order-btn');
+        
+        comboButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const comboCard = this.closest('.combo-card');
+                const comboType = this.getAttribute('data-combo');
+                const comboTitle = comboCard.querySelector('h4').textContent;
+                const comboPrice = comboCard.querySelector('.combo-current').textContent;
+                
+                // Add animation
+                const originalText = this.textContent;
+                this.textContent = 'Processing...';
+                this.style.background = 'linear-gradient(135deg, #636e72, #2d3436)';
+                
+                setTimeout(() => {
+                    showComboOrderModal(comboType, comboTitle, comboPrice);
+                    this.textContent = originalText;
+                    this.style.background = 'linear-gradient(135deg, #3498db, #9b59b6)';
+                }, 1000);
+            });
+        });
+
+        // Functions
+        function filterBeverages(category) {
+            // Show loading animation
+            beverageCards.forEach(card => {
+                card.style.opacity = '0.5';
+                card.style.transform = 'scale(0.98)';
+            });
+            
+            // Filter cards with delay for animation
+            setTimeout(() => {
+                beverageCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    
+                    if (category === 'all' || categories.includes(category)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }, 300);
+        }
+
+        function filterByTemperature(temperature) {
+            beverageCards.forEach(card => {
+                const cardTemp = card.getAttribute('data-temperature');
+                
+                if (temperature === 'all' || cardTemp === temperature) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        function updatePriceForSize(sizeButton) {
+            const beverageCard = sizeButton.closest('.beverage-card');
+            const priceElement = beverageCard.querySelector('.price');
+            const sizeInfoElement = beverageCard.querySelector('.size-info');
+            const currentPrice = parseInt(priceElement.textContent.replace('₹', ''));
+            const size = sizeButton.textContent.toLowerCase();
+            
+            // Update price based on size
+            let newPrice, newSizeInfo;
+            
+            if (size === 'large') {
+                newPrice = Math.round(currentPrice * 1.5);
+                newSizeInfo = size === 'large' ? '500ml' : '250ml';
+            } else {
+                // Reset to original price for regular
+                const originalPrices = {
+                    '1': 49, '2': 129, '3': 89, '4': 139,
+                    '5': 149, '6': 159, '7': 99, '8': 169
+                };
+                const beverageId = beverageCard.querySelector('.add-to-cart-btn').getAttribute('data-id');
+                newPrice = originalPrices[beverageId];
+                newSizeInfo = '250ml';
+            }
+            
+            priceElement.textContent = `₹${newPrice}`;
+            sizeInfoElement.textContent = newSizeInfo;
+            
+            // Animate price change
+            priceElement.style.transform = 'scale(1.2)';
+            priceElement.style.color = '#2ecc71';
+            
+            setTimeout(() => {
+                priceElement.style.transform = 'scale(1)';
+                priceElement.style.color = '#2c3e50';
+            }, 300);
+        }
+
+        function animateQuantityChange(input, change) {
+            input.style.transform = 'scale(1.2)';
+            input.style.color = change > 0 ? '#2ecc71' : '#e74c3c';
+            
+            setTimeout(() => {
+                input.style.transform = 'scale(1)';
+                input.style.color = '#2c3e50';
+            }, 300);
+        }
+
+        function addBeverageToCart(id, title, price, quantity, size, image) {
+            // Check if item already in cart
+            const existingItem = beverageCart.find(item => 
+                item.id === id && item.size === size
+            );
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+                existingItem.total = existingItem.price * existingItem.quantity;
+            } else {
+                beverageCart.push({
+                    id: id,
+                    title: title,
+                    price: price,
+                    quantity: quantity,
+                    size: size,
+                    total: price * quantity,
+                    image: image
+                });
+            }
+            
+            // Update cart count
+            beverageCartCount += quantity;
+            updateBeverageCartBadge();
+            
+            // Show success notification
+            showCartNotification(title, quantity, size, price * quantity);
+        }
+
+        function updateBeverageCartBadge() {
+            beverageCartBadge.textContent = beverageCartCount;
+            beverageCartBadge.style.transform = 'scale(1.3)';
+            
+            setTimeout(() => {
+                beverageCartBadge.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        function showCartNotification(title, quantity, size, total) {
+            const notification = document.createElement('div');
+            notification.className = 'beverage-cart-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <div class="notification-icon">✅</div>
+                    <div class="notification-text">
+                        <strong>${quantity} × ${title} (${size})</strong>
+                        <div class="notification-total">₹${total}</div>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="notification-view-cart">View Cart (${beverageCartCount})</button>
+                        <button class="notification-close">×</button>
+                    </div>
+                </div>
+            `;
+            
+            // Add notification styles
+            const notificationStyles = document.createElement('style');
+            notificationStyles.textContent = `
+                .beverage-cart-notification {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                    z-index: 1001;
+                    animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    max-width: 350px;
+                    border-left: 5px solid #2ecc71;
+                    overflow: hidden;
+                }
+                
+                @keyframes slideInRight {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                
+                .notification-content {
+                    padding: 15px;
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+                
+                .notification-icon {
+                    font-size: 1.5rem;
+                    flex-shrink: 0;
+                }
+                
+                .notification-text {
+                    flex: 1;
+                }
+                
+                .notification-text strong {
+                    display: block;
+                    color: #2c3e50;
+                    margin-bottom: 5px;
+                    font-size: 0.9rem;
+                }
+                
+                .notification-total {
+                    color: #2ecc71;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                }
+                
+                .notification-actions {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+                .notification-view-cart {
+                    background: linear-gradient(135deg, #3498db, #9b59b6);
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    border-radius: 20px;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+                
+                .notification-view-cart:hover {
+                    background: linear-gradient(135deg, #2980b9, #8e44ad);
+                }
+                
+                .notification-close {
+                    background: #f8f9fa;
+                    border: none;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2rem;
+                    color: #7f8c8d;
+                }
+                
+                .notification-close:hover {
+                    background: #e74c3c;
+                    color: white;
+                }
+            `;
+            
+            document.head.appendChild(notificationStyles);
+            document.body.appendChild(notification);
+            
+            // Add event listeners
+            notification.querySelector('.notification-view-cart').addEventListener('click', () => {
+                showBeverageCartModal();
+                notification.remove();
+            });
+            
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            });
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }
+            }, 5000);
+            
+            // Add slideOutRight animation
+            const slideOutStyle = document.createElement('style');
+            slideOutStyle.textContent = `
+                @keyframes slideOutRight {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(slideOutStyle);
+        }
+
+        function showQuickViewModal(card, id) {
+            const title = card.querySelector('.drink-title').textContent;
+            const description = card.querySelector('.drink-description').textContent;
+            const rating = card.querySelector('.stars').textContent;
+            const ratingCount = card.querySelector('.rating-count').textContent;
+            const currentPrice = card.querySelector('.price').textContent;
+            const sizeInfo = card.querySelector('.size-info').textContent;
+            const image = card.querySelector('.drink-img').src;
+            const details = Array.from(card.querySelectorAll('.detail-item')).map(item => item.textContent.trim());
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'beverage-quick-modal';
+            modal.innerHTML = `
+                <div class="modal-overlay"></div>
+                <div class="modal-container">
+                    <div class="modal-image">
+                        <img src="${image}" alt="${title}">
+                    </div>
+                    <div class="modal-details">
+                        <button class="modal-close">×</button>
+                        <h3>${title}</h3>
+                        <div class="modal-rating">
+                            <span class="stars">${rating}</span>
+                            <span class="rating-count">${ratingCount}</span>
+                        </div>
+                        <p class="modal-description">${description}</p>
+                        
+                        <div class="modal-price">
+                            <span class="current">${currentPrice}</span>
+                            <span class="size-info">${sizeInfo}</span>
+                        </div>
+                        
+                        <div class="modal-customization">
+                            <h4>Customize your drink:</h4>
+                            <div class="custom-options">
+                                <div class="option-group">
+                                    <h5>Sugar Level:</h5>
+                                    <div class="option-buttons">
+                                        <button class="option-btn active" data-option="normal">Normal</button>
+                                        <button class="option-btn" data-option="less">Less</button>
+                                        <button class="option-btn" data-option="nosugar">No Sugar</button>
+                                        <button class="option-btn" data-option="extra">Extra</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="option-group">
+                                    <h5>Ice Level:</h5>
+                                    <div class="option-buttons">
+                                        <button class="option-btn active" data-option="normal">Normal</button>
+                                        <button class="option-btn" data-option="less">Less</button>
+                                        <button class="option-btn" data-option="noice">No Ice</button>
+                                        <button class="option-btn" data-option="extra">Extra</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="option-group">
+                                    <h5>Extra Toppings:</h5>
+                                    <div class="option-checkboxes">
+                                        <label>
+                                            <input type="checkbox" name="whipped-cream">
+                                            <span>Whipped Cream (+₹20)</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="chocolate">
+                                            <span>Chocolate Sauce (+₹15)</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="nuts">
+                                            <span>Crushed Nuts (+₹25)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-size-quantity">
+                            <div class="size-selector">
+                                <span>Size:</span>
+                                <div class="size-buttons">
+                                    <button class="size-btn active" data-size="regular">Regular</button>
+                                    <button class="size-btn" data-size="large">Large</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <span>Quantity:</span>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" max="10">
+                                    <button class="quantity-btn plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-actions">
+                            <button class="modal-add-to-cart" data-id="${id}">
+                                <span>🛒</span> Add to Cart
+                            </button>
+                            <button class="modal-order-now">
+                                <span>⚡</span> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add modal styles
+            const modalStyle = document.createElement('style');
+            modalStyle.textContent = `
+                .beverage-quick-modal {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10002;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    animation: fadeIn 0.3s ease;
+                }
+                
+                .modal-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.8);
+                    backdrop-filter: blur(5px);
+                }
+                
+                .modal-container {
+                    background: white;
+                    border-radius: 20px;
+                    max-width: 900px;
+                    width: 90%;
+                    max-height: 90vh;
+                    z-index: 2;
+                    position: relative;
+                    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    overflow: hidden;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+                
+                .modal-image {
+                    padding: 0;
+                }
+                
+                .modal-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+                
+                .modal-details {
+                    padding: 40px;
+                    overflow-y: auto;
+                    position: relative;
+                }
+                
+                .modal-close {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background: white;
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                }
+                
+                .modal-close:hover {
+                    background: #3498db;
+                    color: white;
+                    transform: rotate(90deg);
+                }
+                
+                .modal-details h3 {
+                    font-size: 2rem;
+                    color: #2c3e50;
+                    margin-bottom: 10px;
+                }
+                
+                .modal-rating {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+                
+                .modal-rating .stars {
+                    color: #f1c40f;
+                    font-size: 1.2rem;
+                    letter-spacing: 2px;
+                }
+                
+                .modal-rating .rating-count {
+                    color: #7f8c8d;
+                    font-size: 0.9rem;
+                }
+                
+                .modal-description {
+                    color: #5d6d7e;
+                    line-height: 1.6;
+                    margin-bottom: 30px;
+                }
+                
+                .modal-price {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    background: #e3f2fd;
+                    border-radius: 15px;
+                }
+                
+                .modal-price .current {
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                    color: #2c3e50;
+                }
+                
+                .modal-price .size-info {
+                    font-size: 1rem;
+                    color: #7f8c8d;
+                    background: white;
+                    padding: 5px 15px;
+                    border-radius: 15px;
+                }
+                
+                .modal-customization {
+                    margin-bottom: 30px;
+                }
+                
+                .modal-customization h4 {
+                    color: #2c3e50;
+                    margin-bottom: 20px;
+                }
+                
+                .option-group {
+                    margin-bottom: 20px;
+                }
+                
+                .option-group h5 {
+                    color: #5d6d7e;
+                    margin-bottom: 10px;
+                    font-size: 1rem;
+                }
+                
+                .option-buttons {
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                }
+                
+                .option-btn {
+                    padding: 8px 15px;
+                    border: 2px solid #3498db;
+                    background: white;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    color: #3498db;
+                }
+                
+                .option-btn.active {
+                    background: #3498db;
+                    color: white;
+                }
+                
+                .option-btn:hover:not(.active) {
+                    background: #e3f2fd;
+                }
+                
+                .option-checkboxes {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+                .option-checkboxes label {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    padding: 10px;
+                    border-radius: 10px;
+                    transition: background 0.3s ease;
+                }
+                
+                .option-checkboxes label:hover {
+                    background: #f8f9fa;
+                }
+                
+                .modal-size-quantity {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    background: #f8f9fa;
+                    border-radius: 15px;
+                }
+                
+                .size-selector,
+                .quantity-selector {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+                .size-selector span,
+                .quantity-selector span {
+                    font-weight: 600;
+                    color: #2c3e50;
+                }
+                
+                .size-buttons {
+                    display: flex;
+                    gap: 10px;
+                }
+                
+                .size-buttons .size-btn {
+                    padding: 8px 16px;
+                    border: 2px solid #3498db;
+                    background: white;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                    color: #3498db;
+                }
+                
+                .size-buttons .size-btn.active {
+                    background: #3498db;
+                    color: white;
+                }
+                
+                .modal-size-quantity .quantity-controls {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+                
+                .modal-size-quantity .quantity-btn {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 2px solid #3498db;
+                    background: white;
+                    color: #3498db;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+                
+                .modal-size-quantity .quantity-btn:hover {
+                    background: #3498db;
+                    color: white;
+                }
+                
+                .modal-size-quantity .quantity-input {
+                    width: 50px;
+                    height: 35px;
+                    text-align: center;
+                    border: 2px solid #e0e6ed;
+                    border-radius: 10px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                }
+                
+                .modal-actions {
+                    display: flex;
+                    gap: 15px;
+                }
+                
+                .modal-add-to-cart,
+                .modal-order-now {
+                    flex: 1;
+                    padding: 15px;
+                    border-radius: 12px;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    transition: all 0.3s ease;
+                }
+                
+                .modal-add-to-cart {
+                    background: linear-gradient(135deg, #3498db, #9b59b6);
+                    color: white;
+                    border: none;
+                }
+                
+                .modal-add-to-cart:hover {
+                    background: linear-gradient(135deg, #2980b9, #8e44ad);
+                    transform: translateY(-3px);
+                }
+                
+                .modal-order-now {
+                    background: white;
+                    color: #3498db;
+                    border: 2px solid #3498db;
+                }
+                
+                .modal-order-now:hover {
+                    background: #3498db;
+                    color: white;
+                    transform: translateY(-3px);
+                }
+                
+                @media (max-width: 768px) {
+                    .modal-container {
+                        grid-template-columns: 1fr;
+                        max-height: 80vh;
+                    }
+                    
+                    .modal-image {
+                        height: 200px;
+                    }
+                    
+                    .modal-details {
+                        padding: 20px;
+                    }
+                    
+                    .modal-size-quantity {
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+                    
+                    .modal-actions {
+                        flex-direction: column;
+                    }
+                }
+            `;
+            
+            document.head.appendChild(modalStyle);
+            document.body.appendChild(modal);
+            
+            // Add modal functionality
+            const modalClose = modal.querySelector('.modal-close');
+            const modalOverlay = modal.querySelector('.modal-overlay');
+            const quantityInput = modal.querySelector('.quantity-input');
+            const minusBtn = modal.querySelector('.minus');
+            const plusBtn = modal.querySelector('.plus');
+            const addToCartBtn = modal.querySelector('.modal-add-to-cart');
+            const orderNowBtn = modal.querySelector('.modal-order-now');
+            const sizeBtns = modal.querySelectorAll('.size-btn');
+            const optionBtns = modal.querySelectorAll('.option-btn');
+            
+            // Quantity controls
+            minusBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                }
+            });
+            
+            plusBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (value < 10) {
+                    quantityInput.value = value + 1;
+                }
+            });
+            
+            // Size buttons
+            sizeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    sizeBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Option buttons
+            optionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const optionGroup = this.closest('.option-group');
+                    const groupBtns = optionGroup.querySelectorAll('.option-btn');
+                    groupBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Add to cart in modal
+            addToCartBtn.addEventListener('click', () => {
+                const quantity = parseInt(quantityInput.value);
+                const size = modal.querySelector('.size-btn.active').textContent;
+                const price = parseInt(currentPrice.replace('₹', ''));
+                addBeverageToCart(id, title, price, quantity, size, image);
+                showNotification(`${quantity} × ${title} (${size}) added to cart!`, '#2ecc71');
+                modal.remove();
+            });
+            
+            // Order now
+            orderNowBtn.addEventListener('click', () => {
+                const quantity = parseInt(quantityInput.value);
+                const size = modal.querySelector('.size-btn.active').textContent;
+                alert(`Order placed for ${quantity} × ${title} (${size})!`);
+                modal.remove();
+            });
+            
+            // Close modal
+            modalClose.addEventListener('click', () => modal.remove());
+            modalOverlay.addEventListener('click', () => modal.remove());
+            
+            // Close on Escape key
+            document.addEventListener('keydown', function closeOnEscape(e) {
+                if (e.key === 'Escape') {
+                    modal.remove();
+                    document.removeEventListener('keydown', closeOnEscape);
+                }
+            });
+        }
+
+        function showComboOrderModal(comboType, comboTitle, comboPrice) {
+            const modal = document.createElement('div');
+            modal.className = 'combo-order-modal';
+            modal.innerHTML = `
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <h3>Order ${comboTitle}</h3>
+                    <p>You are about to order the ${comboTitle} for ${comboPrice}</p>
+                    <div class="modal-buttons">
+                        <button class="modal-confirm">Confirm Order</button>
+                        <button class="modal-cancel">Cancel</button>
+                    </div>
+                </div>
+            `;
+            
+            // Add modal styles
+            const modalStyle = document.createElement('style');
+            modalStyle.textContent = `
+                .combo-order-modal {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10003;
+                    animation: fadeIn 0.3s ease;
+                }
+                
+                .combo-order-modal .modal-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.7);
+                    backdrop-filter: blur(3px);
+                }
+                
+                .combo-order-modal .modal-content {
+                    background: white;
+                    padding: 40px;
+                    border-radius: 20px;
+                    max-width: 400px;
+                    width: 90%;
+                    z-index: 2;
+                    text-align: center;
+                    animation: slideUp 0.4s ease;
+                }
+                
+                .combo-order-modal h3 {
+                    color: #2c3e50;
+                    margin-bottom: 15px;
+                }
+                
+                .combo-order-modal p {
+                    color: #7f8c8d;
+                    margin-bottom: 30px;
+                    line-height: 1.6;
+                }
+                
+                .modal-buttons {
+                    display: flex;
+                    gap: 15px;
+                }
+                
+                .modal-confirm,
+                .modal-cancel {
+                    flex: 1;
+                    padding: 15px;
+                    border-radius: 12px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    border: none;
+                    transition: all 0.3s ease;
+                }
+                
+                .modal-confirm {
+                    background: linear-gradient(135deg, #3498db, #9b59b6);
+                    color: white;
+                }
+                
+                .modal-confirm:hover {
+                    background: linear-gradient(135deg, #2980b9, #8e44ad);
+                    transform: translateY(-3px);
+                }
+                
+                .modal-cancel {
+                    background: #f8f9fa;
+                    color: #7f8c8d;
+                    border: 2px solid #e0e6ed;
+                }
+                
+                .modal-cancel:hover {
+                    background: #e0e6ed;
+                    color: #2c3e50;
+                }
+            `;
+            
+            document.head.appendChild(modalStyle);
+            document.body.appendChild(modal);
+            
+            // Add event listeners
+            modal.querySelector('.modal-confirm').addEventListener('click', () => {
+                alert(`Order confirmed for ${comboTitle}! Thank you for your order.`);
+                modal.remove();
+            });
+            
+            modal.querySelector('.modal-cancel').addEventListener('click', () => {
+                modal.remove();
+            });
+            
+            modal.querySelector('.modal-overlay').addEventListener('click', () => {
+                modal.remove();
+            });
+        }
+
+        function showBeverageCartModal() {
+            if (beverageCart.length === 0) {
+                showNotification('Your beverage cart is empty!', '#3498db');
+                return;
+            }
+            
+            let cartHTML = `
+                <div class="beverage-cart-modal">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <h3>Your Beverage Cart (${beverageCartCount} items)</h3>
+                            <button class="modal-close">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-items">
+            `;
+            
+            let totalAmount = 0;
+            
+            beverageCart.forEach(item => {
+                totalAmount += item.total;
+                cartHTML += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.title}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h4>${item.title}</h4>
+                            <div class="cart-item-size">Size: ${item.size}</div>
+                            <div class="cart-item-price">₹${item.price} × ${item.quantity} = ₹${item.total}</div>
+                        </div>
+                        <button class="cart-item-remove" data-id="${item.id}" data-size="${item.size}">×</button>
+                    </div>
+                `;
+            });
+            
+            cartHTML += `
+                            </div>
+                            <div class="cart-total">
+                                <span>Total Amount:</span>
+                                <span class="total-amount">₹${totalAmount}</span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="cart-continue">Continue Shopping</button>
+                            <button class="cart-checkout">Proceed to Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Create modal
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = cartHTML;
+            document.body.appendChild(modalContainer.firstElementChild);
+            
+            // Add cart modal styles
+            const cartModalStyle = document.createElement('style');
+            cartModalStyle.textContent = `
+                .beverage-cart-modal {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10004;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    animation: fadeIn 0.3s ease;
+                }
+                
+                .beverage-cart-modal .modal-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.8);
+                    backdrop-filter: blur(5px);
+                }
+                
+                .beverage-cart-modal .modal-container {
+                    background: white;
+                    border-radius: 20px;
+                    max-width: 500px;
+                    width: 90%;
+                    max-height: 80vh;
+                    z-index: 2;
+                    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .modal-header {
+                    padding: 25px;
+                    border-bottom: 1px solid #eee;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                .modal-header h3 {
+                    margin: 0;
+                    color: #2c3e50;
+                }
+                
+                .modal-header .modal-close {
+                    background: none;
+                    border: none;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    color: #95a5a6;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                }
+                
+                .modal-header .modal-close:hover {
+                    background: #f8f9fa;
+                    color: #e74c3c;
+                }
+                
+                .modal-body {
+                    padding: 25px;
+                    flex: 1;
+                    overflow-y: auto;
+                }
+                
+                .cart-items {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    margin-bottom: 30px;
+                }
+                
+                .cart-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 15px;
+                    background: #f8f9fa;
+                    border-radius: 10px;
+                }
+                
+                .cart-item-image {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+                
+                .cart-item-details {
+                    flex: 1;
+                }
+                
+                .cart-item-details h4 {
+                    margin: 0 0 5px 0;
+                    color: #2c3e50;
+                    font-size: 1rem;
+                }
+                
+                .cart-item-size {
+                    font-size: 0.85rem;
+                    color: #7f8c8d;
+                    margin-bottom: 5px;
+                }
+                
+                .cart-item-price {
+                    color: #3498db;
+                    font-weight: 600;
+                }
+                
+                .cart-item-remove {
+                    background: #e3f2fd;
+                    border: none;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    color: #e74c3c;
+                    font-size: 1.2rem;
+                }
+                
+                .cart-item-remove:hover {
+                    background: #e74c3c;
+                    color: white;
+                }
+                
+                .cart-total {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px;
+                    background: #e3f2fd;
+                    border-radius: 15px;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+                
+                .total-amount {
+                    color: #3498db;
+                    font-size: 1.5rem;
+                }
+                
+                .modal-footer {
+                    padding: 25px;
+                    border-top: 1px solid #eee;
+                    display: flex;
+                    gap: 15px;
+                }
+                
+                .cart-continue,
+                .cart-checkout {
+                    flex: 1;
+                    padding: 15px;
+                    border-radius: 12px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    border: none;
+                    transition: all 0.3s ease;
+                }
+                
+                .cart-continue {
+                    background: #f8f9fa;
+                    color: #7f8c8d;
+                    border: 2px solid #e0e6ed;
+                }
+                
+                .cart-continue:hover {
+                    background: #e0e6ed;
+                    color: #2c3e50;
+                }
+                
+                .cart-checkout {
+                    background: linear-gradient(135deg, #3498db, #9b59b6);
+                    color: white;
+                }
+                
+                .cart-checkout:hover {
+                    background: linear-gradient(135deg, #2980b9, #8e44ad);
+                    transform: translateY(-3px);
+                }
+            `;
+            
+            document.head.appendChild(cartModalStyle);
+            
+            // Add event listeners
+            const modal = document.querySelector('.beverage-cart-modal');
+            const closeBtn = modal.querySelector('.modal-close');
+            const overlay = modal.querySelector('.modal-overlay');
+            const continueBtn = modal.querySelector('.cart-continue');
+            const checkoutBtn = modal.querySelector('.cart-checkout');
+            const removeBtns = modal.querySelectorAll('.cart-item-remove');
+            
+            closeBtn.addEventListener('click', () => modal.remove());
+            overlay.addEventListener('click', () => modal.remove());
+            continueBtn.addEventListener('click', () => modal.remove());
+            checkoutBtn.addEventListener('click', () => {
+                alert(`Proceeding to checkout with total: ₹${totalAmount}`);
+                modal.remove();
+            });
+            
+            removeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = this.getAttribute('data-id');
+                    const itemSize = this.getAttribute('data-size');
+                    const itemIndex = beverageCart.findIndex(item => 
+                        item.id === itemId && item.size === itemSize
+                    );
+                    
+                    if (itemIndex > -1) {
+                        beverageCartCount -= beverageCart[itemIndex].quantity;
+                        beverageCart.splice(itemIndex, 1);
+                        updateBeverageCartBadge();
+                        showNotification('Item removed from cart', '#e74c3c');
+                        modal.remove();
+                        setTimeout(showBeverageCartModal, 300);
+                    }
+                });
+            });
+            
+            // Close on Escape key
+            document.addEventListener('keydown', function closeOnEscape(e) {
+                if (e.key === 'Escape') {
+                    modal.remove();
+                    document.removeEventListener('keydown', closeOnEscape);
+                }
+            });
+        }
+
+        function showNotification(message, color = '#3498db') {
+            const notification = document.createElement('div');
+            notification.className = 'beverage-notification';
+            notification.textContent = message;
+            notification.style.backgroundColor = color;
+            
+            const notificationStyle = document.createElement('style');
+            notificationStyle.textContent = `
+                .beverage-notification {
+                    position: fixed;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(100px);
+                    background: #3498db;
+                    color: white;
+                    padding: 15px 30px;
+                    border-radius: 50px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                    z-index: 9999;
+                    font-weight: 600;
+                    animation: slideUpIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+                              slideDownOut 0.3s ease 2.7s forwards;
+                    text-align: center;
+                    max-width: 90%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                
+                @keyframes slideUpIn {
+                    from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+                    to { transform: translateX(-50%) translateY(0); opacity: 1; }
+                }
+                
+                @keyframes slideDownOut {
+                    from { transform: translateX(-50%) translateY(0); opacity: 1; }
+                    to { transform: translateX(-50%) translateY(100px); opacity: 0; }
+                }
+            `;
+            
+            document.head.appendChild(notificationStyle);
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    document.body.removeChild(notification);
+                }
+            }, 3000);
+        }
+    });
+</script>
+
+
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-logo",>Vinegar<span>.</span></div>
+                    <p class="footer-description">Premium dining experience with warm, family-friendly atmosphere. Serving quality food since 1995 with 72 rotating menus and over 240,000 delicacies.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+              <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+
+                    <!-- Services Dropdown -->
+                          <a class="nav-link " href="index.html">Home</a>
+
+                                               <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Aboutus.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Awards.html">Feedback</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Gallery</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/feedback.html">Awards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Catering Services</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/recipeofthemonth.html">Recipe of the Month</a></li>
+
+
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/contact.html">Contact Us</a></li>
+                       </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-description">Subscribe to get updates on new menus and special offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" style="background: rgba(219, 213, 213, 0.74); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vinegar Restaurant. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for culinary excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinegar | Premium Culinary Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ 
+
+</div>
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="top-links d-none d-md-flex">
+                    <a href="Aboutus.html" class="me-4">About</a>
+                    <a href="feedback.html" class="me-4">Awards</a>
+                    <a href="recipeofthemonth.html" class="me-4">Recipe of the month</a>
+                    <a href="catering.html" class="me-4">Catering</a>
+                </div>
+                <div class="top-contact">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+923283383722">+92 348729930</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@pizerbitsolutions.com">contact@vinegarfood.com</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-text">
+                    <span class="main-text">Vinegar</span>
+                    <span class="tagline">Food Restaurant</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="regularmeals.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Meals 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="regularmeals.html"><i class=" fa-code"></i> Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html"><i class=" fa-bullhorn"></i> Lunch</a></li>
+                            <li><a class="dropdown-item" href="snacks.html"><i class=" fa-paint-brush"></i>  Snacks</a></li>
+                            <li><a class="dropdown-item" href="desert.html"><i class=" fa-video"></i> Desert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html"><i class=" fa-video"></i> Bevarages</a></li>
+
+ </ul>
+                    </li>
+                    
+                    <!-- Blogs Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeofthemonth.html"> Recipe of the month</a>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Awards.html"> Feedback</a>
+                    </li>
+                </ul>
+                   <!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart" id="emptyCart">
+            <i class="fas fa-shopping-basket"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add items to get started</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <div class="cart-tax">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-grand-total">
+                <span>Total:</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i>
+            Proceed to Checkout
+        </button>
+        <button class="continue-shopping-btn" id="continueShopping">
+            <i class="fas fa-shopping-bag"></i>
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- Overlay for cart -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Cart Icon for Header (Add this to your navbar) -->
+<button class="cart-icon" id="openCart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
+                <!-- contact Button -->
+                <div class="d-flex">
+                    <a href="contact.html" class="nav-link appointment-btn"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1 style="color: aliceblue;">Culinary Excellence Since 1995</h1>
+                        <p style="color: aliceblue;">Vinegar Restaurant redefines fine dining with 72 rotating seasonal menus, over 240,000 culinary creations, and a commitment to sustainable, locally-sourced ingredients.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                            <a href="#book-table" class="btn btn-outline-primary" style="background-color: rgba(231, 42, 42, 0.1); color: white; border-color: rgb(185, 57, 57);">Book a Table</a>
+                        </div>
+                        
+                        <div class="hero-highlights">
+                            <div class="hero-highlight-item">
+                                <div class="hero-highlight-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white mb-1">72 Menus</h4>
+                                    <p class="mb-0">Seasonal rotations</p>
+                                </div>
+                            </div>
+                            <div class="hero-highlight-item">
+                                <div class="hero-highlight-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white mb-1">1000+ Locations</h4>
+                                    <p class="mb-0">Global presence</p>
+                                </div>
+                            </div>
+                            <div class="hero-highlight-item">
+                                <div class="hero-highlight-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white mb-1">28 Awards</h4>
+                                    <p class="mb-0">
+                                        Culinary excellence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<section class="about-section">
+    <div class="about-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="about-image">
+            <img src="https://media.istockphoto.com/id/2201068820/photo/female-preparing-aesthetically-pleasing-salad-bowls-adding-dressing-on-top-to-tie-flavors.webp?a=1&b=1&s=612x612&w=0&k=20&c=VHHRo0GoRo1t_SlZzmDfRrS4rSrLfmOHZovQQfVcDpk=" alt="Restaurant">
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-content">
+            <h1>Welcome to <span>Vinegar Food</span></h1>
+
+            <p>
+                Since 2004, we have been serving the finest delicacies with a
+                commitment to quality, flavor, and customer satisfaction.
+            </p>
+
+            <p>
+                With over 1000 branches nationwide and 240,000 delicacies served,
+                we continue to bring aromatic and premium food to every table.
+            </p>
+
+            <a href="Aboutus.html" class="about-btn">Learn More About Us</a>
+        </div>
+
+    </div>
+</section>
+
+
+    <div class="quote">
+        <h2>Where every flavor tells a story.</h2>
+    </div>
+
+
+    </section>
+
+ <!-- Menu Section -->
+    <section id="menu" class="menu-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Exquisite Menu</h2>
+                <p>Discover our carefully crafted dishes made with the freshest ingredients and traditional recipes with a modern twist.</p>
+            </div>
+            
+            <!-- Menu Categories -->
+             <div class="menu-categories-wrapper">
+
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">All Items</button>
+                <button class="category-btn" data-category="regular">Regular</button>
+                <button class="category-btn" data-category="lunch">Lunch Specials</button>
+                <button class="category-btn" data-category="snacks">Snacks</button>
+                <button class="category-btn" data-category="dessert">Desserts</button>
+                <button class="category-btn" data-category="beverages">Beverages</button>
+            </div>
+            
+            <!-- Menu Items -->
+            <div class="row" id="menuItemsContainer">
+                <!-- Regular Items -->
+                <div class="col-lg-4 col-md-6" data-category="regular">
+                    <div class="menu-item">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=1365&q=80" alt="Grilled Salmon" class="menu-item-img">
+                            <div class="special-badge">Chef's Pick</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Grilled Atlantic Salmon</h4>
+                                </div>
+                                <div class="menu-item-price">500</div>
+                            </div>
+                            <p class="menu-item-desc">Fresh Atlantic salmon grilled to perfection, served with herb butter, seasonal vegetables, and lemon dill sauce.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="1" data-name="Grilled Atlantic Salmon" data-price="32" data-image="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=1365&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>420 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="regular">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1546964053-d018e345e490?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmVlZiUyMFdlbGxpbmd0b258ZW58MHx8MHx8fDA%3D" alt="Beef Wellington" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Beef Wellington</h4>
+                                </div>
+                                <div class="menu-item-price">400</div>
+                            </div>
+                            <p class="menu-item-desc">Premium beef tenderloin wrapped in puff pastry with mushroom duxelles and red wine reduction.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="2" data-name="Beef Wellington" data-price="48" data-image="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>680 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="regular">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1480&q=80" alt="Mediterranean Bowl" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Mediterranean Bowl</h4>
+                                </div>
+                                <div class="menu-item-price">400</div>
+                            </div>
+                            <p class="menu-item-desc">Fresh quinoa bowl with roasted vegetables, chickpeas, olives, avocado, and lemon-tahini dressing.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="3" data-name="Mediterranean Bowl" data-price="18" data-image="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1480&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>320 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lunch Specials -->
+                <div class="col-lg-4 col-md-6" data-category="lunch">
+                    <div class="menu-item">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1398&q=80" alt="Gourmet Burger" class="menu-item-img">
+                            <div class="special-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Vinegar Special Burger</h4>
+                                </div>
+                                <div class="menu-item-price">400</div>
+                            </div>
+                            <p class="menu-item-desc">Signature wagyu beef patty with aged cheddar, caramelized onions, and truffle aioli.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="4" data-name="Vinegar Special Burger" data-price="24" data-image="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1398&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>720 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="lunch">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1381&q=80" alt="Margherita Pizza" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Margherita Pizza</h4>
+                                </div>
+                                <div class="menu-item-price">550</div>
+                            </div>
+                            <p class="menu-item-desc">Wood-fired pizza with fresh mozzarella, basil, and San Marzano tomatoes.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="5" data-name="Margherita Pizza" data-price="22" data-image="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1381&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>650 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="lunch">
+                    <div class="menu-item">
+                        <img src="https://media.istockphoto.com/id/2180817484/photo/chicken-ceasar-wraps.webp?a=1&b=1&s=612x612&w=0&k=20&c=J7lE-PPafWlETa-IAvENsgGObK5qbXjNvAYihI0ncGs=" alt="Chicken Wrap" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Chicken Caesar Wrap</h4>
+                                </div>
+                                <div class="menu-item-price">500</div>
+                            </div>
+                            <p class="menu-item-desc">Grilled chicken, romaine lettuce, parmesan, and Caesar dressing in a warm tortilla.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="6" data-name="Chicken Caesar Wrap" data-price="18" data-image="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>520 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Snacks -->
+                <div class="col-lg-4 col-md-6" data-category="snacks">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1647591545909-91f064148630?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VHJ1ZmZsZSUyMFBhcm1lc2FuJTIwRnJpZXN8ZW58MHx8MHx8fDA%3D" alt="French Fries" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Truffle Parmesan Fries</h4>
+                                </div>
+                                <div class="menu-item-price">300</div>
+                            </div>
+                            <p class="menu-item-desc">Crispy fries tossed in truffle oil, parmesan, and herbs with garlic aioli.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="7" data-name="Truffle Parmesan Fries" data-price="12" data-image="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>480 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="snacks">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=1365&q=80" alt="Calamari" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Crispy Calamari</h4>
+                                </div>
+                                <div class="menu-item-price">400</div>
+                            </div>
+                            <p class="menu-item-desc">Lightly battered squid rings with lemon aioli and spicy marinara sauce.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="8" data-name="Crispy Calamari" data-price="16" data-image="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=1365&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>420 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="snacks">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1480&q=80" alt="Bruschetta" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Tomato Bruschetta</h4>
+                                </div>
+                                <div class="menu-item-price">400</div>
+                            </div>
+                            <p class="menu-item-desc">Toasted artisan bread with fresh tomatoes, garlic, basil, and olive oil.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="9" data-name="Tomato Bruschetta" data-price="14" data-image="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1480&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>280 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="col-lg-4 col-md-6" data-category="dessert">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Chocolate Cake" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Chocolate Lava Cake</h4>
+                                </div>
+                                <div class="menu-item-price">450</div>
+                            </div>
+                            <p class="menu-item-desc">Warm chocolate cake with molten center, served with vanilla bean ice cream.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="10" data-name="Chocolate Lava Cake" data-price="14" data-image="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>380 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="dessert">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1611497438246-dcbb383de3c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TmV3JTIwWW9yayUyMENoZWVzZWNha2V8ZW58MHx8MHx8fDA%3D" alt="Cheesecake" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">New York Cheesecake</h4>
+                                </div>
+                                <div class="menu-item-price">200</div>
+                            </div>
+                            <p class="menu-item-desc">Classic creamy cheesecake with berry compote and whipped cream.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="11" data-name="New York Cheesecake" data-price="12" data-image="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>420 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="dessert">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1639744211487-b27e3551b07c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VGlyYW1pc3V8ZW58MHx8MHx8fDA%3D" alt="Tiramisu" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Tiramisu</h4>
+                                </div>
+                                <div class="menu-item-price">400</div>
+                            </div>
+                            <p class="menu-item-desc">Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="12" data-name="Tiramisu" data-price="13" data-image="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>350 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Beverages -->
+                <div class="col-lg-4 col-md-6" data-category="beverages">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" alt="Cocktail" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Vinegar Sunset</h4>
+                                </div>
+                                <div class="menu-item-price">500</div>
+                            </div>
+                            <p class="menu-item-desc">Signature cocktail with premium vodka, citrus, pomegranate, and balsamic reduction.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="13" data-name="Vinegar Sunset" data-price="12" data-image="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>180 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="beverages">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1611091115931-69347677e736?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEhvdXNlJTIwUmVkJTIwV2luZXxlbnwwfHwwfHx8MA%3D%3D" alt="Wine" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">House Red Wine</h4>
+                                </div>
+                                <div class="menu-item-price">350</div>
+                            </div>
+                            <p class="menu-item-desc">Premium Cabernet Sauvignon from our exclusive vineyard selection.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="14" data-name="House Red Wine" data-price="10" data-image="https://media.istockphoto.com/id/1205307899/photo/forest-fruit-cocktail-in-a-glass-on-a-wooden-base-decorated-with-blackberries.webp?a=1&b=1&s=612x612&w=0&k=20&c=W1jxnwyfRH8gxN6-hVNYC1pUfYa95pmUYH4xFyUYpMw=">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>125 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="beverages">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" alt="Mocktail" class="menu-item-img">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h4 class="menu-item-title">Berry Blast Mocktail</h4>
+                                </div>
+                                <div class="menu-item-price">300</div>
+                            </div>
+                            <p class="menu-item-desc">Refreshing mix of berries, mint, lime, and sparkling water.</p>
+                            <div class="menu-item-footer">
+                                <button class="add-to-cart-btn" data-id="15" data-name="Berry Blast Mocktail" data-price="8" data-image="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                                <div class="calories">
+                                    <i class="fas fa-fire"></i>
+                                    <span>90 cal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Button -->
+            <div class="text-center mt-5">
+                <a href="regularmeals.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem; background: var(--primary); border: none;">View Complete Menu</a>
+           
+            </div>
+        </div>
+    </section>
+
+<!-- Book a Table Section -->
+<section id="book-table" class="book-table-section p-8">
+    <div class="container">
+        <div class="row">
+            <!-- Left Column - Image & Info -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="booking-image-wrapper">
+                    <div class="booking-image-main">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Vinegar Restaurant Interior" 
+                             class="img-fluid rounded-4">
+                        <div class="booking-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>Best Dining Experience 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-info mt-5">
+                        <h3 class="h4 mb-4">Why Choose Vinegar?</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>Michelin Star Quality</h5>
+                                        <p class="mb-0">Award-winning culinary excellence</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-wine-glass-alt"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>Curated Wine Selection</h5>
+                                        <p class="mb-0">500+ wines from around the world</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>Private Dining</h5>
+                                        <p class="mb-0">Perfect for special occasions</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>Flexible Hours</h5>
+                                        <p class="mb-0">Open 7 days a week</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Booking Form -->
+            <div class="col-lg-6">
+                <div class="booking-form-wrapper">
+                    <div class="section-header mb-4">
+                        <span class="section-subtitle">Reservation</span>
+                        <h2 class="section-title">Book Your Table</h2>
+                        <p class="text-muted">Fill in the form below to reserve your table at Vinegar</p>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <form id="bookingForm" class="booking-form" novalidate>
+                        <div class="form-message"></div>
+                        
+                        <!-- Personal Details -->
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="fullName" 
+                                           placeholder="John Doe" 
+                                           required>
+                                    <label for="fullName">
+                                        <i class="fas fa-user me-2"></i>Full Name
+                                    </label>
+                                    <div class="invalid-feedback">Please enter your full name</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="email" 
+                                           class="form-control" 
+                                           id="email" 
+                                           placeholder="name@example.com" 
+                                           required>
+                                    <label for="email">
+                                        <i class="fas fa-envelope me-2"></i>Email Address
+                                    </label>
+                                    <div class="invalid-feedback">Please enter a valid email</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="tel" 
+                                           class="form-control" 
+                                           id="phone" 
+                                           placeholder="+1 234 567 8900" 
+                                           required>
+                                    <label for="phone">
+                                        <i class="fas fa-phone me-2"></i>Phone Number
+                                    </label>
+                                    <div class="invalid-feedback">Please enter a valid phone number</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <select class="form-select" id="guests" required>
+                                        <option value="" selected disabled>Select number of guests</option>
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5">5 People</option>
+                                        <option value="6">6 People</option>
+                                        <option value="7">7 People</option>
+                                        <option value="8">8 People</option>
+                                        <option value="9">9+ People</option>
+                                    </select>
+                                    <label for="guests">
+                                        <i class="fas fa-users me-2"></i>Number of Guests
+                                    </label>
+                                    <div class="invalid-feedback">Please select number of guests</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date & Time -->
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="date" 
+                                           class="form-control" 
+                                           id="date" 
+                                           min="<?php echo date('Y-m-d'); ?>" 
+                                           max="<?php echo date('Y-m-d', strtotime('+3 months')); ?>" 
+                                           required>
+                                    <label for="date">
+                                        <i class="fas fa-calendar me-2"></i>Date
+                                    </label>
+                                    <div class="invalid-feedback">Please select a date</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <select class="form-select" id="time" required>
+                                        <option value="" selected disabled>Select time</option>
+                                        <option value="11:00">11:00 AM - Lunch</option>
+                                        <option value="12:00">12:00 PM - Lunch</option>
+                                        <option value="13:00">1:00 PM - Lunch</option>
+                                        <option value="14:00">2:00 PM - Lunch</option>
+                                        <option value="18:00">6:00 PM - Dinner</option>
+                                        <option value="18:30">6:30 PM - Dinner</option>
+                                        <option value="19:00">7:00 PM - Dinner</option>
+                                        <option value="19:30">7:30 PM - Dinner</option>
+                                        <option value="20:00">8:00 PM - Dinner</option>
+                                        <option value="20:30">8:30 PM - Dinner</option>
+                                        <option value="21:00">9:00 PM - Dinner</option>
+                                    </select>
+                                    <label for="time">
+                                        <i class="fas fa-clock me-2"></i>Time
+                                    </label>
+                                    <div class="invalid-feedback">Please select a time</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Requests -->
+                        <div class="mb-4">
+                            <div class="form-floating">
+                                <label for="">Special Requests</label>
+                                <textarea class="form-control" 
+                                          id="specialRequests" 
+                                          placeholder="Special requests, dietary restrictions, etc." 
+                                          style="height: 120px"></textarea>
+                                <label for="specialRequests">
+                                    <!-- <i class=""></i> -->
+                                </label>
+                            </div>
+                            <div class="form-text">Any dietary restrictions, allergies, or special occasions?</div>
+                        </div>
+
+                        <!-- Table Preference -->
+                        <div class="mb-4">
+                            <label class="form-label mb-3">
+                                <i class="fas fa-chair me-2"></i>Table Preference
+                            </label>
+                            <div class="table-preference">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tableType" id="indoor" value="indoor" checked>
+                                    <label class="form-check-label" for="indoor">
+                                        <i class="fas fa-home me-1"></i> Indoor
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tableType" id="outdoor" value="outdoor">
+                                    <label class="form-check-label" for="outdoor">
+                                        <i class="fas fa-umbrella me-1"></i> Outdoor
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tableType" id="private" value="private">
+                                    <label class="form-check-label" for="private">
+                                        <i class="fas fa-crown me-1"></i> Private Room
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tableType" id="counter" value="counter">
+                                    <label class="form-check-label" for="counter">
+                                        <i class="fas fa-utensils me-1"></i> Chef's Counter
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitBooking">
+                                <span class="btn-text">
+                                    <i class="fas fa-calendar-check me-2"></i>Book Table Now
+                                </span>
+                                <span class="btn-loading d-none">
+                                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                    Processing...
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <p class="text-muted small mb-0">
+                                <i class="fas fa-info-circle me-1"></i>
+                                You'll receive a confirmation email within 24 hours.
+                                For immediate assistance, call <a href="tel:+11234567890" class="text-decoration-none">+92 37676786</a>
+                            </p>
+                        </div>
+                    </form>
+
+                    <!-- Quick Booking Info -->
+                    <div class="booking-info-card mt-5">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="info-card">
+                                    <div class="info-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h6>Opening Hours</h6>
+                                        <p class="mb-0">Mon-Sun: 11AM - 11PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="info-card">
+                                    <div class="info-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h6>Call Us</h6>
+                                        <p class="mb-0">
+                                            <a href="tel:+11234567890" class="text-decoration-none">+92 37676786</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<a href="https://www.whatsapp.com/" class="whatsapp-float">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+
+<!-- Success Modal -->
+<div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center py-5">
+                <div class="success-icon mb-4">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="modal-title mb-3" id="bookingSuccessModalLabel">Booking Confirmed!</h3>
+                <p class="text-muted mb-4">Your table has been reserved successfully. Check your email for confirmation details.</p>
+                <div class="booking-details bg-light p-4 rounded-3 mb-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="small mb-1 text-muted">Date & Time</p>
+                            <p class="mb-0 fw-bold" id="modalDateTime"></p>
+                        </div>
+                        <div class="col-6">
+                            <p class="small mb-1 text-muted">Guests</p>
+                            <p class="mb-0 fw-bold" id="modalGuests"></p>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-outline-primary me-2" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="window.print()">
+                    <i class="fas fa-print me-2"></i>Print Details
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-logo",>Vinegar<span>.</span></div>
+                    <p class="footer-description">Premium dining experience with warm, family-friendly atmosphere. Serving quality food since 1995 with 72 rotating menus and over 240,000 delicacies.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+
+                    <!-- Services Dropdown -->
+                    <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/index.html#menu">Home</a></li>
+class="nav-iem dropdown">
+                                               <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Aboutus.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Awards.html">Feedback</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Gallery</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/feedback.html">Awards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="catering.html">Catering Services</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/recipeofthemonth.html">Recipe of the Month</a></li>
+
+
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/contact.html">Contact Us</a></li>
+                       </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-description">Subscribe to get updates on new menus and special offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" style="background: rgba(219, 213, 213, 0.74); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vinegar Restaurant. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for culinary excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

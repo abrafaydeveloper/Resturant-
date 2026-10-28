@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinegar | Premium Culinary Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ <style>
+
+/* Feedback Section */
+.feedback-section {
+    background: linear-gradient(135deg, 
+        rgba(255, 250, 250, 0.95) 0%, 
+        rgba(250, 245, 255, 0.95) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+/* Background Elements */
+.feedback-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(45, 91, 227, 0.05), rgba(155, 81, 224, 0.05));
+    animation: floatBubble 20s ease-in-out infinite;
+}
+
+.bg-bubble.bubble-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bg-bubble.bubble-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.bg-bubble.bubble-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 6s;
+}
+
+.bg-bubble.bubble-4 {
+    width: 180px;
+    height: 180px;
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 9s;
+}
+
+.bg-heart {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.1;
+    animation: floatHeart 8s ease-in-out infinite;
+}
+
+.bg-heart.heart-1 {
+    top: 20%;
+    right: 20%;
+    animation-delay: 0s;
+}
+
+.bg-heart.heart-2 {
+    top: 40%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.bg-heart.heart-3 {
+    bottom: 30%;
+    right: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    33% {
+        transform: translateY(-30px) scale(1.05);
+    }
+    66% {
+        transform: translateY(20px) scale(0.95);
+    }
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Overall Rating */
+.overall-rating {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.rating-stars {
+    font-size: 28px;
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.rating-score {
+    margin-bottom: 10px;
+}
+
+.rating-score .score {
+    font-size: 48px;
+    font-weight: 800;
+    color: #333;
+}
+
+.rating-score .out-of {
+    font-size: 20px;
+    color: #666;
+    font-weight: 600;
+}
+
+.rating-count {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.rating-count i {
+    color: var(--primary);
+}
+
+/* Testimonial Tabs */
+.tabs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tabs-filter {
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-btn:hover {
+    color: var(--primary);
+    background: rgba(45, 91, 227, 0.05);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg,  #df3737, #3d82e9);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(45, 91, 227, 0.2);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reviewer-avatar {
+    position: relative;
+}
+
+.reviewer-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+}
+
+.verified-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: #4caf50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    border: 2px solid white;
+}
+
+.reviewer-details h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.reviewer-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.reviewer-meta span {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.reviewer-meta i {
+    font-size: 10px;
+    color: var(--primary);
+}
+
+.review-rating {
+    text-align: right;
+}
+
+.review-rating .stars {
+    color: #ffc107;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.rating-badge {
+    background: linear-gradient(135deg,  #df3737, #3d82e9);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.testimonial-body {
+    margin-bottom: 20px;
+}
+
+.review-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.review-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.highlight {
+    background: rgba(45, 91, 227, 0.1);
+    color: var(--primary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.review-helpful {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.helpful-btn, .reply-btn {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.helpful-btn:hover {
+    background: #e9ecef;
+    color: var(--primary);
+}
+
+.reply-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.helpful-btn .count {
+  
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.testimonial-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.restaurant-response {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+.response-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.response-header i {
+    color: var(--primary);
+}
+
+.response-text {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Feedback Statistics */
+.feedback-stats {
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(45, 91, 227, 0.1);
+    border-color: var(--primary);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg,  #df3737, #3d82e9);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.stat-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-content p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Feedback Form */
+.feedback-form-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 20px;
+}
+
+.form-header .form-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg,  #df3737, #3d82e9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: white;
+    margin: 0 auto 20px;
+    box-shadow: 0 15px 30px rgba(45, 91, 227, 0.2);
+}
+
+/* Rating Input */
+.rating-input {
+    text-align: center;
+}
+
+.rating-stars-input {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.rating-stars-input input {
+    display: none;
+}
+
+.rating-stars-input label {
+    float: right;
+    padding: 0 5px;
+    font-size: 36px;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rating-stars-input label:hover,
+.rating-stars-input label:hover ~ label,
+.rating-stars-input input:checked ~ label {
+    color: #ffc107;
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.rating-labels .label {
+    font-size: 12px;
+    color: #999;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.rating-labels .label:hover {
+    color: #666;
+}
+
+.selected-rating {
+    font-size: 16px;
+    color: #666;
+    font-weight: 600;
+    margin-top: 10px;
+    min-height: 24px;
+}
+
+/* Form Groups */
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-control {
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #fdfdfd;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 5px 20px rgba(45, 91, 227, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Category Tags */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.category-tag {
+    padding: 10px 18px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 50px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-tag:hover {
+    background: #e9ecef;
+}
+
+.category-tag.active {
+    background: linear-gradient(135deg, var(--primary), #9b51e0);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(45, 91, 227, 0.2);
+}
+
+/* Photo Upload */
+.photo-upload {
+    margin-top: 10px;
+}
+
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.upload-area:hover {
+    border-color: var(--primary);
+    background: rgba(45, 91, 227, 0.05);
+}
+
+.upload-area i {
+    font-size: 48px;
+    color: #adb5bd;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.upload-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.upload-hint {
+    font-size: 13px;
+    color: #666;
+}
+
+.upload-preview {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.preview-item {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.remove-photo {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.preview-item:hover .remove-photo {
+    opacity: 1;
+}
+
+/* Character Counter */
+.char-counter {
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Platform Reviews */
+.platform-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.platform-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.platform-card.google {
+    border-top: 4px solid #4285f4;
+}
+
+.platform-card.tripadvisor {
+    border-top: 4px solid #00aa6c;
+}
+
+.platform-card.yelp {
+    border-top: 4px solid #d32323;
+}
+
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.platform-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+}
+
+.platform-card.google .platform-icon {
+    background: #4285f4;
+}
+
+.platform-card.tripadvisor .platform-icon {
+    background: #00aa6c;
+}
+
+.platform-card.yelp .platform-icon {
+    background: #d32323;
+}
+
+.platform-info h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.platform-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.platform-rating .stars {
+    color: #ffc107;
+    font-size: 16px;
+}
+
+.rating-score {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.platform-body .platform-text {
+    font-size: 15px;
+    color: #555;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.platform-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.platform-stats .stat {
+    text-align: center;
+    flex: 1;
+}
+
+.platform-stats .stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.platform-stats .stat-label {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Success Modal */
+.success-animation .success-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    margin: 0 auto;
+    animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .feedback-form-wrapper {
+        padding: 30px;
+    }
+    
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .feedback-section {
+        padding: 80px 0;
+    }
+    
+    .tabs-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .feedback-form-wrapper {
+        position: static;
+        margin-top: 40px;
+    }
+    
+    .platform-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .overall-rating {
+        padding: 20px;
+    }
+    
+    .rating-stars {
+        font-size: 24px;
+    }
+    
+    .rating-score .score {
+        font-size: 36px;
+    }
+    
+    .testimonial-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .review-rating {
+        text-align: left;
+    }
+    
+    .form-header .form-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .rating-stars-input label {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .feedback-form-wrapper {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .tabs-filter {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 15px;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .category-tags {
+        flex-direction: column;
+    }
+    
+    .review-helpful {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .success-actions {
+        flex-direction: column;
+    }
+}
+
+/* Loading Animation */
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+
+/* Scroll Animation */
+.testimonial-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.testimonial-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Utility Classes */
+.mt-6 { margin-top: 4rem !important; }
+.mt-8 { margin-top: 6rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.mb-6 { margin-bottom: 4rem !important; }
+ </style>
+
+</div>
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="top-links d-none d-md-flex">
+                    <a href="Aboutus.html" class="me-4">About</a>
+                    <a href="feedback.html" class="me-4">Awards</a>
+                    <a href="recipeofthemonth.html" class="me-4">Recipe of the month</a>
+                    <a href="catering.html" class="me-4">Catering</a>
+                </div>
+                <div class="top-contact">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+923283383722">+92 348729930</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@pizerbitsolutions.com">contact@vinegarfood.com</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-text">
+                    <span class="main-text">Vinegar</span>
+                    <span class="tagline">Food Restaurant</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+      <a class="nav-link " href="index.html">Home</a>                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="regularmeals.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Meals 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="regularmeals.html"><i class=" fa-code"></i> Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html"><i class=" fa-bullhorn"></i> Lunch</a></li>
+                            <li><a class="dropdown-item" href="snacks.html"><i class=" fa-paint-brush"></i>  Snacks</a></li>
+                            <li><a class="dropdown-item" href="desert.html"><i class=" fa-video"></i> Desert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html"><i class=" fa-video"></i> Bevarages</a></li>
+
+ </ul>
+                    </li>
+                    
+                    <!-- Blogs Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeofthemonth.html"> Recipe of the month</a>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Awards.html"> Feedback</a>
+                    </li>
+                </ul>
+                   <!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart" id="emptyCart">
+            <i class="fas fa-shopping-basket"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add items to get started</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <div class="cart-tax">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-grand-total">
+                <span>Total:</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i>
+            Proceed to Checkout
+        </button>
+        <button class="continue-shopping-btn" id="continueShopping">
+            <i class="fas fa-shopping-bag"></i>
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- Overlay for cart -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Cart Icon for Header (Add this to your navbar) -->
+<button class="cart-icon" id="openCart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
+                <!-- Appointment Button -->
+                <div class="d-flex">
+                    <a href="contact.html" class="nav-link appointment-btn"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+<!-- Feedback & Testimonials Section -->
+<section id="feedback" class="feedback-section section-padding">
+    <!-- Background Elements -->
+    <div class="feedback-bg">
+        <div class="bg-bubble bubble-1"></div>
+        <div class="bg-bubble bubble-2"></div>
+        <div class="bg-bubble bubble-3"></div>
+        <div class="bg-bubble bubble-4"></div>
+        <div class="bg-heart heart-1">❤️</div>
+        <div class="bg-heart heart-2">❤️</div>
+        <div class="bg-heart heart-3">❤️</div>
+    </div>
+    
+    <div class="container">
+        <!-- Section Header -->
+        <div class="row mb-6">
+            <div class="col-lg-10 mx-auto text-center">
+                <span class="section-subtitle">Customer Love</span>
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="lead mb-4">Real stories from our valued customers about their dining experience</p>
+                
+                <!-- Overall Rating -->
+                <div class="overall-rating">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-score">
+                        <span class="score">4.8</span>
+                        <span class="out-of">/ 5.0</span>
+                    </div>
+                    <div class="rating-count">
+                        <i class="fas fa-users"></i> Based on 1,257 reviews
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Column - Testimonials -->
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <!-- Testimonial Tabs -->
+                <div class="testimonial-tabs mb-6">
+                    <div class="tabs-header mb-4">
+                        <h3 class="section-subtitle">Recent Reviews</h3>
+                        <div class="tabs-filter">
+                            <button class="filter-btn active" data-filter="all">
+                                <i class="fas fa-th-large"></i> All
+                            </button>
+                            <button class="filter-btn" data-filter="5">
+                                <i class="fas fa-star"></i> 5 Stars
+                            </button>
+                            <button class="filter-btn" data-filter="4">
+                                <i class="fas fa-star"></i> 4 Stars
+                            </button>
+                            <button class="filter-btn" data-filter="featured">
+                                <i class="fas fa-crown"></i> Featured
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonials Grid -->
+                    <div class="testimonials-grid">
+                        <div class="row g-4">
+                            <!-- Testimonial 1 -->
+                            <div class="col-md-6 testimonial-item" data-rating="5" data-featured="true">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">
+                                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                                                <div class="verified-badge">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="reviewer-details">
+                                                <h5 class="reviewer-name">Sarah Johnson</h5>
+                                                <div class="reviewer-meta">
+                                                    <span class="review-date">2 days ago</span>
+                                                    <span class="review-visit">
+                                                        <i class="fas fa-utensils"></i> Dinner
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="rating-badge">5.0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="testimonial-body">
+                                        <h4 class="review-title">An Unforgettable Anniversary Dinner!</h4>
+                                        <p class="review-text">
+                                            "From the moment we walked in, everything was perfect. The sommelier helped us choose the perfect wine pairing, and the chef's tasting menu was extraordinary. The service was impeccable!"
+                                        </p>
+                                        
+                                        <div class="review-highlights">
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Excellent Service
+                                            </span>
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Amazing Food
+                                            </span>
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Romantic Ambiance
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="review-helpful">
+                                            <button class="helpful-btn">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span>Helpful</span>
+                                                <span class="count">42</span>
+                                            </button>
+                                            <button class="reply-btn">
+                                                <i class="fas fa-reply"></i> Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="testimonial-footer">
+                                        <div class="restaurant-response">
+                                            <div class="response-header">
+                                                <i class="fas fa-reply"></i>
+                                                <strong>Response from Vinegar</strong>
+                                            </div>
+                                            <p class="response-text">
+                                                Thank you, Sarah! We're thrilled you enjoyed your anniversary with us. Looking forward to welcoming you back!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="col-md-6 testimonial-item" data-rating="5" data-featured="true">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">
+                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                                            </div>
+                                            <div class="reviewer-details">
+                                                <h5 class="reviewer-name">Michael Chen</h5>
+                                                <div class="reviewer-meta">
+                                                    <span class="review-date">1 week ago</span>
+                                                    <span class="review-visit">
+                                                        <i class="fas fa-briefcase"></i> Business Lunch
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="rating-badge">5.0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="testimonial-body">
+                                        <h4 class="review-title">Perfect Business Lunch Venue</h4>
+                                        <p class="review-text">
+                                            "Impressed our international clients with the impeccable service and exquisite cuisine. The private dining room was perfect for our meeting. Highly recommend!"
+                                        </p>
+                                        
+                                        <div class="review-highlights">
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Professional Service
+                                            </span>
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Private Dining
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="review-helpful">
+                                            <button class="helpful-btn">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span>Helpful</span>
+                                                <span class="count">28</span>
+                                            </button>
+                                            <button class="reply-btn">
+                                                <i class="fas fa-reply"></i> Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="col-md-6 testimonial-item" data-rating="4" data-featured="false">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">
+                                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Wilson">
+                                            </div>
+                                            <div class="reviewer-details">
+                                                <h5 class="reviewer-name">Emma Wilson</h5>
+                                                <div class="reviewer-meta">
+                                                    <span class="review-date">2 weeks ago</span>
+                                                    <span class="review-visit">
+                                                        <i class="fas fa-birthday-cake"></i> Birthday
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <span class="rating-badge">4.0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="testimonial-body">
+                                        <h4 class="review-title">Wonderful Birthday Celebration</h4>
+                                        <p class="review-text">
+                                            "The team made my birthday so special with a personalized dessert and singing. Food was excellent, though the wine pairing could be improved. Overall, a fantastic experience!"
+                                        </p>
+                                        
+                                        <div class="review-highlights">
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Special Occasion
+                                            </span>
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Great Food
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="review-helpful">
+                                            <button class="helpful-btn">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span>Helpful</span>
+                                                <span class="count">15</span>
+                                            </button>
+                                            <button class="reply-btn">
+                                                <i class="fas fa-reply"></i> Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 4 -->
+                            <div class="col-md-6 testimonial-item" data-rating="5" data-featured="false">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">
+                                                <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="David Rodriguez">
+                                                <div class="verified-badge">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="reviewer-details">
+                                                <h5 class="reviewer-name">David Rodriguez</h5>
+                                                <div class="reviewer-meta">
+                                                    <span class="review-date">3 weeks ago</span>
+                                                    <span class="review-visit">
+                                                        <i class="fas fa-glass-cheers"></i> Celebration
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="rating-badge">5.0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="testimonial-body">
+                                        <h4 class="review-title">Exceptional Culinary Experience</h4>
+                                        <p class="review-text">
+                                            "Every dish was a work of art. The attention to detail, from presentation to flavor combinations, was outstanding. The wine list is extensive and well-curated."
+                                        </p>
+                                        
+                                        <div class="review-highlights">
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Food Presentation
+                                            </span>
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Wine Selection
+                                            </span>
+                                            <span class="highlight">
+                                                <i class="fas fa-check-circle"></i> Attention to Detail
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="review-helpful">
+                                            <button class="helpful-btn">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                <span>Helpful</span>
+                                                <span class="count">37</span>
+                                            </button>
+                                            <button class="reply-btn">
+                                                <i class="fas fa-reply"></i> Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Load More -->
+                    <div class="text-center mt-5">
+                        <button class="btn btn-outline-primary" id="loadMoreReviews">
+                            <i class="fas fa-sync me-2"></i>Load More Reviews
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="feedback-stats">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-smile"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="stat-number" data-count="94">94%</h3>
+                                    <p class="stat-label">Would Return</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="stat-number" data-count="98">98%</h3>
+                                    <p class="stat-label">Service Rating</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="stat-number" data-count="96">96%</h3>
+                                    <p class="stat-label">Food Quality</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Feedback Form -->
+            <div class="col-lg-5">
+                <div class="feedback-form-wrapper">
+                    <div class="form-header text-center mb-5">
+                        <div class="form-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <h3 class="section-subtitle">Share Your Experience</h3>
+                        <p class="text-muted">Tell us about your visit at Vinegar</p>
+                    </div>
+                    
+                    <!-- Review Form -->
+                    <form id="reviewForm" class="review-form">
+                        <!-- Rating Section -->
+                        <div class="rating-section mb-5">
+                            <label class="form-label mb-3">
+                                <i class="fas fa-star me-2"></i>Overall Rating
+                            </label>
+                            <div class="rating-input">
+                                <div class="rating-stars-input">
+                                    <input type="radio" id="star5" name="rating" value="5">
+                                    <label for="star5" title="5 stars">
+                                        <i class="fas fa-star"></i>
+                                    </label>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4" title="4 stars">
+                                        <i class="fas fa-star"></i>
+                                    </label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3" title="3 stars">
+                                        <i class="fas fa-star"></i>
+                                    </label>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2" title="2 stars">
+                                        <i class="fas fa-star"></i>
+                                    </label>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1" title="1 star">
+                                        <i class="fas fa-star"></i>
+                                    </label>
+                                </div>
+                                <div class="rating-labels">
+                                    <span class="label" data-value="1">Poor</span>
+                                    <span class="label" data-value="2">Fair</span>
+                                    <span class="label" data-value="3">Good</span>
+                                    <span class="label" data-value="4">Very Good</span>
+                                    <span class="label" data-value="5">Excellent</span>
+                                </div>
+                                <div class="selected-rating" id="selectedRatingText">Select your rating</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Personal Info -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="reviewerName" class="form-label">
+                                        <i class="fas fa-user me-2"></i>Your Name *
+                                    </label>
+                                    <input type="text" class="form-control" id="reviewerName" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="reviewerEmail" class="form-label">
+                                        <i class="fas fa-envelope me-2"></i>Email Address *
+                                    </label>
+                                    <input type="email" class="form-control" id="reviewerEmail" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Visit Details -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="visitDate" class="form-label">
+                                        <i class="fas fa-calendar me-2"></i>Visit Date *
+                                    </label>
+                                    <input type="date" class="form-control" id="visitDate" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="visitType" class="form-label">
+                                        <i class="fas fa-utensils me-2"></i>Visit Type *
+                                    </label>
+                                    <select class="form-control" id="visitType" required>
+                                        <option value="">Select</option>
+                                        <option value="lunch">Lunch</option>
+                                        <option value="dinner">Dinner</option>
+                                        <option value="brunch">Brunch</option>
+                                        <option value="celebration">Celebration</option>
+                                        <option value="business">Business</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Review Title -->
+                        <div class="mb-4">
+                            <div class="form-group">
+                                <label for="reviewTitle" class="form-label">
+                                    <i class="fas fa-heading me-2"></i>Review Title *
+                                </label>
+                                <input type="text" class="form-control" id="reviewTitle" 
+                                       placeholder="Summarize your experience" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Review Text -->
+                        <div class="mb-4">
+                            <div class="form-group">
+                                <label for="reviewText" class="form-label">
+                                    <i class="fas fa-edit me-2"></i>Your Review *
+                                </label>
+                                <textarea class="form-control" id="reviewText" rows="5" 
+                                          placeholder="Share details of your experience with food, service, ambiance..."
+                                          required></textarea>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span>/500 characters
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Categories -->
+                        <div class="mb-5">
+                            <label class="form-label mb-3">
+                                <i class="fas fa-tags me-2"></i>What stood out? (Optional)
+                            </label>
+                            <div class="category-tags">
+                                <span class="category-tag" data-category="service">
+                                    <i class="fas fa-concierge-bell"></i> Service
+                                </span>
+                                <span class="category-tag" data-category="food">
+                                    <i class="fas fa-utensils"></i> Food Quality
+                                </span>
+                                <span class="category-tag" data-category="ambiance">
+                                    <i class="fas fa-home"></i> Ambiance
+                                </span>
+                                <span class="category-tag" data-category="drinks">
+                                    <i class="fas fa-wine-glass-alt"></i> Drinks
+                                </span>
+                                <span class="category-tag" data-category="value">
+                                    <i class="fas fa-coins"></i> Value
+                                </span>
+                                <span class="category-tag" data-category="cleanliness">
+                                    <i class="fas fa-broom"></i> Cleanliness
+                                </span>
+                            </div>
+                            <input type="hidden" id="selectedCategories" value="">
+                        </div>
+                        
+                        <!-- Photo Upload -->
+                        <div class="mb-5">
+                            <label class="form-label mb-3">
+                                <i class="fas fa-camera me-2"></i>Add Photos (Optional)
+                            </label>
+                            <div class="photo-upload">
+                                <div class="upload-area" id="uploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p class="upload-text">Click or drag photos here</p>
+                                    <p class="upload-hint">Max 3 photos, 5MB each</p>
+                                    <input type="file" id="photoUpload" multiple accept="image/*" style="display: none;">
+                                </div>
+                                <div class="upload-preview" id="uploadPreview"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Privacy Consent -->
+                        <div class="mb-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="privacyConsent" required>
+                                <label class="form-check-label" for="privacyConsent">
+                                    I agree to the <a href="#" class="text-primary">Privacy Policy</a> and understand that my review may be published on Vinegar's website and social media.
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitReview">
+                                <span class="btn-text">
+                                    <i class="fas fa-paper-plane me-2"></i>Submit Review
+                                </span>
+                                <span class="btn-loading d-none">
+                                    <span class="spinner-border spinner-border-sm me-2"></span>
+                                    Submitting...
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="form-footer text-center mt-4">
+                            <p class="small text-muted mb-0">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Your review helps us improve and helps other guests make informed decisions.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platform Reviews -->
+        <div class="platform-reviews mt-8">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="section-subtitle">Reviews Across Platforms</h3>
+                    <h2 class="section-title">What People Are Saying</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="platform-card google">
+                        <div class="platform-header">
+                            <div class="platform-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="platform-info">
+                                <h4>Google Reviews</h4>
+                                <div class="platform-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-score">4.7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="platform-body">
+                            <p class="platform-text">
+                                "Consistently excellent! The attention to detail is remarkable."
+                            </p>
+                            <div class="platform-stats">
+                                <div class="stat">
+                                    <div class="stat-number">850+</div>
+                                    <div class="stat-label">Reviews</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">92%</div>
+                                    <div class="stat-label">5-Star</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="platform-card tripadvisor">
+                        <div class="platform-header">
+                            <div class="platform-icon">
+                                <i class="fab fa-tripadvisor"></i>
+                            </div>
+                            <div class="platform-info">
+                                <h4>TripAdvisor</h4>
+                                <div class="platform-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="platform-body">
+                            <p class="platform-text">
+                                "Travelers' Choice Award winner 2024. A must-visit destination!"
+                            </p>
+                            <div class="platform-stats">
+                                <div class="stat">
+                                    <div class="stat-number">#1</div>
+                                    <div class="stat-label">in City</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">650+</div>
+                                    <div class="stat-label">Reviews</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="platform-card yelp">
+                        <div class="platform-header">
+                            <div class="platform-icon">
+                                <i class="fab fa-yelp"></i>
+                            </div>
+                            <div class="platform-info">
+                                <h4>Yelp</h4>
+                                <div class="platform-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-score">4.6</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="platform-body">
+                            <p class="platform-text">
+                                "Elite status restaurant. The tasting menu is life-changing!"
+                            </p>
+                            <div class="platform-stats">
+                                <div class="stat">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Reviews</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">88%</div>
+                                    <div class="stat-label">Recommended</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Modal -->
+<div class="modal fade" id="reviewSuccessModal" tabindex="-1" aria-labelledby="reviewSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center p-5">
+                <div class="success-animation mb-4">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                <h3 class="modal-title mb-3">Review Submitted Successfully!</h3>
+                <p class="text-muted mb-4">
+                    Thank you for sharing your experience. Your review helps us improve and helps other guests.
+                </p>
+                <div class="success-details bg-light p-4 rounded-3 mb-4">
+                    <p class="mb-2"><strong>What happens next?</strong></p>
+                    <ul class="text-start small mb-0">
+                        <li>Your review will be visible after moderation (within 24 hours)</li>
+                        <li>You'll receive a thank you email</li>
+                        <li>Our team will read your feedback</li>
+                    </ul>
+                </div>
+                <div class="success-actions">
+                    <button type="button" class="btn btn-outline-primary me-2" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='#reviews'">
+                        View All Reviews
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-logo",>Vinegar<span>.</span></div>
+                    <p class="footer-description">Premium dining experience with warm, family-friendly atmosphere. Serving quality food since 1995 with 72 rotating menus and over 240,000 delicacies.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+               <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+
+                    <!-- Services Dropdown -->
+                    <li                         <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/index.html#menu">Home</a></li>
+class="nav-iem dropdown">
+                                               <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Aboutus.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Awards.html">Feedback</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Gallery</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/feedback.html">Awards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Catering Services</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/recipeofthemonth.html">Recipe of the Month</a></li>
+
+
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/contact.html">Contact Us</a></li>
+                       </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-description">Subscribe to get updates on new menus and special offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" style="background: rgba(219, 213, 213, 0.74); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vinegar Restaurant. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for culinary excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Feedback Section Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    initFeedbackSection();
+});
+
+function initFeedbackSection() {
+    initTestimonialFilter();
+    initReviewForm();
+    initRatingInput();
+    initPhotoUpload();
+    initCategorySelection();
+    initLoadMore();
+    initScrollAnimations();
+    initStatistics();
+}
+
+// Testimonial Filter
+function initTestimonialFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            
+            // Filter testimonials
+            testimonialItems.forEach(item => {
+                const rating = item.dataset.rating;
+                const featured = item.dataset.featured;
+                
+                let shouldShow = false;
+                
+                switch(filter) {
+                    case 'all':
+                        shouldShow = true;
+                        break;
+                    case '5':
+                        shouldShow = rating === '5';
+                        break;
+                    case '4':
+                        shouldShow = rating === '4';
+                        break;
+                    case 'featured':
+                        shouldShow = featured === 'true';
+                        break;
+                }
+                
+                if (shouldShow) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 10);
+                } else {
+                    item.classList.remove('visible');
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
+
+// Rating Input
+function initRatingInput() {
+    const ratingInputs = document.querySelectorAll('.rating-stars-input input');
+    const ratingLabels = document.querySelectorAll('.rating-labels .label');
+    const selectedRatingText = document.getElementById('selectedRatingText');
+    
+    const ratingTexts = {
+        '1': 'Poor - Needs significant improvement',
+        '2': 'Fair - Room for improvement',
+        '3': 'Good - Met expectations',
+        '4': 'Very Good - Exceeded expectations',
+        '5': 'Excellent - Outstanding experience'
+    };
+    
+    ratingInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const value = this.value;
+            selectedRatingText.textContent = ratingTexts[value];
+            selectedRatingText.style.color = getRatingColor(value);
+            
+            // Update label colors
+            ratingLabels.forEach(label => {
+                const labelValue = label.dataset.value;
+                if (labelValue <= value) {
+                    label.style.color = getRatingColor(value);
+                    label.style.fontWeight = '600';
+                } else {
+                    label.style.color = '#999';
+                    label.style.fontWeight = 'normal';
+                }
+            });
+        });
+    });
+    
+    // Click on labels to select rating
+    ratingLabels.forEach(label => {
+        label.addEventListener('click', function() {
+            const value = this.dataset.value;
+            const input = document.getElementById(`star${value}`);
+            input.checked = true;
+            input.dispatchEvent(new Event('change'));
+        });
+    });
+    
+    function getRatingColor(rating) {
+        const colors = {
+            '1': '#ff4757',
+            '2': '#ff6b6b',
+            '3': '#ffa502',
+            '4': '#2ed573',
+            '5': '#2ed573'
+        };
+        return colors[rating] || '#666';
+    }
+}
+
+// Photo Upload
+function initPhotoUpload() {
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('photoUpload');
+    const previewContainer = document.getElementById('uploadPreview');
+    const maxFiles = 3;
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    let uploadedFiles = [];
+    
+    uploadArea.addEventListener('click', () => fileInput.click());
+    
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.style.borderColor = 'var(--primary)';
+        uploadArea.style.background = 'rgba(45, 91, 227, 0.1)';
+    });
+    
+    uploadArea.addEventListener('dragleave', () => {
+        uploadArea.style.borderColor = '#dee2e6';
+        uploadArea.style.background = '#f8f9fa';
+    });
+    
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.style.borderColor = '#dee2e6';
+        uploadArea.style.background = '#f8f9fa';
+        
+        const files = Array.from(e.dataTransfer.files);
+        handleFiles(files);
+    });
+    
+    fileInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files);
+        handleFiles(files);
+    });
+    
+    function handleFiles(files) {
+        files.forEach(file => {
+            // Check file type
+            if (!file.type.startsWith('image/')) {
+                showNotification('Please upload only image files', 'error');
+                return;
+            }
+            
+            // Check file size
+            if (file.size > maxSize) {
+                showNotification(`File ${file.name} is too large (max 5MB)`, 'error');
+                return;
+            }
+            
+            // Check max files
+            if (uploadedFiles.length >= maxFiles) {
+                showNotification(`Maximum ${maxFiles} photos allowed`, 'error');
+                return;
+            }
+            
+            // Add to uploaded files
+            uploadedFiles.push(file);
+            
+            // Create preview
+            createPreview(file);
+        });
+        
+        // Reset file input
+        fileInput.value = '';
+    }
+    
+    function createPreview(file) {
+        const reader = new FileReader();
+        
+        reader.onload = (e) => {
+            const previewItem = document.createElement('div');
+            previewItem.className = 'preview-item';
+            
+            previewItem.innerHTML = `
+                <img src="${e.target.result}" alt="Preview">
+                <div class="remove-photo" data-file="${file.name}">
+                    <i class="fas fa-times"></i>
+                </div>
+            `;
+            
+            previewContainer.appendChild(previewItem);
+            
+            // Add remove functionality
+            const removeBtn = previewItem.querySelector('.remove-photo');
+            removeBtn.addEventListener('click', () => {
+                removeFile(file.name);
+                previewItem.remove();
+            });
+        };
+        
+        reader.readAsDataURL(file);
+    }
+    
+    function removeFile(fileName) {
+        uploadedFiles = uploadedFiles.filter(file => file.name !== fileName);
+    }
+}
+
+// Category Selection
+function initCategorySelection() {
+    const categoryTags = document.querySelectorAll('.category-tag');
+    const selectedCategoriesInput = document.getElementById('selectedCategories');
+    let selectedCategories = [];
+    
+    categoryTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            if (this.classList.contains('active')) {
+                this.classList.remove('active');
+                selectedCategories = selectedCategories.filter(c => c !== category);
+            } else {
+                this.classList.add('active');
+                selectedCategories.push(category);
+            }
+            
+            selectedCategoriesInput.value = selectedCategories.join(',');
+        });
+    });
+}
+
+// Review Form Submission
+function initReviewForm() {
+    const form = document.getElementById('reviewForm');
+    const submitBtn = document.getElementById('submitReview');
+    const successModal = new bootstrap.Modal(document.getElementById('reviewSuccessModal'));
+    const charCount = document.getElementById('charCount');
+    const reviewText = document.getElementById('reviewText');
+    
+    // Character counter
+    reviewText.addEventListener('input', function() {
+        const count = this.value.length;
+        charCount.textContent = count;
+        
+        if (count > 500) {
+            charCount.style.color = '#ff4757';
+        } else if (count > 400) {
+            charCount.style.color = '#ffa502';
+        } else {
+            charCount.style.color = '#666';
+        }
+    });
+    
+    // Form validation
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        if (!validateReviewForm()) {
+            return;
+        }
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.querySelector('.btn-text').classList.add('d-none');
+        submitBtn.querySelector('.btn-loading').classList.remove('d-none');
+        
+        // Collect form data
+        const formData = {
+            name: document.getElementById('reviewerName').value.trim(),
+            email: document.getElementById('reviewerEmail').value.trim(),
+            rating: document.querySelector('input[name="rating"]:checked')?.value,
+            visitDate: document.getElementById('visitDate').value,
+            visitType: document.getElementById('visitType').value,
+            title: document.getElementById('reviewTitle').value.trim(),
+            review: reviewText.value.trim(),
+            categories: document.getElementById('selectedCategories').value.split(',').filter(c => c),
+            photos: uploadedFiles.length,
+            timestamp: new Date().toISOString(),
+            helpfulCount: 0
+        };
+        
+        try {
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Store in localStorage for demo
+            const reviews = JSON.parse(localStorage.getItem('vinegarReviews') || '[]');
+            reviews.push(formData);
+            localStorage.setItem('vinegarReviews', JSON.stringify(reviews));
+            
+            // Update overall rating (demo)
+            updateOverallRating(formData.rating);
+            
+            // Show success modal
+            successModal.show();
+            
+            // Reset form
+            resetForm();
+            
+            // Send notification (demo)
+            sendReviewNotification(formData);
+            
+        } catch (error) {
+            console.error('Review submission error:', error);
+            showNotification('Something went wrong. Please try again.', 'error');
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.querySelector('.btn-text').classList.remove('d-none');
+            submitBtn.querySelector('.btn-loading').classList.add('d-none');
+        }
+    });
+    
+    // Date validation
+    const visitDate = document.getElementById('visitDate');
+    const today = new Date();
+    const maxDate = new Date();
+    maxDate.setDate(today.getDate() + 1); // Allow today and tomorrow
+    
+    visitDate.max = formatDate(maxDate);
+    
+    function formatDate(date) {
+        return date.toISOString().split('T')[0];
+    }
+}
+
+function validateReviewForm() {
+    let isValid = true;
+    const requiredFields = document.querySelectorAll('#reviewForm [required]');
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('is-invalid');
+            isValid = false;
+            shakeElement(field);
+        } else {
+            field.classList.remove('is-invalid');
+        }
+        
+        // Email validation
+        if (field.type === 'email' && field.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+                field.classList.add('is-invalid');
+                isValid = false;
+                shakeElement(field);
+            }
+        }
+        
+        // Rating validation
+        if (field.name === 'rating' && !field.checked) {
+            const ratingSection = document.querySelector('.rating-input');
+            ratingSection.style.border = '2px solid #ff4757';
+            ratingSection.style.borderRadius = '10px';
+            ratingSection.style.padding = '10px';
+            isValid = false;
+            
+            setTimeout(() => {
+                ratingSection.style.border = 'none';
+                ratingSection.style.padding = '0';
+            }, 1000);
+        }
+    });
+    
+    return isValid;
+}
+
+function updateOverallRating(newRating) {
+    // This is a demo - in real app, you would calculate from all reviews
+    const currentScore = 4.8;
+    const currentCount = 1257;
+    
+    // Simulate new average
+    const newTotal = currentScore * currentCount + parseInt(newRating);
+    const newAverage = newTotal / (currentCount + 1);
+    
+    // Update display (rounded to 1 decimal)
+    document.querySelector('.score').textContent = newAverage.toFixed(1);
+    
+    // Update star display
+    const stars = document.querySelectorAll('.overall-rating .fa-star');
+    const fullStars = Math.floor(newAverage);
+    const hasHalfStar = newAverage % 1 >= 0.5;
+    
+    stars.forEach((star, index) => {
+        if (index < fullStars) {
+            star.className = 'fas fa-star';
+        } else if (index === fullStars && hasHalfStar) {
+            star.className = 'fas fa-star-half-alt';
+        } else {
+            star.className = 'far fa-star';
+        }
+    });
+    
+    // Update count
+    document.querySelector('.rating-count').innerHTML = 
+        `<i class="fas fa-users"></i> Based on ${currentCount + 1} reviews`;
+}
+
+function resetForm() {
+    document.getElementById('reviewForm').reset();
+    document.getElementById('selectedRatingText').textContent = 'Select your rating';
+    document.getElementById('selectedRatingText').style.color = '#666';
+    document.getElementById('selectedCategories').value = '';
+    document.getElementById('charCount').textContent = '0';
+    
+    // Reset category tags
+    document.querySelectorAll('.category-tag').forEach(tag => {
+        tag.classList.remove('active');
+    });
+    
+    // Reset photo upload
+    document.getElementById('uploadPreview').innerHTML = '';
+    uploadedFiles = [];
+    
+    // Reset validation
+    document.querySelectorAll('.is-invalid').forEach(el => {
+        el.classList.remove('is-invalid');
+    });
+}
+
+// Load More Reviews
+function initLoadMore() {
+    const loadMoreBtn = document.getElementById('loadMoreReviews');
+    let visibleCount = 4;
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading
+            this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                // Add more reviews (in real app, fetch from API)
+                visibleCount += 4;
+                
+                // Update button
+                if (visibleCount >= 12) { // Demo limit
+                    this.style.display = 'none';
+                } else {
+                    this.innerHTML = '<i class="fas fa-sync me-2"></i>Load More Reviews';
+                    this.disabled = false;
+                }
+                
+                showNotification('Loaded more reviews', 'success');
+            }, 1000);
+        });
+    }
+}
+
+// Helpful Button
+function initHelpfulButtons() {
+    document.querySelectorAll('.helpful-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const countElement = this.querySelector('.count');
+            let count = parseInt(countElement.textContent);
+            
+            if (!this.classList.contains('voted')) {
+                count++;
+                countElement.textContent = count;
+                this.classList.add('voted');
+                this.style.background = 'var(--primary)';
+                this.style.color = 'white';
+                this.style.borderColor = 'var(--primary)';
+                
+                showNotification('Thanks for your feedback!', 'success');
+            }
+        });
+    });
+}
+
+// Scroll Animations
+function initScrollAnimations() {
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    testimonialItems.forEach(item => observer.observe(item));
+}
+
+// Statistics Animation
+function initStatistics() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        animateStat(stat, target);
+    });
+}
+
+function animateStat(element, target) {
+    let current = 0;
+    const increment = target / 50;
+    const duration = 1500;
+    const stepTime = duration / 50;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + '%';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + '%';
+        }
+    }, stepTime);
+}
+
+// Notification System
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    document.querySelectorAll('.feedback-notification').forEach(n => n.remove());
+    
+    // Create notification
+    const notification = document.createElement('div');
+    notification.className = `feedback-notification notification-${type}`;
+    
+    const icons = {
+        success: 'check-circle',
+        error: 'exclamation-circle',
+        info: 'info-circle',
+        warning: 'exclamation-triangle'
+    };
+    
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-${icons[type]}"></i>
+            <span>${message}</span>
+        </div>
+        <button class="notification-close">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Add styles if not present
+    if (!document.getElementById('notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+            .feedback-notification {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                z-index: 9999;
+                transform: translateX(120%);
+                transition: transform 0.3s ease;
+                min-width: 300px;
+                border-left: 4px solid var(--primary);
+            }
+            .notification-success {
+                border-left-color: #4caf50;
+            }
+            .notification-error {
+                border-left-color: #ff4757;
+            }
+            .notification-info {
+                border-left-color: #2196f3;
+            }
+            .feedback-notification.show {
+                transform: translateX(0);
+            }
+            .notification-content {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                flex: 1;
+            }
+            .notification-content i {
+                font-size: 20px;
+            }
+            .notification-success .notification-content i {
+                color: #4caf50;
+            }
+            .notification-error .notification-content i {
+                color: #ff4757;
+            }
+            .notification-close {
+                background: transparent;
+                border: none;
+                color: #666;
+                cursor: pointer;
+                padding: 5px;
+                margin-left: 15px;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Animate in
+    setTimeout(() => notification.classList.add('show'), 10);
+    
+    // Close button
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    });
+    
+    // Auto-remove
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }
+    }, 5000);
+}
+
+function shakeElement(element) {
+    element.classList.add('shake');
+    setTimeout(() => element.classList.remove('shake'), 500);
+}
+
+// Demo notification for review submission
+function sendReviewNotification(data) {
+    console.log('📧 Review submitted:', data);
+    console.log('Sending notification to restaurant team...');
+    
+    // In production, integrate with your notification system
+}
+
+// Initialize helpful buttons when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initHelpfulButtons();
+    
+    // Add shake animation CSS
+    const shakeCSS = `
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .shake {
+            animation: shake 0.5s ease;
+        }
+    `;
+    
+    const style = document.createElement('style');
+    style.textContent = shakeCSS;
+    document.head.appendChild(style);
+});
+    </script>
+</body>
+</html>

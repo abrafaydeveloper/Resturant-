@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinegar | Premium Culinary Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ 
+
+</div>
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Top Bar -->
+     <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="top-links d-none d-md-flex">
+                    <a href="Aboutus.html" class="me-4">About</a>
+                    <a href="feedback.html" class="me-4">Awards</a>
+                    <a href="recipeofthemonth.html" class="me-4">Recipe of the month</a>
+                    <a href="catering.html" class="me-4">Catering</a>
+                </div>
+                <div class="top-contact">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+923283383722">+92 348729930</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@pizerbitsolutions.com">contact@vinegarfood.com</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-text">
+                    <span class="main-text">Vinegar</span>
+                    <span class="tagline">Food Restaurant</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="regularmeals.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Meals 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="regularmeals.html"><i class=" fa-code"></i> Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html"><i class=" fa-bullhorn"></i> Lunch</a></li>
+                            <li><a class="dropdown-item" href="snacks.html"><i class=" fa-paint-brush"></i>  Snacks</a></li>
+                            <li><a class="dropdown-item" href="desert.html"><i class=" fa-video"></i> Desert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html"><i class=" fa-video"></i> Bevarages</a></li>
+
+ </ul>
+                    </li>
+                    
+                    <!-- Blogs Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeofthemonth.html"> Recipe of the month</a>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Awards.html"> Feedback</a>
+                    </li>
+                </ul>
+                   <!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart" id="emptyCart">
+            <i class="fas fa-shopping-basket"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add items to get started</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <div class="cart-tax">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-grand-total">
+                <span>Total:</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i>
+            Proceed to Checkout
+        </button>
+        <button class="continue-shopping-btn" id="continueShopping">
+            <i class="fas fa-shopping-bag"></i>
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- Overlay for cart -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Cart Icon for Header (Add this to your navbar) -->
+<button class="cart-icon" id="openCart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
+                <!-- Appointment Button -->
+                <div class="d-flex">
+                    <a href="contact.html" class="nav-link appointment-btn"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+<section class="desserts-section">
+  <div class="desserts-container">
+    <!-- Header -->
+    <div class="desserts-header">
+      <h1 class="desserts-title">Sweet Treats & Desserts</h1>
+      <p class="desserts-subtitle">Indulge in delicious desserts with our curated collection of sweet recipes</p>
+      
+      <!-- Stats -->
+      <div class="desserts-stats">
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Dessert Recipes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.8</span>
+          <span class="stat-label">Avg. Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">15-60</span>
+          <span class="stat-label">Prep Time (min)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Navigation -->
+    <div class="desserts-filter-nav">
+      <button class="filter-btn active" data-filter="all">All Desserts</button>
+      <button class="filter-btn" data-filter="indian">Indian Sweets</button>
+      <button class="filter-btn" data-filter="cakes">Cakes & Pastries</button>
+      <button class="filter-btn" data-filter="icecream">Ice Creams</button>
+      <button class="filter-btn" data-filter="healthy">Healthy Options</button>
+      <button class="filter-btn" data-filter="quick">Quick Desserts</button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="dessert-search">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="dessertSearch" placeholder="Search desserts by name, ingredient...">
+        <button class="search-btn">Search</button>
+      </div>
+      <div class="dietary-filter">
+        <span class="filter-label">Dietary:</span>
+        <button class="dietary-btn" data-diet="vegetarian">Vegetarian</button>
+        <button class="dietary-btn active" data-diet="all">All</button>
+        <button class="dietary-btn" data-diet="eggless">Eggless</button>
+        <button class="dietary-btn" data-diet="sugarfree">Sugar-Free</button>
+      </div>
+    </div>
+
+    <!-- Dessert Cards Grid -->
+    <div class="desserts-grid">
+      <!-- Gulab Jamun -->
+      <div class="dessert-card" data-category="indian" data-diet="vegetarian" data-time="45">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Gulab Jamun">
+          <span class="difficulty easy">Easy</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Gulab Jamun</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-value">4.5</span>
+            </div>
+          </div>
+          <p class="dessert-description">Soft, melt-in-your-mouth milk dumplings soaked in fragrant sugar syrup. A classic Indian festive sweet.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>45 mins</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Serves 4-6</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>280 cal/serving</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag festive">Festive</span>
+            <span class="tag milk-based">Milk Based</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="gulab-jamun">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chocolate Cake -->
+      <div class="dessert-card" data-category="cakes" data-diet="vegetarian" data-time="60">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Chocolate Cake">
+          <span class="difficulty medium">Medium</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Decadent Chocolate Cake</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-value">4.9</span>
+            </div>
+          </div>
+          <p class="dessert-description">Rich, moist chocolate cake with creamy chocolate frosting. Perfect for celebrations and birthdays.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>60 mins</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Serves 8-10</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>420 cal/slice</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag chocolate">Chocolate</span>
+            <span class="tag baking">Baking</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="chocolate-cake">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mango Kulfi -->
+      <div class="dessert-card" data-category="icecream indian" data-diet="vegetarian" data-time="20">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Mango Kulfi">
+          <span class="difficulty easy">Easy</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Mango Kulfi</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-value">4.7</span>
+            </div>
+          </div>
+          <p class="dessert-description">Creamy Indian ice cream made with ripe mangoes, milk, and cardamom. No-churn, traditional recipe.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>20 mins + freeze</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Serves 6</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>210 cal/serving</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag summer">Summer</span>
+            <span class="tag no-bake">No-Bake</span>
+            <span class="tag seasonal">Seasonal</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="mango-kulfi">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chia Pudding -->
+      <div class="dessert-card" data-category="healthy quick" data-diet="vegetarian" data-time="10">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Chia Pudding">
+          <span class="difficulty easy">Easy</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Berry Chia Pudding</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-value">4.3</span>
+            </div>
+          </div>
+          <p class="dessert-description">Healthy, protein-rich chia seed pudding with mixed berries. Perfect for breakfast or guilt-free dessert.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>10 mins + set</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Serves 2</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>180 cal/serving</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag healthy">Healthy</span>
+            <span class="tag vegan">Vegan Option</span>
+            <span class="tag quick">Quick</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="chia-pudding">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rasmalai -->
+      <div class="dessert-card" data-category="indian" data-diet="vegetarian" data-time="50">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rasmalai">
+          <span class="difficulty medium">Medium</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Rasmalai</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-value">4.8</span>
+            </div>
+          </div>
+          <p class="dessert-description">Soft cottage cheese patties soaked in sweet, saffron-infused milk. A royal Indian dessert.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>50 mins</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Serves 6-8</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>320 cal/serving</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag festive">Festive</span>
+            <span class="tag milk-based">Milk Based</span>
+            <span class="tag saffron">Saffron</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="rasmalai">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fruit Cream -->
+      <div class="dessert-card" data-category="healthy quick" data-diet="vegetarian" data-time="15">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Fruit Cream">
+          <span class="difficulty easy">Easy</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Mixed Fruit Cream</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-value">4.4</span>
+            </div>
+          </div>
+          <p class="dessert-description">Fresh seasonal fruits mixed with sweetened cream and nuts. A light, refreshing dessert.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>15 mins</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Serves 4</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>220 cal/serving</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag healthy">Healthy</span>
+            <span class="tag fruits">Fruits</span>
+            <span class="tag quick">Quick</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="fruit-cream">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jalebi -->
+      <div class="dessert-card" data-category="indian" data-diet="vegetarian" data-time="40">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Jalebi">
+          <span class="difficulty medium">Medium</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Crispy Jalebi</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-value">4.6</span>
+            </div>
+          </div>
+          <p class="dessert-description">Crispy, coil-shaped deep-fried batter soaked in sugar syrup. Best served warm.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>40 mins</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Serves 4</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>350 cal/serving</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag festive">Festive</span>
+            <span class="tag fried">Fried</span>
+            <span class="tag traditional">Traditional</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="jalebi">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oats Cookies -->
+      <div class="dessert-card" data-category="healthy" data-diet="eggless" data-time="30">
+        <div class="dessert-card-image">
+          <img src="https://images.unsplash.com/photo-1753826366864-a6d419e2988e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8T2F0cyUyMCUyNiUyME51dCUyMENvb2tpZXN8ZW58MHx8MHx8fDA%3D" alt="Oats Cookies">
+          <span class="difficulty easy">Easy</span>
+          <button class="favorite-btn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="dessert-card-content">
+          <div class="dessert-card-header">
+            <h3 class="dessert-name">Oats & Nut Cookies</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-value">4.2</span>
+            </div>
+          </div>
+          <p class="dessert-description">Healthy, eggless cookies made with oats, nuts, and honey. Perfect with tea or as a snack.</p>
+          
+          <div class="dessert-details">
+            <div class="detail">
+              <i class="far fa-clock"></i>
+              <span>30 mins</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-user-friends"></i>
+              <span>Makes 20 cookies</span>
+            </div>
+            <div class="detail">
+              <i class="fas fa-fire"></i>
+              <span>90 cal/cookie</span>
+            </div>
+          </div>
+          
+          <div class="dessert-tags">
+            <span class="tag healthy">Healthy</span>
+            <span class="tag eggless">Eggless</span>
+            <span class="tag baking">Baking</span>
+          </div>
+          
+          <div class="dessert-card-footer">
+            <button class="view-recipe-btn" data-recipe="oats-cookies">View Recipe</button>
+            <button class="add-to-plan-btn">Add to Meal Plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dessert Tips Section -->
+    <div class="dessert-tips-section">
+      <h2 class="tips-title">Dessert Tips & Tricks</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-temperature-high"></i>
+          </div>
+          <h3>Temperature Matters</h3>
+          <p>For perfect cakes, ensure ingredients are at room temperature. Cold ingredients don't blend well.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>Measure Precisely</h3>
+          <p>Baking is a science. Use measuring cups/spoons for consistent results every time.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Timing is Key</h3>
+          <p>Don't overmix batter and set timers. Overmixing develops gluten, making desserts tough.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Healthy Swaps</h3>
+          <p>Replace sugar with honey/maple syrup, all-purpose flour with whole wheat, cream with yogurt.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="dessert-cta">
+      <h2>Create Your Dessert Plan</h2>
+      <p>Add desserts to your weekly meal plan and get shopping lists automatically generated.</p>
+      <div class="cta-buttons">
+        <button class="cta-btn primary">View All Recipes</button>
+        <button class="cta-btn secondary">Download Dessert eBook</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.desserts-section {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #fff9fb 0%, #fff5f9 100%);
+  padding: 3rem 1rem;
+  color: #333;
+}
+
+.desserts-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.desserts-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.desserts-title {
+  font-size: 3rem;
+  color: #b3180d;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #b3180d, #117cbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.desserts-subtitle {
+  font-size: 1.2rem;
+  color: #b3180d;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.desserts-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+  min-width: 120px;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #b3180d;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  display: block;
+  color: #b3180d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.desserts-filter-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #f0d9c5;
+  background: white;
+  color: #b3180d;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #f9e4d4;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: #b3180d;
+  color: white;
+  border-color: #11aa9d;
+  box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+}
+
+.dessert-search {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-container i {
+  position: absolute;
+  margin-left: 1rem;
+  color: #b3180d;
+}
+
+#dessertSearch {
+  flex: 1;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #f0d9c5;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#dessertSearch:focus {
+  border-color: #b3180d;
+}
+
+.search-btn {
+  margin-left: 1rem;
+  padding: 1rem 2rem;
+  background: #b3180d;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #b3180d;
+  transform: translateY(-2px);
+}
+
+.dietary-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: #e44219;
+  margin-right: 0.5rem;
+}
+
+.dietary-btn {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #e0c4ad;
+  background: white;
+  color: #000000;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dietary-btn:hover {
+  background: #f9e4d4;
+}
+
+.dietary-btn.active {
+  background: #1359aa;
+  color: white;
+  border-color: #dd3416;
+}
+
+.desserts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.dessert-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dessert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(139, 69, 19, 0.15);
+}
+
+.dessert-card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.dessert-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dessert-card:hover .dessert-card-image img {
+  transform: scale(1.05);
+}
+
+.difficulty {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.difficulty.easy {
+  background: #1385a1;
+}
+
+.difficulty.medium {
+  background: #0a9bb4;
+}
+
+.difficulty.hard {
+  background: #e74c3c;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.favorite-btn i {
+  color: #e74c3c;
+  font-size: 1.2rem;
+}
+
+.dessert-card-content {
+  padding: 1.5rem;
+}
+
+.dessert-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.dessert-name {
+  font-size: 1.4rem;
+  color: black;
+  margin: 0;
+  font-weight: 700;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.stars {
+  color: #e94124;
+  font-size: 0.9rem;
+}
+
+.rating-value {
+  font-weight: 600;
+  color: #13a5d1;
+}
+
+.dessert-description {
+  color: #585656c7;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.dessert-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.detail i {
+  color: #083b88;
+  font-size: 1.1rem;
+}
+
+.detail span {
+  font-size: 0.85rem;
+  color: #b3180d;
+  font-weight: 500;
+}
+
+.dessert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tag.festive {
+  background: #0b8499;
+  color: #e9390e;
+}
+
+.tag.milk-based {
+  background: #b3180d;
+  color: white;
+}
+
+.tag.chocolate {
+  background:#b3180d;
+  color: white;
+}
+
+.tag.baking {
+  background: #b3180d;
+  color: white;
+}
+
+.tag.summer {
+  background:  #0c82c7;
+  color: white;
+}
+
+.tag.no-bake {
+  background:  #0c82c7;
+  color: white;
+}
+
+.tag.seasonal {
+  background: #0c82c7;
+  color: #2d3436;
+}
+
+.tag.healthy {
+  background: #dd490f;
+  color: white;
+}
+
+.tag.vegan {
+  background: #13a3bd;
+  color: white;
+}
+
+.tag.quick {
+  background: #1ea9e9;
+  color: #2d3436;
+}
+
+.tag.fruits {
+  background: #da1212;
+  color: white;
+}
+
+.tag.fried {
+  background: #be3614;
+  color: white;
+}
+
+.tag.traditional {
+  background: #a29bfe;
+  color: white;
+}
+
+.tag.eggless {
+  background: #3266f7;
+  color: white;
+}
+
+.tag.saffron {
+  background: #33a4e6;
+  color: #2d3436;
+}
+
+.dessert-card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.view-recipe-btn, .add-to-plan-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-recipe-btn {
+  background: #b32a18;
+  color: white;
+}
+
+.view-recipe-btn:hover {
+  background: #cf180b;
+  transform: translateY(-2px);
+}
+
+.add-to-plan-btn {
+  background: #f8f3e6;
+  color: #cc2b0e;
+  border: 2px solid #f0d9c5;
+}
+
+.add-to-plan-btn:hover {
+  background: #f0d9c5;
+  transform: translateY(-2px);
+}
+
+.dessert-tips-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.1);
+}
+
+.tips-title {
+  text-align: center;
+  color: #444241d5;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.tip-card {
+  background: #fef9f5;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #ec0d0d;
+  transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+}
+
+.tip-icon {
+  width: 50px;
+  height: 50px;
+  background: #f0d9c5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tip-icon i {
+  color: #ca271b;
+  font-size: 1.5rem;
+}
+
+.tip-card h3 {
+  color: #e72121;
+  margin-bottom: 0.8rem;
+}
+
+.tip-card p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.dessert-cta {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #a52e09 0%, #2f5bbb 100%);
+  border-radius: 20px;
+  color: white;
+  margin-top: 2rem;
+}
+
+.dessert-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.dessert-cta p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.cta-btn.primary {
+  background: white;
+  color: #f51313;
+}
+
+.cta-btn.primary:hover {
+  background: #f8f3e6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .desserts-title {
+    font-size: 2.2rem;
+  }
+  
+  .desserts-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    min-width: 100px;
+    padding: 0.8rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .desserts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .search-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .search-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .dessert-card-footer {
+    flex-direction: column;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .desserts-title {
+    font-size: 1.8rem;
+  }
+  
+  .desserts-subtitle {
+    font-size: 1rem;
+  }
+  
+  .filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .dessert-card {
+    max-width: 100%;
+  }
+  
+  .dessert-tips-section {
+    padding: 1.5rem;
+  }
+}
+</style>
+
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-logo",>Vinegar<span>.</span></div>
+                    <p class="footer-description">Premium dining experience with warm, family-friendly atmosphere. Serving quality food since 1995 with 72 rotating menus and over 240,000 delicacies.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+               <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+
+                    <!-- Services Dropdown -->
+                         <a class="nav-link " href="index.html">Home</a>
+                                               <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Aboutus.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Awards.html">Feedback</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Gallery</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/feedback.html">Awards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Catering Services</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/recipeofthemonth.html">Recipe of the Month</a></li>
+
+
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/contact.html">Contact Us</a></li>
+                       </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-description">Subscribe to get updates on new menus and special offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" style="background: rgba(219, 213, 213, 0.74); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vinegar Restaurant. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for culinary excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+        
+    </body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Elements
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const dietaryButtons = document.querySelectorAll('.dietary-btn');
+  const dessertCards = document.querySelectorAll('.dessert-card');
+  const searchInput = document.getElementById('dessertSearch');
+  const searchButton = document.querySelector('.search-btn');
+  const favoriteButtons = document.querySelectorAll('.favorite-btn');
+  const viewRecipeButtons = document.querySelectorAll('.view-recipe-btn');
+  const addToPlanButtons = document.querySelectorAll('.add-to-plan-btn');
+  
+  // Current filter state
+  let currentFilter = 'all';
+  let currentDiet = 'all';
+  let currentSearch = '';
+  
+  // Filter desserts function
+  function filterDesserts() {
+    dessertCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const diet = card.getAttribute('data-diet');
+      const name = card.querySelector('.dessert-name').textContent.toLowerCase();
+      const description = card.querySelector('.dessert-description').textContent.toLowerCase();
+      
+      // Check category filter
+      const categoryMatch = currentFilter === 'all' || category.includes(currentFilter);
+      
+      // Check dietary filter
+      const dietMatch = currentDiet === 'all' || diet === currentDiet;
+      
+      // Check search filter
+      const searchMatch = currentSearch === '' || 
+                         name.includes(currentSearch) || 
+                         description.includes(currentSearch) ||
+                         category.includes(currentSearch);
+      
+      // Show/hide card based on all filters
+      if (categoryMatch && dietMatch && searchMatch) {
+        card.style.display = 'block';
+        // Add fade-in animation
+        card.style.animation = 'fadeIn 0.5s ease forwards';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    
+    // Add animation for appearing cards
+    const visibleCards = document.querySelectorAll('.dessert-card[style*="display: block"]');
+    visibleCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.1}s`;
+    });
+  }
+  
+  // Category filter buttons
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Update current filter
+      currentFilter = this.getAttribute('data-filter');
+      
+      // Apply filter
+      filterDesserts();
+    });
+  });
+  
+  // Dietary filter buttons
+  dietaryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Update active button
+      dietaryButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Update current diet
+      currentDiet = this.getAttribute('data-diet');
+      
+      // Apply filter
+      filterDesserts();
+    });
+  });
+  
+  // Search functionality
+  searchButton.addEventListener('click', function() {
+    currentSearch = searchInput.value.toLowerCase().trim();
+    filterDesserts();
+  });
+  
+  searchInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      currentSearch = searchInput.value.toLowerCase().trim();
+      filterDesserts();
+    }
+  });
+  
+  // Favorite button toggle
+  favoriteButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const icon = this.querySelector('i');
+      if (icon.classList.contains('far')) {
+        icon.classList.remove('far');
+        icon.classList.add('fas');
+        this.style.background = '#ffebee';
+        showNotification('Added to favorites!', 'success');
+      } else {
+        icon.classList.remove('fas');
+        icon.classList.add('far');
+        this.style.background = 'rgba(255, 255, 255, 0.9)';
+        showNotification('Removed from favorites', 'info');
+      }
+    });
+  });
+  
+  // View recipe button
+  viewRecipeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const recipeName = this.getAttribute('data-recipe');
+      showRecipeModal(recipeName);
+    });
+  });
+  
+  // Add to plan button
+  addToPlanButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const card = this.closest('.dessert-card');
+      const dessertName = card.querySelector('.dessert-name').textContent;
+      showNotification(`Added "${dessertName}" to your meal plan!`, 'success');
+      
+      // Visual feedback
+      this.textContent = 'Added ✓';
+      this.style.background = '#2ecc71';
+      this.style.color = 'white';
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        this.textContent = 'Add to Meal Plan';
+        this.style.background = '#f8f3e6';
+        this.style.color = '#8b4513';
+      }, 2000);
+    });
+  });
+  
+  // Show notification
+  function showNotification(message, type) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+      <span>${message}</span>
+      <button class="close-notification">&times;</button>
+    `;
+    
+    // Add styles for notification
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      background: ${type === 'success' ? '#2ecc71' : '#3498db'};
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      z-index: 1000;
+      animation: slideIn 0.3s ease;
+    `;
+    
+    // Add close button functionality
+    const closeBtn = notification.querySelector('.close-notification');
+    closeBtn.addEventListener('click', function() {
+      notification.style.animation = 'slideOut 0.3s ease forwards';
+      setTimeout(() => notification.remove(), 300);
+    });
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.style.animation = 'slideOut 0.3s ease forwards';
+        setTimeout(() => notification.remove(), 300);
+      }
+    }, 3000);
+    
+    // Add keyframe animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  // Show recipe modal (simplified version)
+  function showRecipeModal(recipeName) {
+    // In a real app, this would fetch recipe details from a database
+    const recipeTitles = {
+      'gulab-jamun': 'Gulab Jamun Recipe',
+      'chocolate-cake': 'Chocolate Cake Recipe',
+      'mango-kulfi': 'Mango Kulfi Recipe',
+      'chia-pudding': 'Berry Chia Pudding Recipe',
+      'rasmalai': 'Rasmalai Recipe',
+      'fruit-cream': 'Mixed Fruit Cream Recipe',
+      'jalebi': 'Crispy Jalebi Recipe',
+      'oats-cookies': 'Oats & Nut Cookies Recipe'
+    };
+    
+    const title = recipeTitles[recipeName] || 'Dessert Recipe';
+    alert(`Opening recipe: ${title}\n\nIn a full application, this would show:\n- Ingredients list\n- Step-by-step instructions\n- Cooking tips\n- Nutritional information\n- Video tutorial`);
+  }
+  
+  // Initialize with all desserts shown
+  filterDesserts();
+});
+</script>
+
+
+</html>

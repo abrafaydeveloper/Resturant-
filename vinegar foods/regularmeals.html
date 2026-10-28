@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinegar | Premium Culinary Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- CSS Styles -->
+
+ 
+<!-- CSS Styles - UPDATED -->
+<style>
+    /* Base Styles */
+    .regular-meals-section {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        padding: 60px 20px;
+        color: #2c3e50;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Section Header */
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #a64035, #b31919);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        margin-bottom: 35px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    .day-selector {
+        display: inline-flex;
+        background: white;
+        border-radius: 12px;
+        padding: 6px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e6ed;
+    }
+
+    .day-btn {
+        padding: 12px 28px;
+        border: none;
+        background: transparent;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #7f8c8d;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .day-btn.active {
+        background: linear-gradient(135deg, #e74c3c, #f50707);
+        color: white;
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .day-btn:hover:not(.active) {
+        background: #f8f9fa;
+        color: #2c3e50;
+        transform: translateY(-2px);
+    }
+
+    /* Meals Container - UPDATED FOR 4 CARDS PER ROW */
+    .meals-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        margin-bottom: 60px;
+    }
+
+    /* Meal Card */
+    .meal-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border: 1px solid #f1f2f6;
+    }
+
+    .meal-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .meal-card.featured {
+        border: 2px solid #f5f2f2;
+    }
+
+    .featured-badge {
+        position: absolute;
+        top: 20px;
+        right: -35px;
+        background: linear-gradient(135deg, #e74c3c, #c93c15);
+        color: white;
+        padding: 8px 40px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        transform: rotate(45deg);
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        z-index: 2;
+        letter-spacing: 0.5px;
+    }
+
+    /* Meal Image */
+    .meal-image {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .meal-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .meal-card:hover .meal-img {
+        transform: scale(1.08);
+    }
+
+    .meal-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .meal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(231, 76, 60, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .meal-image:hover .meal-overlay {
+        opacity: 1;
+    }
+
+    .view-details {
+        background: white;
+        color: #a33428;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .view-details:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Meal Content */
+    .meal-content {
+        padding: 20px;
+    }
+
+    .meal-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        gap: 12px;
+    }
+
+    .meal-icon {
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .meal-title-wrapper {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .meal-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .meal-time {
+        font-size: 0.8rem;
+        color: #7f8c8d;
+        background: #f8f9fa;
+        padding: 4px 10px;
+        border-radius: 15px;
+        display: inline-block;
+    }
+
+    .meal-description {
+        margin-bottom: 15px;
+    }
+
+    .meal-description p {
+        color: #5d6d7e;
+        line-height: 1.5;
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .meal-highlights {
+        margin-bottom: 15px;
+    }
+
+    .meal-highlights h4 {
+        color: #e74d3cc8;
+        font-size: 1rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .meal-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .meal-items li {
+        padding: 6px 0;
+        border-bottom: 1px dashed #eaeaea;
+        position: relative;
+        padding-left: 20px;
+        color: #34495e;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .meal-items li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: hsla(0, 63%, 49%, 0.963);
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    .meal-items li:last-child {
+        border-bottom: none;
+    }
+
+    /* Meal Tags */
+    .meal-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .meal-tag {
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap;
+    }
+
+    .meal-tag.vegetarian {
+        background: #e8f6f3;
+        color: #e54a1f;
+    }
+
+    .meal-tag.nonveg {
+        background: #fbeeea;
+        color: #f02913;
+    }
+
+    .meal-tag.balanced {
+        background: #e8f4fc;
+        color: #f33a25;
+    }
+
+    .meal-tag.healthy {
+        background: #eafaf1;
+        color: #fd4828;
+    }
+
+    .meal-tag.spicy {
+        background: #fef5e7;
+        color: #e34e1c;
+    }
+
+    .meal-tag.time {
+        background: #f4f6f6;
+        color: #e81414;
+    }
+
+    /* Meal Footer */
+    .meal-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        border-top: 1px solid #f1f2f6;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .meal-pricing {
+        display: flex;
+        flex-direction: column;
+        min-width: 120px;
+    }
+
+    .price-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 3px;
+        flex-wrap: wrap;
+    }
+
+    .current-price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #2c3e50;
+        line-height: 1;
+    }
+
+    .original-price {
+        font-size: 1.1rem;
+        color: #95a5a6;
+        text-decoration: line-through;
+    }
+
+    .discount {
+        background: #ff6b6b;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 10px;
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+
+    .price-note {
+        font-size: 0.75rem;
+        color: #7f8c8d;
+    }
+
+    .order-btn {
+        background: linear-gradient(135deg, #e3411c, #da2915);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        white-space: nowrap;
+    }
+
+    .order-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        background: linear-gradient(135deg, #de1616, #ea1919);
+    }
+
+    /* Different button colors for different meal types */
+    .breakfast .order-btn {
+        background: linear-gradient(135deg, #e7501e, #a92d0b);
+        box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    .breakfast .order-btn:hover {
+        background: linear-gradient(135deg, #ec2415, #d35400);
+    }
+
+    .lunch .order-btn {
+        background: linear-gradient(135deg, #e74c3c, #f5220a);
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .lunch .order-btn:hover {
+        background: linear-gradient(135deg, #c0392b, #a93226);
+    }
+
+    .snacks .order-btn {
+        background: linear-gradient(135deg, #f31111, #ec1010);
+        box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    }
+
+    .snacks .order-btn:hover {
+        background: linear-gradient(135deg, #f4320b, #d01313de);
+    }
+
+    .beverages .order-btn {
+        background: linear-gradient(135deg, #dc331c, #d90e0e);
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .beverages .order-btn:hover {
+        background: linear-gradient(135deg, hsl(0, 88%, 53%), #dc1f1f);
+    }
+
+    .healthy .order-btn {
+        background: linear-gradient(135deg, #d70909, #f51111);
+        box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3);
+    }
+
+    .healthy .order-btn:hover {
+        background: linear-gradient(135deg, #ce1010, #eb2006);
+    }
+
+    .btn-text {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .btn-icon {
+        font-size: 1rem;
+    }
+
+    /* Section Footer */
+    .section-footer {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    .info-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        border: 1px solid #f1f2f6;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .info-card h4 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .info-card p {
+        color: #7f8c8d;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .meal-timing {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .meal-timing h3 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+    }
+
+    .timing-slots {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .timing-slot {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        padding: 20px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid #e0e6ed;
+    }
+
+    .timing-slot:hover {
+        background: linear-gradient(135deg, #d52511, #da1414);
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    .timing-slot:hover .slot-time,
+    .timing-slot:hover .slot-meal {
+        color: white;
+    }
+
+    .slot-time {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 8px;
+    }
+
+    .slot-meal {
+        font-size: 1rem;
+        color: #7f8c8d;
+        font-weight: 500;
+    }
+
+    /* Responsive Design - UPDATED */
+    @media (max-width: 1400px) {
+        .meals-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .meals-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .container {
+            max-width: 900px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .meals-container {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+        }
+
+        .day-selector {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .day-btn {
+            width: 100%;
+            margin: 2px 0;
+        }
+
+        .meal-image {
+            height: 250px;
+        }
+
+        .meal-footer {
+            flex-direction: column;
+            gap: 15px;
+            align-items: stretch;
+        }
+
+        .meal-pricing {
+            align-items: center;
+            text-align: center;
+        }
+
+        .order-btn {
+            justify-content: center;
+            padding: 12px 20px;
+        }
+
+        .info-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .regular-meals-section {
+            padding: 40px 15px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .meal-content {
+            padding: 18px;
+        }
+
+        .meal-image {
+            height: 200px;
+        }
+
+        .info-cards {
+            grid-template-columns: 1fr;
+        }
+
+        .timing-slots {
+            grid-template-columns: 1fr;
+        }
+
+        .price-container {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .meal-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .meal-title-wrapper {
+            text-align: center;
+        }
+
+        .meal-items li {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+</div>
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="top-links d-none d-md-flex">
+                    <a href="Aboutus.html" class="me-4">About</a>
+                    <a href="feedback.html" class="me-4">Awards</a>
+                    <a href="recipeofthemonth.html" class="me-4">Recipe of the month</a>
+                    <a href="catering.html" class="me-4">Catering</a>
+                </div>
+                <div class="top-contact">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+923283383722">+92 348729930</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@pizerbitsolutions.com">contact@vinegarfood.com</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-text">
+                    <span class="main-text">Vinegar</span>
+                    <span class="tagline">Food Restaurant</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Meals 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="regularmeals.html"><i class=" fa-code"></i> Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html"><i class=" fa-bullhorn"></i> Lunch</a></li>
+                            <li><a class="dropdown-item" href="snacks.html"><i class=" fa-paint-brush"></i>  Snacks</a></li>
+                            <li><a class="dropdown-item" href="desert.html"><i class=" fa-video"></i> Desert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html"><i class=" fa-video"></i> Bevarages</a></li>
+
+ </ul>
+                    </li>
+                    
+                    <!-- Blogs Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeofthemonth.html"> Recipe of the month</a>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Awards.html"> Feedback</a>
+                    </li>
+                </ul>  
+                   <!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart" id="emptyCart">
+            <i class="fas fa-shopping-basket"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add items to get started</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <div class="cart-tax">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-grand-total">
+                <span>Total:</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i>
+            Proceed to Checkout
+        </button>
+        <button class="continue-shopping-btn" id="continueShopping">
+            <i class="fas fa-shopping-bag"></i>
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- Overlay for cart -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Cart Icon for Header (Add this to your navbar) -->
+<button class="cart-icon" id="openCart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
+                <!-- Appointment Button -->
+                <div class="d-flex">
+                    <a href="contact.html" class="nav-link appointment-btn"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+
+<!-- Regular Meals Section with Images - UPDATED VERSION -->
+<section class="regular-meals-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">Daily Regular Meals</h2>
+            <p class="section-subtitle">Freshly prepared, home-style meals served daily</p>
+            <div class="day-selector">
+                <button class="day-btn active" data-day="today">Today</button>
+                <button class="day-btn" data-day="tomorrow">Tomorrow</button>
+                <button class="day-btn" data-day="week">Weekly Plan</button>
+            </div>
+        </div>
+
+        <!-- Meals Container - NOW 4 CARDS PER ROW -->
+        <div class="meals-container">
+            <!-- Breakfast Card -->
+            <div class="meal-card breakfast">
+                <div class="meal-image">
+                    <img src="https://images.unsplash.com/photo-1556909211-36987daf7b4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Indian Breakfast" class="meal-img">
+                    <div class="meal-badge">Morning Special</div>
+                    <div class="meal-overlay">
+                        <button class="view-details">View Details</button>
+                    </div>
+                </div>
+                <div class="meal-content">
+                    <div class="meal-header">
+                        <div class="meal-icon">🍳</div>
+                        <div class="meal-title-wrapper">
+                            <h3 class="meal-title">Breakfast</h3>
+                            <span class="meal-time">7:00 AM - 10:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="meal-description">
+                        <p>Start your day with our traditional Indian breakfast options, freshly made every morning.</p>
+                    </div>
+                    <div class="meal-highlights">
+                        <h4>Today's Special:</h4>
+                        <ul class="meal-items">
+                            <li>Masala Dosa with Sambar & Chutney</li>
+                            <li>Poha with Peanuts & Fresh Coriander</li>
+                            <li>Aloo Paratha with Butter & Curd</li>
+                            <li>Idli with Coconut Chutney</li>
+                            <li>Fresh Fruit Plate & Juices</li>
+                        </ul>
+                    </div>
+                    <div class="meal-tags">
+                        <span class="meal-tag vegetarian">🥗 Vegetarian</span>
+                        <span class="meal-tag time">⏱️ 15 mins prep</span>
+                        <span class="meal-tag spicy">🌶️ Mild Spice</span>
+                    </div>
+                    <div class="meal-footer">
+                        <div class="meal-pricing">
+                            <div class="price-container">
+                                <span class="current-price">199</span>
+                                <span class="original-price">249</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                            <span class="price-note">Inclusive of all taxes</span>
+                        </div>
+                        <button class="order-btn" data-meal="breakfast">
+                            <span class="btn-text">Add to Cart</span>
+                            <span class="btn-icon">🛒</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lunch Card -->
+            <div class="meal-card lunch featured">
+                <div class="featured-badge">Chef's Special</div>
+                <div class="meal-image">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Indian Thali" class="meal-img">
+                    <div class="meal-badge">Best Seller</div>
+                    <div class="meal-overlay">
+                        <button class="view-details">View Details</button>
+                    </div>
+                </div>
+                <div class="meal-content">
+                    <div class="meal-header">
+                        <div class="meal-icon">🍛</div>
+                        <div class="meal-title-wrapper">
+                            <h3 class="meal-title">Lunch Thali</h3>
+                            <span class="meal-time">12:00 PM - 3:30 PM</span>
+                        </div>
+                    </div>
+                    <div class="meal-description">
+                        <p>A complete balanced meal with 7 items including main course, sides, and dessert.</p>
+                    </div>
+                    <div class="meal-highlights">
+                        <h4>Thali Includes:</h4>
+                        <ul class="meal-items">
+                            <li>Paneer Butter Masala / Chicken Curry</li>
+                            <li>Dal Tadka / Sambar</li>
+                            <li>Jeera Rice & 2 Roti/Chapati</li>
+                            <li>Seasonal Vegetable Sabzi</li>
+                            <li>Fresh Salad & Raita</li>
+                            <li>Papad & Pickle</li>
+                            <li>Dessert (Gulab Jamun/Kheer)</li>
+                        </ul>
+                    </div>
+                    <div class="meal-tags">
+                        <span class="meal-tag nonveg">🍗 Non-Veg Option</span>
+                        <span class="meal-tag balanced">⚡ Balanced Meal</span>
+                        <span class="meal-tag spicy">🌶️ Medium Spice</span>
+                    </div>
+                    <div class="meal-footer">
+                        <div class="meal-pricing">
+                            <div class="price-container">
+                                <span class="current-price">299</span>
+                                <span class="original-price">399</span>
+                                <span class="discount">25% off</span>
+                            </div>
+                            <span class="price-note">Free home delivery</span>
+                        </div>
+                        <button class="order-btn" data-meal="lunch">
+                            <span class="btn-text">Order Now</span>
+                            <span class="btn-icon">🔥</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Snacks Card (लंच के बाद) -->
+            <div class="meal-card snacks">
+                <div class="meal-image">
+                    <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlbmNoJTIwZnJpZXN8ZW58MHx8MHx8fDA%3D" alt="Evening Snacks" class="meal-img">
+                    <div class="meal-badge">Evening Special</div>
+                    <div class="meal-overlay">
+                        <button class="view-details">View Details</button>
+                    </div>
+                </div>
+                <div class="meal-content">
+                    <div class="meal-header">
+                        <div class="meal-icon">🥨</div>
+                        <div class="meal-title-wrapper">
+                            <h3 class="meal-title">Evening Snacks</h3>
+                            <span class="meal-time">4:00 PM - 6:30 PM</span>
+                        </div>
+                    </div>
+                    <div class="meal-description">
+                        <p>Perfect evening snacks to refresh you after a long day. Crispy, fresh and delicious.</p>
+                    </div>
+                    <div class="meal-highlights">
+                        <h4>Today's Snacks:</h4>
+                        <ul class="meal-items">
+                            <li>Samosa with Mint Chutney</li>
+                            <li>Pakora Platter (Mix Vegetables)</li>
+                            <li>Sandwiches & Toast</li>
+                            <li>French Fries & Nachos</li>
+                            <li>Spring Rolls</li>
+                        </ul>
+                    </div>
+                    <div class="meal-tags">
+                        <span class="meal-tag vegetarian">🥗 Vegetarian</span>
+                        <span class="meal-tag time">⏱️ 10 mins prep</span>
+                        <span class="meal-tag spicy">🌶️ Medium Spice</span>
+                    </div>
+                    <div class="meal-footer">
+                        <div class="meal-pricing">
+                            <div class="price-container">
+                                <span class="current-price">149</span>
+                                <span class="original-price">199</span>
+                                <span class="discount">25% off</span>
+                            </div>
+                            <span class="price-note">Perfect with Tea/Coffee</span>
+                        </div>
+                        <button class="order-btn" data-meal="snacks">
+                            <span class="btn-text">Add to Cart</span>
+                            <span class="btn-icon">🛒</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Tea & Coffee Card -->
+            <div class="meal-card beverages">
+                <div class="meal-image">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Tea & Coffee" class="meal-img">
+                    <div class="meal-badge">Hot & Fresh</div>
+                    <div class="meal-overlay">
+                        <button class="view-details">View Details</button>
+                    </div>
+                </div>
+                <div class="meal-content">
+                    <div class="meal-header">
+                        <div class="meal-icon">☕</div>
+                        <div class="meal-title-wrapper">
+                            <h3 class="meal-title">Tea & Coffee</h3>
+                            <span class="meal-time">All Day</span>
+                        </div>
+                    </div>
+                    <div class="meal-description">
+                        <p>Freshly brewed tea and coffee varieties to energize your day or relax in the evening.</p>
+                    </div>
+                    <div class="meal-highlights">
+                        <h4>Our Specialties:</h4>
+                        <ul class="meal-items">
+                            <li>Masala Chai</li>
+                            <li>Filter Coffee</li>
+                            <li>Cappuccino & Latte</li>
+                            <li>Green Tea & Herbal Tea</li>
+                            <li>Hot Chocolate</li>
+                            <li>Iced Tea & Cold Coffee</li>
+                        </ul>
+                    </div>
+                    <div class="meal-tags">
+                        <span class="meal-tag vegetarian">🥗 Vegetarian</span>
+                        <span class="meal-tag healthy">💪 Energy Boost</span>
+                        <span class="meal-tag time">⏱️ 5 mins prep</span>
+                    </div>
+                    <div class="meal-footer">
+                        <div class="meal-pricing">
+                            <div class="price-container">
+                                <span class="current-price">49</span>
+                                <span class="original-price">79</span>
+                                <span class="discount">38% off</span>
+                            </div>
+                            <span class="price-note">Free refill on some items</span>
+                        </div>
+                        <button class="order-btn" data-meal="beverages">
+                            <span class="btn-text">Order Now</span>
+                            <span class="btn-icon">🔥</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dinner Card -->
+            <div class="meal-card dinner">
+                <div class="meal-image">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Indian Dinner" class="meal-img">
+                    <div class="meal-badge">Evening Special</div>
+                    <div class="meal-overlay">
+                        <button class="view-details">View Details</button>
+                    </div>
+                </div>
+                <div class="meal-content">
+                    <div class="meal-header">
+                        <div class="meal-icon">🍽️</div>
+                        <div class="meal-title-wrapper">
+                            <h3 class="meal-title">Dinner</h3>
+                            <span class="meal-time">7:00 PM - 11:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="meal-description">
+                        <p>Light yet satisfying dinner options perfect for ending your day on a delicious note.</p>
+                    </div>
+                    <div class="meal-highlights">
+                        <h4>Tonight's Menu:</h4>
+                        <ul class="meal-items">
+                            <li>Veg/Chicken Biryani or Pulao</li>
+                            <li>Dal Makhani / Rajma Masala</li>
+                            <li>Butter Naan / Tandoori Roti</li>
+                            <li>Kadhai Paneer / Mix Veg</li>
+                            <li>Green Salad & Chutney</li>
+                            <li>Buttermilk or Sweet Lassi</li>
+                        </ul>
+                    </div>
+                    <div class="meal-tags">
+                        <span class="meal-tag vegetarian">🥗 Vegetarian</span>
+                        <span class="meal-tag healthy">💪 High Protein</span>
+                        <span class="meal-tag spicy">🌶️ Custom Spice</span>
+                    </div>
+                    <div class="meal-footer">
+                        <div class="meal-pricing">
+                            <div class="price-container">
+                                <span class="current-price">249</span>
+                                <span class="original-price">329</span>
+                                <span class="discount">24% off</span>
+                            </div>
+                            <span class="price-note">Serves 1-2 persons</span>
+                        </div>
+                        <button class="order-btn" data-meal="dinner">
+                            <span class="btn-text">Add to Cart</span>
+                            <span class="btn-icon">🛒</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Healthy Bites Card -->
+            <div class="meal-card healthy">
+                <div class="meal-image">
+                    <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Healthy Food" class="meal-img">
+                    <div class="meal-badge">Healthy Choice</div>
+                    <div class="meal-overlay">
+                        <button class="view-details">View Details</button>
+                    </div>
+                </div>
+                <div class="meal-content">
+                    <div class="meal-header">
+                        <div class="meal-icon">🥗</div>
+                        <div class="meal-title-wrapper">
+                            <h3 class="meal-title">Healthy Bites</h3>
+                            <span class="meal-time">All Day</span>
+                        </div>
+                    </div>
+                    <div class="meal-description">
+                        <p>Nutritious and healthy options for fitness enthusiasts and health-conscious people.</p>
+                    </div>
+                    <div class="meal-highlights">
+                        <h4>Healthy Options:</h4>
+                        <ul class="meal-items">
+                            <li>Salad Bowls (Protein Rich)</li>
+                            <li>Smoothies & Detox Drinks</li>
+                            <li>Grilled Sandwiches</li>
+                            <li>Quinoa & Brown Rice Meals</li>
+                            <li>Protein Shakes & Bars</li>
+                        </ul>
+                    </div>
+                    <div class="meal-tags">
+                        <span class="meal-tag vegetarian">🥗 Vegetarian</span>
+                        <span class="meal-tag healthy">💪 High Protein</span>
+                        <span class="meal-tag balanced">⚡ Low Calorie</span>
+                    </div>
+                    <div class="meal-footer">
+                        <div class="meal-pricing">
+                            <div class="price-container">
+                                <span class="current-price">179</span>
+                                <span class="original-price">229</span>
+                                <span class="discount">22% off</span>
+                            </div>
+                            <span class="price-note">Customizable as per diet</span>
+                        </div>
+                        <button class="order-btn" data-meal="healthy">
+                            <span class="btn-text">Order Now</span>
+                            <span class="btn-icon">🔥</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="section-footer">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">🚚</div>
+                    <h4>Free Delivery</h4>
+                    <p>Free home delivery on orders above 499</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⏰</div>
+                    <h4>30-Minute Delivery</h4>
+                    <p>Guanteed delivery within 30 minutes</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🌱</div>
+                    <h4>Fresh Ingredients</h4>
+                    <p>100% fresh & locally sourced ingredients</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">👨‍🍳</div>
+                    <h4>Expert Chefs</h4>
+                    <p>Prepared by experienced chefs</p>
+                </div>
+            </div>
+            
+            <div class="meal-timing">
+                <h3>Meal Timing</h3>
+                <div class="timing-slots">
+                    <div class="timing-slot">
+                        <span class="slot-time">7:00 AM - 10:00 AM</span>
+                        <span class="slot-meal">Breakfast</span>
+                    </div>
+                    <div class="timing-slot">
+                        <span class="slot-time">12:00 PM - 3:30 PM</span>
+                        <span class="slot-meal">Lunch</span>
+                    </div>
+                    <div class="timing-slot">
+                        <span class="slot-time">4:00 PM - 6:30 PM</span>
+                        <span class="slot-meal">Snacks</span>
+                    </div>
+                    <div class="timing-slot">
+                        <span class="slot-time">7:00 PM - 11:00 PM</span>
+                        <span class="slot-meal">Dinner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-logo",>Vinegar<span>.</span></div>
+                    <p class="footer-description">Premium dining experience with warm, family-friendly atmosphere. Serving quality food since 1995 with 72 rotating menus and over 240,000 delicacies.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+
+                    <!-- Services Dropdown -->
+                         <a class="nav-link " href="index.html">Home</a>
+                                               <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Aboutus.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Awards.html">Feedback</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Gallery</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/feedback.html">Awards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Catering Services</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/recipeofthemonth.html">Recipe of the Month</a></li>
+
+
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/contact.html">Contact Us</a></li>
+                       </ul>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-description">Subscribe to get updates on new menus and special offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" style="background: rgba(219, 213, 213, 0.74); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vinegar Restaurant. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for culinary excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- JavaScript -->
+
+
+<!-- JavaScript - UPDATED -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Day selector functionality
+        const dayButtons = document.querySelectorAll('.day-btn');
+        
+        dayButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                dayButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.transform = '';
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                this.style.transform = 'scale(0.95)';
+                
+                // Add ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = event.clientX - rect.left - size / 2;
+                const y = event.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                // Remove ripple element after animation
+                setTimeout(() => {
+                    ripple.remove();
+                    this.style.transform = '';
+                }, 600);
+                
+                // Update meals based on selected day
+                const selectedDay = this.getAttribute('data-day');
+                updateMealsForDay(selectedDay);
+            });
+        });
+        
+        // Order button functionality for all cards
+        const orderButtons = document.querySelectorAll('.order-btn');
+        
+        orderButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const mealType = this.getAttribute('data-meal');
+                const mealCard = this.closest('.meal-card');
+                const mealTitle = mealCard.querySelector('.meal-title').textContent;
+                const mealPrice = mealCard.querySelector('.current-price').textContent;
+                
+                // Add animation to button
+                this.style.transform = 'scale(0.95)';
+                this.innerHTML = '<span class="btn-text">Adding...</span><span class="btn-icon">⏳</span>';
+                
+                // Simulate API call
+                setTimeout(() => {
+                    showOrderSuccess(mealType, mealTitle, mealPrice);
+                    this.innerHTML = '<span class="btn-text">Added!</span><span class="btn-icon">✅</span>';
+                    
+                    // Reset button after 2 seconds
+                    setTimeout(() => {
+                        const originalText = mealType === 'lunch' || mealType === 'beverages' || 
+                                            mealType === 'healthy' ? 'Order Now' : 'Add to Cart';
+                        this.innerHTML = `<span class="btn-text">${originalText}</span><span class="btn-icon">${mealType === 'lunch' ? '🔥' : '🛒'}</span>`;
+                        this.style.transform = '';
+                    }, 2000);
+                }, 800);
+            });
+        });
+        
+        // View details button functionality for all cards
+        const viewDetailsButtons = document.querySelectorAll('.view-details');
+        
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const mealImage = this.closest('.meal-image');
+                const mealImg = mealImage.querySelector('.meal-img');
+                const mealTitle = mealImage.closest('.meal-card').querySelector('.meal-title').textContent;
+                
+                showImageModal(mealImg.src, mealTitle);
+            });
+        });
+        
+        // Add ripple effect CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Functions
+        function updateMealsForDay(day) {
+            const mealCards = document.querySelectorAll('.meal-card');
+            const mealDescriptions = document.querySelectorAll('.meal-description p');
+            const mealHighlights = document.querySelectorAll('.meal-highlights h4');
+            
+            // Add loading animation
+            mealCards.forEach(card => {
+                card.style.opacity = '0.7';
+                card.style.filter = 'blur(2px)';
+            });
+            
+            // Simulate API delay
+            setTimeout(() => {
+                // Update content based on selected day for all cards
+                if (day === 'today') {
+                    // Breakfast
+                    mealDescriptions[0].textContent = "Start your day with our traditional Indian breakfast options, freshly made every morning.";
+                    mealHighlights[0].textContent = "Today's Special:";
+                    
+                    // Lunch
+                    mealDescriptions[1].textContent = "A complete balanced meal with 7 items including main course, sides, and dessert.";
+                    mealHighlights[1].textContent = "Thali Includes:";
+                    
+                    // Snacks
+                    mealDescriptions[2].textContent = "Perfect evening snacks to refresh you after a long day. Crispy, fresh and delicious.";
+                    mealHighlights[2].textContent = "Today's Snacks:";
+                    
+                    // Tea/Coffee
+                    mealDescriptions[3].textContent = "Freshly brewed tea and coffee varieties to energize your day or relax in the evening.";
+                    mealHighlights[3].textContent = "Our Specialties:";
+                    
+                    // Dinner
+                    mealDescriptions[4].textContent = "Light yet satisfying dinner options perfect for ending your day on a delicious note.";
+                    mealHighlights[4].textContent = "Tonight's Menu:";
+                    
+                    // Healthy Bites
+                    mealDescriptions[5].textContent = "Nutritious and healthy options for fitness enthusiasts and health-conscious people.";
+                    mealHighlights[5].textContent = "Healthy Options:";
+                    
+                } else if (day === 'tomorrow') {
+                    // Breakfast
+                    mealDescriptions[0].textContent = "Tomorrow's special breakfast featuring seasonal ingredients and new recipes.";
+                    mealHighlights[0].textContent = "Tomorrow's Breakfast:";
+                    
+                    // Lunch
+                    mealDescriptions[1].textContent = "Special lunch menu for tomorrow with regional specialties and festive dishes.";
+                    mealHighlights[1].textContent = "Tomorrow's Lunch Special:";
+                    
+                    // Snacks
+                    mealDescriptions[2].textContent = "Tomorrow's snack special includes some exciting new additions to our menu.";
+                    mealHighlights[2].textContent = "Tomorrow's Snacks:";
+                    
+                    // Tea/Coffee
+                    mealDescriptions[3].textContent = "Special tea blends and coffee varieties for tomorrow's menu.";
+                    mealHighlights[3].textContent = "Tomorrow's Beverages:";
+                    
+                    // Dinner
+                    mealDescriptions[4].textContent = "Tomorrow's dinner features comfort food classics with a modern twist.";
+                    mealHighlights[4].textContent = "Tomorrow's Dinner Plan:";
+                    
+                    // Healthy Bites
+                    mealDescriptions[5].textContent = "Special healthy menu for tomorrow with seasonal superfoods.";
+                    mealHighlights[5].textContent = "Tomorrow's Healthy Options:";
+                    
+                } else if (day === 'week') {
+                    // Breakfast
+                    mealDescriptions[0].textContent = "Weekly breakfast rotation featuring different regional specialties each day.";
+                    mealHighlights[0].textContent = "Weekly Breakfast Rotation:";
+                    
+                    // Lunch
+                    mealDescriptions[1].textContent = "Complete weekly thali plan with rotating menus for balanced nutrition.";
+                    mealHighlights[1].textContent = "Weekly Thali Plan:";
+                    
+                    // Snacks
+                    mealDescriptions[2].textContent = "Weekly snack schedule with different crispy treats each day.";
+                    mealHighlights[2].textContent = "Weekly Snack Schedule:";
+                    
+                    // Tea/Coffee
+                    mealDescriptions[3].textContent = "Weekly beverage specials with different tea and coffee varieties.";
+                    mealHighlights[3].textContent = "Weekly Beverage Specials:";
+                    
+                    // Dinner
+                    mealDescriptions[4].textContent = "Weekly dinner schedule with international and regional cuisine themes.";
+                    mealHighlights[4].textContent = "Weekly Dinner Schedule:";
+                    
+                    // Healthy Bites
+                    mealDescriptions[5].textContent = "Weekly healthy meal plan with balanced nutrition schedule.";
+                    mealHighlights[5].textContent = "Weekly Healthy Plan:";
+                }
+                
+                // Remove loading animation
+                mealCards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.filter = 'blur(0)';
+                });
+                
+                // Show notification
+                showNotification(`Showing meals for ${day}`, '#2ecc71');
+            }, 500);
+        }
+        
+        function showOrderSuccess(mealType, mealTitle, mealPrice) {
+            // Create success notification
+            const notification = document.createElement('div');
+            notification.className = 'success-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <div class="notification-icon">✅</div>
+                    <div class="notification-text">
+                        <h4>${mealTitle} Added!</h4>
+                        <p>Successfully added to your cart for ${mealPrice}</p>
+                    </div>
+                    <button class="notification-close">×</button>
+                </div>
+            `;
+            
+            // Add styles if not already added
+            if (!document.querySelector('#notification-styles')) {
+                const notificationStyle = document.createElement('style');
+                notificationStyle.id = 'notification-styles';
+                notificationStyle.textContent = `
+                    .success-notification {
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: white;
+                        border-radius: 12px;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                        z-index: 10000;
+                        animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                        max-width: 350px;
+                        border-left: 5px solid #2ecc71;
+                        overflow: hidden;
+                    }
+                    
+                    @keyframes slideInRight {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    
+                    .notification-content {
+                        display: flex;
+                        align-items: center;
+                        padding: 20px;
+                        gap: 15px;
+                    }
+                    
+                    .notification-icon {
+                        font-size: 1.8rem;
+                        flex-shrink: 0;
+                    }
+                    
+                    .notification-text h4 {
+                        margin: 0 0 5px 0;
+                        color: #2c3e50;
+                    }
+                    
+                    .notification-text p {
+                        margin: 0;
+                        color: #7f8c8d;
+                        font-size: 0.95rem;
+                    }
+                    
+                    .notification-close {
+                        background: none;
+                        border: none;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        color: #95a5a6;
+                        margin-left: auto;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                    }
+                    
+                    .notification-close:hover {
+                        background: #f8f9fa;
+                        color: #e74c3c;
+                    }
+                    
+                    @keyframes slideOutRight {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(notificationStyle);
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Add close functionality
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            });
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 300);
+                }
+            }, 5000);
+        }
+        
+        function showImageModal(imageSrc, title) {
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'image-modal';
+            modal.innerHTML = `
+                <div class="modal-overlay"></div>
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h3>${title}</h3>
+                        <button class="modal-close">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="${imageSrc}" alt="${title}" class="modal-image">
+                    </div>
+                    <div class="modal-footer">
+                        <p>High-quality, fresh ingredients prepared daily by our expert chefs.</p>
+                    </div>
+                </div>
+            `;
+            
+            // Add modal styles if not already added
+            if (!document.querySelector('#modal-styles')) {
+                const modalStyle = document.createElement('style');
+                modalStyle.id = 'modal-styles';
+                modalStyle.textContent = `
+                    .image-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 10001;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        animation: fadeIn 0.3s ease;
+                    }
+                    
+                    @keyframes fadeIn {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
+                    }
+                    
+                    .modal-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        backdrop-filter: blur(5px);
+                    }
+                    
+                    .modal-container {
+                        background: white;
+                        border-radius: 20px;
+                        max-width: 700px;
+                        width: 90%;
+                        max-height: 90vh;
+                        z-index: 2;
+                        animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                        overflow: hidden;
+                        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+                    }
+                    
+                    @keyframes slideUp {
+                        from { transform: translateY(30px); opacity: 0; }
+                        to { transform: translateY(0); opacity: 1; }
+                    }
+                    
+                    .modal-header {
+                        padding: 20px 30px;
+                        border-bottom: 1px solid #eee;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    
+                    .modal-header h3 {
+                        margin: 0;
+                        color: #2c3e50;
+                        font-size: 1.5rem;
+                    }
+                    
+                    .modal-close {
+                        background: none;
+                        border: none;
+                        font-size: 2rem;
+                        cursor: pointer;
+                        color: #95a5a6;
+                        padding: 0;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .modal-close:hover {
+                        background: #f8f9fa;
+                        color: #e74c3c;
+                    }
+                    
+                    .modal-body {
+                        padding: 0;
+                        max-height: 60vh;
+                        overflow: hidden;
+                    }
+                    
+                    .modal-image {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        max-height: 60vh;
+                        object-fit: contain;
+                    }
+                    
+                    .modal-footer {
+                        padding: 20px 30px;
+                        border-top: 1px solid #eee;
+                        text-align: center;
+                        color: #7f8c8d;
+                    }
+                    
+                    @keyframes fadeOut {
+                        from { opacity: 1; }
+                        to { opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(modalStyle);
+            }
+            
+            document.body.appendChild(modal);
+            
+            // Close modal on close button click
+            modal.querySelector('.modal-close').addEventListener('click', () => {
+                modal.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    if (modal.parentNode) {
+                        document.body.removeChild(modal);
+                    }
+                }, 300);
+            });
+            
+            // Close modal on overlay click
+            modal.querySelector('.modal-overlay').addEventListener('click', () => {
+                modal.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    if (modal.parentNode) {
+                        document.body.removeChild(modal);
+                    }
+                }, 300);
+            });
+            
+            // Close on Escape key
+            const closeModal = function(e) {
+                if (e.key === 'Escape') {
+                    modal.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => {
+                        if (modal.parentNode) {
+                            document.body.removeChild(modal);
+                        }
+                    }, 300);
+                    document.removeEventListener('keydown', closeModal);
+                }
+            };
+            document.addEventListener('keydown', closeModal);
+        }
+        
+        function showNotification(message, color = '#3498db') {
+            // Create notification
+            const notification = document.createElement('div');
+            notification.className = 'floating-notification';
+            notification.textContent = message;
+            notification.style.backgroundColor = color;
+            
+            // Add styles if not already added
+            if (!document.querySelector('#floating-notification-styles')) {
+                const notificationStyle = document.createElement('style');
+                notificationStyle.id = 'floating-notification-styles';
+                notificationStyle.textContent = `
+                    .floating-notification {
+                        position: fixed;
+                        bottom: 20px;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(100px);
+                        background: #3498db;
+                        color: white;
+                        padding: 15px 30px;
+                        border-radius: 50px;
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                        z-index: 9999;
+                        font-weight: 600;
+                        animation: slideUpIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+                                  slideDownOut 0.3s ease 2.7s forwards;
+                        text-align: center;
+                        max-width: 90%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    
+                    @keyframes slideUpIn {
+                        from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+                        to { transform: translateX(-50%) translateY(0); opacity: 1; }
+                    }
+                    
+                    @keyframes slideDownOut {
+                        from { transform: translateX(-50%) translateY(0); opacity: 1; }
+                        to { transform: translateX(-50%) translateY(100px); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(notificationStyle);
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    document.body.removeChild(notification);
+                }
+            }, 3000);
+        }
+        
+        // Initialize with today's meals
+        updateMealsForDay('today');
+    });
+</script>
+</body>
+</html>

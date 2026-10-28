@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinegar | Premium Culinary Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <style>
+    /* Base Styles */
+    .lunch-section {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+        padding: 60px 20px;
+        color: #2c3e50;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Section Header */
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #d63031, #e17055);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 15px;
+        letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #636e72;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    .filters {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        background: white;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .filter-btn {
+        padding: 10px 24px;
+        border: 2px solid #e0e6ed;
+        background: white;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #636e72;
+    }
+
+    .filter-btn.active {
+        background: linear-gradient(135deg, #d63031, #e17055);
+        color: white;
+        border-color: #d63031;
+        box-shadow: 0 4px 15px rgba(214, 48, 49, 0.3);
+    }
+
+    .filter-btn:hover:not(.active) {
+        background: #f8f9fa;
+        color: #2c3e50;
+        border-color: #d63031;
+        transform: translateY(-2px);
+    }
+
+    /* Menu Stats */
+    .menu-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .stat-item {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        border: 1px solid #f1f2f6;
+    }
+
+    .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-icon {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stat-info h4 {
+        font-size: 1.4rem;
+        color: #2d3436;
+        margin-bottom: 5px;
+    }
+
+    .stat-info p {
+        color: #636e72;
+        font-size: 0.95rem;
+    }
+
+    /* Lunch Grid */
+    .lunch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    /* Lunch Card */
+    .lunch-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border: 1px solid #f1f2f6;
+    }
+
+    .lunch-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: linear-gradient(135deg, #d63031, #e17055);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        z-index: 2;
+        box-shadow: 0 4px 15px rgba(214, 48, 49, 0.3);
+    }
+
+    .card-badge.bestseller {
+        background: linear-gradient(135deg, #fdcb6e, #e17055);
+    }
+
+    /* Card Image */
+    .card-image {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .food-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .lunch-card:hover .food-img {
+        transform: scale(1.1);
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(214, 48, 49, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .lunch-card:hover .image-overlay {
+        opacity: 1;
+    }
+
+    .quick-view {
+        background: white;
+        color: #d63031;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .quick-view:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Card Content */
+    .card-content {
+        padding: 25px;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .food-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .food-rating {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .stars {
+        color: #fdcb6e;
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .rating-count {
+        font-size: 0.8rem;
+        color: #636e72;
+        margin-top: 3px;
+    }
+
+    .food-description {
+        color: #5d6d7e;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        height: 70px;
+        overflow: hidden;
+    }
+
+    .food-details {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #f8f9fa;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        color: #636e72;
+    }
+
+    .detail-icon {
+        font-size: 1rem;
+    }
+
+    /* Card Footer */
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        border-top: 1px solid #f1f2f6;
+    }
+
+    .price-section {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .current-price {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #2c3e50;
+    }
+
+    .original-price {
+        font-size: 1.2rem;
+        color: #95a5a6;
+        text-decoration: line-through;
+    }
+
+    .discount {
+        background: #2ecc71;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .add-to-cart {
+        background: linear-gradient(135deg, #d63031, #e17055);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(214, 48, 49, 0.3);
+    }
+
+    .add-to-cart:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(214, 48, 49, 0.4);
+        background: linear-gradient(135deg, #c23616, #d63031);
+    }
+
+    .cart-icon {
+        font-size: 1.1rem;
+    }
+
+    /* Meal Packages */
+    .meal-packages {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        margin-top: 40px;
+    }
+
+    .packages-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 40px;
+        font-weight: 700;
+    }
+
+    .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .package-card {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid #e0e6ed;
+        position: relative;
+    }
+
+    .package-card.popular {
+             border: 2px solid #e0e6ed;
+    background: #f8f9fa;
+        box-shadow: 0 10px 30px rgba(214, 48, 49, 0.1);
+        transform: scale(1.05);
+    }
+
+    .package-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .package-card.popular:hover {
+        transform: scale(1.05) translateY(-10px);
+    }
+
+    .package-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .package-card h4 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .package-card p {
+        color: #636e72;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+    }
+
+    .package-price {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    .package-save {
+        display: block;
+        font-size: 0.9rem;
+        color: #2ecc71;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+
+    .package-btn {
+        background: linear-gradient(135deg, #124226, #ef0a0a);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    .package-btn:hover {
+        background: linear-gradient((135deg, #22421b, #c23616));
+        transform: translateY(-2px);
+    }
+
+    .package-card.popular .package-btn {
+        background: linear-gradient((135deg, #22421b, #c23616));
+    }
+
+    .package-card.popular .package-btn:hover {
+        background: linear-gradient((135deg, #22421b, #c23616));
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .lunch-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .lunch-section {
+            padding: 40px 15px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+        }
+
+        .filters {
+            width: 100%;
+            overflow-x: auto;
+            justify-content: flex-start;
+            padding: 15px;
+        }
+
+        .filter-btn {
+            flex-shrink: 0;
+        }
+
+        .lunch-grid {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .stat-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .packages-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .package-card.popular {
+            transform: none;
+        }
+
+        .package-card.popular:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .food-rating {
+            align-items: flex-start;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .menu-stats {
+            grid-template-columns: 1fr;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-footer {
+            flex-direction: column;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .price-section {
+            justify-content: center;
+        }
+
+        .add-to-cart {
+            justify-content: center;
+        }
+
+        .meal-packages {
+            padding: 25px;
+        }
+
+        .package-card {
+            padding: 20px;
+        }
+    }
+</style>
+ 
+
+</div>
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Top Bar -->
+     <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="top-links d-none d-md-flex">
+                    <a href="Aboutus.html" class="me-4">About</a>
+                    <a href="feedback.html" class="me-4">Awards</a>
+                    <a href="recipeofthemonth.html" class="me-4">Recipe of the month</a>
+                    <a href="catering.html" class="me-4">Catering</a>
+                </div>
+                <div class="top-contact">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+923283383722">+92 348729930</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@pizerbitsolutions.com">contact@vinegarfood.com</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-text">
+                    <span class="main-text">Vinegar</span>
+                    <span class="tagline">Food Restaurant</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                      <a class="nav-link " href="index.html">Home</a>       
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Meals 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="regularmeals.html"><i class=" fa-code"></i> Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html"><i class=" fa-bullhorn"></i> Lunch</a></li>
+                            <li><a class="dropdown-item" href="snacks.html"><i class=" fa-paint-brush"></i>  Snacks</a></li>
+                            <li><a class="dropdown-item" href="desert.html"><i class=" fa-video"></i> Desert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html"><i class=" fa-video"></i> Bevarages</a></li>
+
+ </ul>
+                    </li>
+                    
+                    <!-- Blogs Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeofthemonth.html"> Recipe of the month</a>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Awards.html"> Feedback</a>
+                    </li>
+                </ul>
+                   <!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart" id="emptyCart">
+            <i class="fas fa-shopping-basket"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add items to get started</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <div class="cart-tax">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-grand-total">
+                <span>Total:</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i>
+            Proceed to Checkout
+        </button>
+        <button class="continue-shopping-btn" id="continueShopping">
+            <i class="fas fa-shopping-bag"></i>
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- Overlay for cart -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Cart Icon for Header (Add this to your navbar) -->
+<button class="cart-icon" id="openCart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
+                <!-- contact  Button -->
+                <div class="d-flex">
+                    <a href="contact.html" class="nav-link appointment-btn"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+
+
+<!-- Lunch Meals Section -->
+<section class="lunch-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">Lunch Specials</h2>
+            <p class="section-subtitle">Daily changing lunch menu with fresh, homemade Indian dishes</p>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="veg">Vegetarian</button>
+                <button class="filter-btn" data-filter="nonveg">Non-Veg</button>
+                <button class="filter-btn" data-filter="thali">Thali Special</button>
+                <button class="filter-btn" data-filter="combo">Combo Meals</button>
+            </div>
+        </div>
+
+        <!-- Lunch Menu Stats -->
+        <div class="menu-stats">
+            <div class="stat-item">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-info">
+                    <h4>12:00 PM - 3:30 PM</h4>
+                    <p>Lunch Hours</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-info">
+                    <h4>45+ Items</h4>
+                    <p>Menu Options</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🚚</div>
+                <div class="stat-info">
+                    <h4>30 Min</h4>
+                    <p>Delivery Time</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <h4>4.8/5</h4>
+                    <p>Customer Rating</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lunch Meals Grid -->
+        <div class="lunch-grid">
+            <!-- Veg Thali -->
+            <div class="lunch-card" data-category="veg thali featured">
+                <div class="card-badge">Chef's Choice</div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vegetarian Thali" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="1">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">Royal Veg Thali</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(248)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Complete vegetarian meal with 9 different items including main course, breads, rice, dal, vegetables, salad, raita, papad, and dessert.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍽️</span>
+                            <span class="detail-text">Serves 1-2</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Medium Spice</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 25 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">700</div>
+                            <div class="original-price">850</div>
+                            <div class="discount">22% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="1">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chicken Biryani -->
+            <div class="lunch-card" data-category="nonveg">
+                <div class="card-badge bestseller">Best Seller</div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chicken Biryani" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="2">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">Hyderabadi Chicken Biryani</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(512)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Authentic Hyderabadi style biryani cooked with basmati rice, marinated chicken, and aromatic spices. Served with raita and mirchi ka salan.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍗</span>
+                            <span class="detail-text">6 Chicken Pieces</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Spicy</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 30 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">500</div>
+                            <div class="original-price">600</div>
+                            <div class="discount">20% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="2">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paneer Thali -->
+            <div class="lunch-card" data-category="veg thali">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Paneer Thali" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="3">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">Paneer Special Thali</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Paneer butter masala, dal tadka, jeera rice, 2 butter naan, mix veg, salad, raita, papad, and gulab jamun.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🧀</span>
+                            <span class="detail-text">Paneer Delight</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Mild Spice</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 20 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">500</div>
+                            <div class="original-price">550</div>
+                            <div class="discount">21% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="3">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fish Curry Meal -->
+            <div class="lunch-card" data-category="nonveg combo">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fish Curry Meal" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="4">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">Fish Curry Combo</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(143)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Spicy fish curry cooked in traditional South Indian style with steamed rice, appalam, and buttermilk.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🐟</span>
+                            <span class="detail-text">6 Fish Pieces</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Hot</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 35 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">400</div>
+                            <div class="original-price">550</div>
+                            <div class="discount">18% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="4">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jain Thali -->
+            <div class="lunch-card" data-category="veg thali">
+                <div class="card-badge">Jain Special</div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Jain Thali" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="5">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">Jain Special Thali</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(96)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Specially prepared without onion and garlic. Includes sabzi, dal, rice, roti, salad, raita, papad, and sweet.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🙏</span>
+                            <span class="detail-text">Jain Friendly</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Mild Spice</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 25 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">450</div>
+                            <div class="original-price">490</div>
+                            <div class="discount">21% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="5">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mutton Combo -->
+            <div class="lunch-card" data-category="nonveg combo">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mutton Curry" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="6">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">Mutton Rogan Josh Combo</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(167)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Rich and flavorful mutton curry cooked with traditional Kashmiri spices, served with steamed rice, naan, and salad.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍖</span>
+                            <span class="detail-text">Tender Mutton</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Medium Spice</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 45 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">350</div>
+                            <div class="original-price">400</div>
+                            <div class="discount">17% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="6">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- South Indian Combo -->
+            <div class="lunch-card" data-category="veg combo">
+                <div class="card-badge">New</div>
+                <div class="card-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1728412897842-06f0fc4c2ec6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U291dGglMjBJbmRpYW4lMjBNZWFsc3xlbnwwfHwwfHx8MA%3D%3D" alt="South Indian Meal" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="7">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">South Indian Meals</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(214)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Traditional South Indian lunch with rice, sambar, rasam, three vegetables, curd, papad, pickle, and banana.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🍚</span>
+                            <span class="detail-text">Rice Platter</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Medium Spice</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 30 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">300</div>
+                            <div class="original-price">400</div>
+                            <div class="discount">20% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="7">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Egg Curry Combo -->
+            <div class="lunch-card" data-category="nonveg combo">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Egg Curry" class="food-img">
+                    <div class="image-overlay">
+                        <button class="quick-view" data-id="8">
+                            <span>👁️</span> Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="food-title">Egg Curry Combo</h3>
+                        <div class="food-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(178)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">Spicy egg curry with 4 boiled eggs in rich gravy, served with jeera rice, 2 roti, and salad.</p>
+                    <div class="food-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🥚</span>
+                            <span class="detail-text">4 Eggs</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌶️</span>
+                            <span class="detail-text">Spicy</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span class="detail-text">Prep: 20 mins</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-section">
+                            <div class="current-price">300</div>
+                            <div class="original-price">400</div>
+                            <div class="discount">17% OFF</div>
+                        </div>
+                        <button class="add-to-cart" data-id="8">
+                            <span class="cart-icon">🛒</span>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meal Packages -->
+        <div class="meal-packages">
+            <h3 class="packages-title">Lunch Packages</h3>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-icon">👨‍👩‍👧</div>
+                    <h4>Family Pack</h4>
+                    <p>4 Thalis + 4 Drinks</p>
+                    <div class="package-price">1,199 <span class="package-save">Save 300</span></div>
+                    <button class="package-btn">Order Now</button>
+                </div>
+                <div class="package-card popular">
+                    <div class="package-icon">🏢</div>
+                    <h4>Office Lunch</h4>
+                    <p>10 Meals + Free Delivery</p>
+                    <div class="package-price">2,999 <span class="package-save">Save 500</span></div>
+                    <button class="package-btn">Order Now</button>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">📅</div>
+                    <h4>Weekly Plan</h4>
+                    <p>5 Days Lunch</p>
+                    <div class="package-price">1,499 <span class="package-save">Save 400</span></div>
+                    <button class="package-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-logo",>Vinegar<span>.</span></div>
+                    <p class="footer-description">Premium dining experience with warm, family-friendly atmosphere. Serving quality food since 1995 with 72 rotating menus and over 240,000 delicacies.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+               <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+
+                    <!-- Services Dropdown -->
+                    <li                         <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/index.html#menu">Home</a></li>
+class="nav-iem dropdown">
+                                               <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Aboutus.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Awards.html">Feedback</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Gallery</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/feedback.html">Awards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Catering Services</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/recipeofthemonth.html">Recipe of the Month</a></li>
+
+
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/contact.html">Contact Us</a></li>
+                       </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-description">Subscribe to get updates on new menus and special offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" style="background: rgba(219, 213, 213, 0.74); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vinegar Restaurant. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for culinary excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+        // Day selector functionality
+        const dayButtons = document.querySelectorAll('.day-btn');
+        
+        dayButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                dayButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.transform = '';
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                this.style.transform = 'scale(0.95)';
+                
+                // Add ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = event.clientX - rect.left - size / 2;
+                const y = event.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                // Remove ripple element after animation
+                setTimeout(() => {
+                    ripple.remove();
+                    this.style.transform = '';
+                }, 600);
+                
+                // Update meals based on selected day
+                const selectedDay = this.getAttribute('data-day');
+                updateMealsForDay(selectedDay);
+            });
+        });
+        
+        // Order button functionality
+        const orderButtons = document.querySelectorAll('.order-btn');
+        
+        orderButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const mealType = this.getAttribute('data-meal');
+                const mealCard = this.closest('.meal-card');
+                const mealTitle = mealCard.querySelector('.meal-title').textContent;
+                const mealPrice = mealCard.querySelector('.current-price').textContent;
+                
+                // Add animation to button
+                this.style.transform = 'scale(0.95)';
+                this.innerHTML = '<span class="btn-text">Adding...</span><span class="btn-icon">⏳</span>';
+                
+                // Simulate API call
+                setTimeout(() => {
+                    showOrderSuccess(mealType, mealTitle, mealPrice);
+                    this.innerHTML = '<span class="btn-text">Added!</span><span class="btn-icon">✅</span>';
+                    
+                    // Reset button after 2 seconds
+                    setTimeout(() => {
+                        this.innerHTML = '<span class="btn-text">Add to Cart</span><span class="btn-icon">🛒</span>';
+                        this.style.transform = '';
+                    }, 2000);
+                }, 800);
+            });
+        });
+        
+        // View details button functionality
+        const viewDetailsButtons = document.querySelectorAll('.view-details');
+        
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const mealImage = this.closest('.meal-image');
+                const mealImg = mealImage.querySelector('.meal-img');
+                const mealTitle = mealImage.closest('.meal-card').querySelector('.meal-title').textContent;
+                
+                showImageModal(mealImg.src, mealTitle);
+            });
+        });
+        
+        // Add ripple effect CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Functions
+        function updateMealsForDay(day) {
+            const mealCards = document.querySelectorAll('.meal-card');
+            const mealDescriptions = document.querySelectorAll('.meal-description p');
+            const mealHighlights = document.querySelectorAll('.meal-highlights h4');
+            
+            // Add loading animation
+            mealCards.forEach(card => {
+                card.style.opacity = '0.7';
+                card.style.filter = 'blur(2px)';
+            });
+            
+            // Simulate API delay
+            setTimeout(() => {
+                // Update content based on selected day
+                if (day === 'today') {
+                    mealDescriptions[0].textContent = "Start your day with our traditional Indian breakfast options, freshly made every morning.";
+                    mealDescriptions[1].textContent = "A complete balanced meal with 7 items including main course, sides, and dessert.";
+                    mealDescriptions[2].textContent = "Light yet satisfying dinner options perfect for ending your day on a delicious note.";
+                    
+                    mealHighlights[0].textContent = "Today's Special:";
+                    mealHighlights[1].textContent = "Thali Includes:";
+                    mealHighlights[2].textContent = "Tonight's Menu:";
+                } else if (day === 'tomorrow') {
+                    mealDescriptions[0].textContent = "Tomorrow's special breakfast featuring seasonal ingredients and new recipes.";
+                    mealDescriptions[1].textContent = "Special lunch menu for tomorrow with regional specialties and festive dishes.";
+                    mealDescriptions[2].textContent = "Tomorrow's dinner features comfort food classics with a modern twist.";
+                    
+                    mealHighlights[0].textContent = "Tomorrow's Breakfast:";
+                    mealHighlights[1].textContent = "Tomorrow's Lunch Special:";
+                    mealHighlights[2].textContent = "Tomorrow's Dinner Plan:";
+                } else if (day === 'week') {
+                    mealDescriptions[0].textContent = "Weekly breakfast rotation featuring different regional specialties each day.";
+                    mealDescriptions[1].textContent = "Complete weekly thali plan with rotating menus for balanced nutrition.";
+                    mealDescriptions[2].textContent = "Weekly dinner schedule with international and regional cuisine themes.";
+                    
+                    mealHighlights[0].textContent = "Weekly Breakfast Rotation:";
+                    mealHighlights[1].textContent = "Weekly Thali Plan:";
+                    mealHighlights[2].textContent = "Weekly Dinner Schedule:";
+                }
+                
+                // Remove loading animation
+                mealCards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.filter = 'blur(0)';
+                });
+                
+                // Show notification
+                showNotification(`Showing meals for ${day}`, '#2ecc71');
+            }, 500);
+        }
+        
+        function showOrderSuccess(mealType, mealTitle, mealPrice) {
+            // Create success notification
+            const notification = document.createElement('div');
+            notification.className = 'success-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <div class="notification-icon">✅</div>
+                    <div class="notification-text">
+                        <h4>${mealTitle} Added!</h4>
+                        <p>Successfully added to your cart for ${mealPrice}</p>
+                    </div>
+                    <button class="notification-close">×</button>
+                </div>
+            `;
+            
+            // Add styles
+            const notificationStyle = document.createElement('style');
+            notificationStyle.textContent = `
+                .success-notification {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                    z-index: 10000;
+                    animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    max-width: 350px;
+                    border-left: 5px solid #2ecc71;
+                    overflow: hidden;
+                }
+                
+                @keyframes slideInRight {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                
+                .notification-content {
+                    display: flex;
+                    align-items: center;
+                    padding: 20px;
+                    gap: 15px;
+                }
+                
+                .notification-icon {
+                    font-size: 1.8rem;
+                    flex-shrink: 0;
+                }
+                
+                .notification-text h4 {
+                    margin: 0 0 5px 0;
+                    color: #2c3e50;
+                }
+                
+                .notification-text p {
+                    margin: 0;
+                    color: #7f8c8d;
+                    font-size: 0.95rem;
+                }
+                
+                .notification-close {
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    color: #95a5a6;
+                    margin-left: auto;
+                    padding: 0;
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                }
+                
+                .notification-close:hover {
+                    background: #f8f9fa;
+                    color: #e74c3c;
+                }
+            `;
+            
+            document.head.appendChild(notificationStyle);
+            document.body.appendChild(notification);
+            
+            // Add close functionality
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            });
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 300);
+                }
+            }, 5000);
+            
+            // Add slideOutRight animation
+            const slideOutStyle = document.createElement('style');
+            slideOutStyle.textContent = `
+                @keyframes slideOutRight {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(slideOutStyle);
+        }
+        
+        function showImageModal(imageSrc, title) {
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'image-modal';
+            modal.innerHTML = `
+                <div class="modal-overlay"></div>
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h3>${title}</h3>
+                        <button class="modal-close">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="${imageSrc}" alt="${title}" class="modal-image">
+                    </div>
+                    <div class="modal-footer">
+                        <p>High-quality, fresh ingredients prepared daily by our expert chefs.</p>
+                    </div>
+                </div>
+            `;
+            
+            // Add modal styles
+            const modalStyle = document.createElement('style');
+            modalStyle.textContent = `
+                .image-modal {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10001;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    animation: fadeIn 0.3s ease;
+                }
+                
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                
+                .modal-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.8);
+                    backdrop-filter: blur(5px);
+                }
+                
+                .modal-container {
+                    background: white;
+                    border-radius: 20px;
+                    max-width: 700px;
+                    width: 90%;
+                    max-height: 90vh;
+                    z-index: 2;
+                    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    overflow: hidden;
+                    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+                }
+                
+                @keyframes slideUp {
+                    from { transform: translateY(30px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+                
+                .modal-header {
+                    padding: 20px 30px;
+                    border-bottom: 1px solid #eee;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                .modal-header h3 {
+                    margin: 0;
+                    color: #2c3e50;
+                    font-size: 1.5rem;
+                }
+                
+                .modal-close {
+                    background: none;
+                    border: none;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    color: #95a5a6;
+                    padding: 0;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+                }
+                
+                .modal-close:hover {
+                    background: #f8f9fa;
+                    color: #e74c3c;
+                }
+                
+                .modal-body {
+                    padding: 0;
+                    max-height: 60vh;
+                    overflow: hidden;
+                }
+                
+                .modal-image {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    max-height: 60vh;
+                    object-fit: contain;
+                }
+                
+                .modal-footer {
+                    padding: 20px 30px;
+                    border-top: 1px solid #eee;
+                    text-align: center;
+                    color: #7f8c8d;
+                }
+            `;
+            
+            document.head.appendChild(modalStyle);
+            document.body.appendChild(modal);
+            
+            // Close modal on close button click
+            modal.querySelector('.modal-close').addEventListener('click', () => {
+                modal.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    if (modal.parentNode) {
+                        document.body.removeChild(modal);
+                    }
+                }, 300);
+            });
+            
+            // Close modal on overlay click
+            modal.querySelector('.modal-overlay').addEventListener('click', () => {
+                modal.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    if (modal.parentNode) {
+                        document.body.removeChild(modal);
+                    }
+                }, 300);
+            });
+            
+            // Add fadeOut animation
+            const fadeOutStyle = document.createElement('style');
+            fadeOutStyle.textContent = `
+                @keyframes fadeOut {
+                    from { opacity: 1; }
+                    to { opacity: 0; }
+                }
+            `;
+            document.head.appendChild(fadeOutStyle);
+            
+            // Close on Escape key
+            document.addEventListener('keydown', function closeModal(e) {
+                if (e.key === 'Escape') {
+                    modal.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => {
+                        if (modal.parentNode) {
+                            document.body.removeChild(modal);
+                        }
+                    }, 300);
+                    document.removeEventListener('keydown', closeModal);
+                }
+            });
+        }
+        
+        function showNotification(message, color = '#3498db') {
+            // Create notification
+            const notification = document.createElement('div');
+            notification.className = 'floating-notification';
+            notification.textContent = message;
+            notification.style.backgroundColor = color;
+            
+            // Add styles
+            const notificationStyle = document.createElement('style');
+            notificationStyle.textContent = `
+                .floating-notification {
+                    position: fixed;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(100px);
+                    background: #3498db;
+                    color: white;
+                    padding: 15px 30px;
+                    border-radius: 50px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                    z-index: 9999;
+                    font-weight: 600;
+                    animation: slideUpIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+                              slideDownOut 0.3s ease 2.7s forwards;
+                    text-align: center;
+                    max-width: 90%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                
+                @keyframes slideUpIn {
+                    from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+                    to { transform: translateX(-50%) translateY(0); opacity: 1; }
+                }
+                
+                @keyframes slideDownOut {
+                    from { transform: translateX(-50%) translateY(0); opacity: 1; }
+                    to { transform: translateX(-50%) translateY(100px); opacity: 0; }
+                }
+            `;
+            
+            document.head.appendChild(notificationStyle);
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    document.body.removeChild(notification);
+                }
+            }, 3000);
+        }
+        
+        // Initialize with today's meals
+        updateMealsForDay('today');
+    });
+    </script>
+</body>
+</html>

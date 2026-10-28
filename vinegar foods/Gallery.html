@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinegar | Premium Culinary Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<style>
+    /* Gallery Section */
+.gallery-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    padding: 80px 0;
+}
+
+.gallery-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Gallery Filters */
+.gallery-filters {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: white;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 12px 28px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    color: #666;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.filter-btn:hover {
+    color: var(--primary);
+    background: rgba(45, 91, 227, 0.05);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 5px 20px rgba(45, 91, 227, 0.2);
+}
+
+.filter-btn i {
+    font-size: 14px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    position: relative;
+    min-height: 500px;
+}
+
+.gallery-item {
+    margin-bottom: 30px;
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    will-change: transform;
+}
+
+.gallery-card:hover .gallery-image img {
+    transform: scale(1.08);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+        transparent 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.overlay-text {
+    flex: 1;
+}
+
+.overlay-text h5 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.view-btn {
+    width: 44px;
+    height: 44px;
+    background: white;
+    color: var(--primary);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.view-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1) rotate(90deg);
+}
+
+.gallery-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation: fadeInLightbox 0.3s ease;
+}
+
+@keyframes fadeInLightbox {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-header {
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lightbox-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.lightbox-close {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.lightbox-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.lightbox-image-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-img.loaded {
+    opacity: 1;
+}
+
+.lightbox-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.lightbox-loader.active {
+    display: block;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.lightbox-footer {
+    padding: 20px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+}
+
+.lightbox-footer p {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.lightbox-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.lightbox-nav-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.lightbox-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.lightbox-nav-btn:disabled:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-counter {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Load More Button */
+#loadMore {
+    padding: 15px 45px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(45, 91, 227, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#loadMore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+#loadMore:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(45, 91, 227, 0.4);
+}
+
+#loadMore:hover::before {
+    left: 100%;
+}
+
+#loadMore.loading {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+#loadMore.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .gallery-image {
+        height: 280px;
+    }
+    
+    .lightbox-container {
+        width: 95%;
+        height: 85vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-section {
+        padding: 60px 0;
+    }
+    
+    .gallery-image {
+        height: 250px;
+    }
+    
+    .filter-buttons {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 10px 20px;
+        min-width: 110px;
+        font-size: 14px;
+    }
+    
+    .lightbox-header {
+        padding: 15px 20px;
+    }
+    
+    .lightbox-body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-image {
+        height: 220px;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 15px;
+        gap: 8px;
+        background: transparent;
+        box-shadow: none;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        justify-content: center;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .overlay-text h5 {
+        font-size: 16px;
+    }
+    
+    .overlay-text p {
+        font-size: 13px;
+    }
+    
+    .lightbox-container {
+        width: 98%;
+        height: 90vh;
+        border-radius: 10px;
+    }
+    
+    .lightbox-header h3 {
+        font-size: 18px;
+    }
+    
+    .lightbox-footer p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-image {
+        height: 200px;
+    }
+    
+    .view-btn {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .gallery-category {
+        top: 10px;
+        right: 10px;
+        padding: 4px 12px;
+        font-size: 10px;
+    }
+    
+    #loadMore {
+        padding: 12px 35px;
+        font-size: 15px;
+        width: 100%;
+    }
+    
+    .lightbox-nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-counter {
+        font-size: 14px;
+    }
+}
+
+/* Animation for grid items */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-item.visible {
+    animation: slideUp 0.6s ease forwards;
+}
+
+/* Category colors */
+.gallery-category[data-category="food"] {
+    background: rgba(220, 53, 69, 0.8);
+}
+
+.gallery-category[data-category="interior"] {
+    background: rgba(25, 135, 84, 0.8);
+}
+
+.gallery-category[data-category="chefs"] {
+    background: rgba(13, 110, 253, 0.8);
+}
+
+.gallery-category[data-category="events"] {
+    background: rgba(255, 193, 7, 0.8);
+}
+</style>
+ 
+
+</div>
+    <!-- Header & Navigation -->
+    <header>
+        <!-- Top Bar -->
+     <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="top-links d-none d-md-flex">
+                    <a href="Aboutus.html" class="me-4">About</a>
+                    <a href="feedback.html" class="me-4">Awards</a>
+                    <a href="recipeofthemonth.html" class="me-4">Recipe of the month</a>
+                    <a href="catering.html" class="me-4">Catering</a>
+                </div>
+                <div class="top-contact">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+923283383722">+92 348729930</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@pizerbitsolutions.com">contact@vinegarfood.com</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-text">
+                    <span class="main-text">Vinegar</span>
+                    <span class="tagline">Food Restaurant</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+      <a class="nav-link " href="index.html">Home</a>                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Gallery.html">Gallery</a>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="regularmeals.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Meals 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="regularmeals.html"><i class=" fa-code"></i> Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html"><i class=" fa-bullhorn"></i> Lunch</a></li>
+                            <li><a class="dropdown-item" href="snacks.html"><i class=" fa-paint-brush"></i>  Snacks</a></li>
+                            <li><a class="dropdown-item" href="desert.html"><i class=" fa-video"></i> Desert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html"><i class=" fa-video"></i> Bevarages</a></li>
+
+ </ul>
+                    </li>
+                    
+                    <!-- Blogs Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeofthemonth.html"> Recipe of the month</a>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Awards.html"> Feedback</a>
+                    </li>
+                </ul>
+                   <!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart" id="emptyCart">
+            <i class="fas fa-shopping-basket"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add items to get started</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <div class="cart-tax">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="cart-grand-total">
+                <span>Total:</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i>
+            Proceed to Checkout
+        </button>
+        <button class="continue-shopping-btn" id="continueShopping">
+            <i class="fas fa-shopping-bag"></i>
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- Overlay for cart -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Cart Icon for Header (Add this to your navbar) -->
+<button class="cart-icon" id="openCart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
+                <!-- Appointment Button -->
+                <div class="d-flex">
+                    <a href="contact.html" class="nav-link appointment-btn"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section section-padding">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <span class="section-subtitle">Visual Feast</span>
+                <h2 class="section-title">Our Culinary Gallery</h2>
+                <p class="lead">Take a visual journey through our world of flavors, ambiance, and culinary artistry</p>
+            </div>
+        </div>
+
+        <!-- Gallery Filters -->
+        <div class="gallery-filters mb-5">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large me-2"></i> All Photos
+                </button>
+                <button class="filter-btn" data-filter="food">
+                    <i class="fas fa-utensils me-2"></i> Food
+                </button>
+                <button class="filter-btn" data-filter="interior">
+                    <i class="fas fa-store me-2"></i> Restaurant
+                </button>
+                <button class="filter-btn" data-filter="chefs">
+                    <i class="fas fa-user-chef me-2"></i> Chefs
+                </button>
+                <button class="filter-btn" data-filter="events">
+                    <i class="fas fa-calendar-alt me-2"></i> Events
+                </button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <div class="row g-4">
+                <!-- Food Images -->
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="food">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Grilled Salmon" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Grilled Atlantic Salmon</h5>
+                                        <p>Fresh salmon with lemon dill sauce</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Grilled Atlantic Salmon"
+                                            data-desc="Fresh salmon with lemon dill sauce">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Food</div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="food">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Margherita Pizza" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Wood-fired Pizza</h5>
+                                        <p>Authentic Italian Margherita</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Wood-fired Pizza"
+                                            data-desc="Authentic Italian Margherita">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Food</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="food">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Chocolate Lava Cake" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Chocolate Lava Cake</h5>
+                                        <p>Warm cake with molten center</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Chocolate Lava Cake"
+                                            data-desc="Warm cake with molten center">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Food</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="food">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Gourmet Burger" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Vinegar Special Burger</h5>
+                                        <p>Signature wagyu beef burger</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Vinegar Special Burger"
+                                            data-desc="Signature wagyu beef burger">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Food</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Interior Images -->
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="interior">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Restaurant Interior" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Main Dining Area</h5>
+                                        <p>Elegant and spacious seating</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Main Dining Area"
+                                            data-desc="Elegant and spacious seating">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Restaurant</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="interior">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Restaurant Bar" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Premium Bar Area</h5>
+                                        <p>Extensive wine and cocktail selection</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Premium Bar Area"
+                                            data-desc="Extensive wine and cocktail selection">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Restaurant</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="interior">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Kitchen View" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Open Kitchen</h5>
+                                        <p>Watch our chefs in action</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Open Kitchen"
+                                            data-desc="Watch our chefs in action">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Restaurant</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="interior">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Outdoor Seating" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Garden Terrace</h5>
+                                        <p>Al fresco dining experience</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Garden Terrace"
+                                            data-desc="Al fresco dining experience">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Restaurant</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chef Images -->
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="chefs">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Chef Cooking" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Chef Marco Vinegar</h5>
+                                        <p>Executive Chef & Founder</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Chef Marco Vinegar"
+                                            data-desc="Executive Chef & Founder">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Chefs</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="events">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnRzfGVufDB8fDB8fHww" 
+                                 alt="Outdoor Seating" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Garden Terrace</h5>
+                                        <p>Al fresco dining experience</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnRzfGVufDB8fDB8fHww" 
+                                            data-title="Garden Terrace"
+                                            data-desc="Al fresco dining experience">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Events</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 gallery-item" data-category="chefs">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Chef Preparing Food" 
+                                 class="img-fluid"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-text">
+                                        <h5>Chef Anna Rodriguez</h5>
+                                        <p>Pastry Chef</p>
+                                    </div>
+                                    <button class="view-btn" data-src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                            data-title="Chef Anna Rodriguez"
+                                            data-desc="Pastry Chef">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery-category">Chefs</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- events -->
+
+                
+                
+
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-5">
+            <button class="btn btn-primary btn-lg" id="loadMore">
+                <i class="fas fa-images me-2"></i> Load More Images
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox-container">
+        <div class="lightbox-header">
+            <h3 id="lightboxTitle">Image Title</h3>
+            <button class="lightbox-close" id="closeLightbox">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="lightbox-body">
+            <div class="lightbox-image-wrapper">
+                <img src="" alt="" id="lightboxImage" class="lightbox-img">
+                <div class="lightbox-loader">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+            <div class="lightbox-footer">
+                <p id="lightboxDescription">Image description</p>
+                <div class="lightbox-nav">
+                    <button class="lightbox-nav-btn prev" id="prevBtn" title="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="lightbox-counter">
+                        <span id="currentIndex">1</span> / <span id="totalImages">12</span>
+                    </div>
+                    <button class="lightbox-nav-btn next" id="nextBtn" title="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="footer-logo",>Vinegar<span>.</span></div>
+                    <p class="footer-description">Premium dining experience with warm, family-friendly atmosphere. Serving quality food since 1995 with 72 rotating menus and over 240,000 delicacies.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+               <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+
+                    <!-- Services Dropdown -->
+                        <a class="nav-link active" href="index.html">Home</a>
+                                               <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Aboutus.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Awards.html">Feedback</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Gallery</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/feedback.html">Awards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Information</h5>
+                    <ul class="footer-links">
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/Gallery.html#gallery-all">Catering Services</a></li>
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/recipeofthemonth.html">Recipe of the Month</a></li>
+
+
+                        <li><a href="file:///C:/Users/User/Desktop/vinegar%20foods/contact.html">Contact Us</a></li>
+                       </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-description">Subscribe to get updates on new menus and special offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" style="background: rgba(219, 213, 213, 0.74); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vinegar Restaurant. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for culinary excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Gallery Functionality
+class Gallery {
+    constructor() {
+        this.galleryItems = document.querySelectorAll('.gallery-item');
+        this.filterButtons = document.querySelectorAll('.filter-btn');
+        this.viewButtons = document.querySelectorAll('.view-btn');
+        this.loadMoreBtn = document.getElementById('loadMore');
+        this.lightboxModal = document.getElementById('lightboxModal');
+        this.lightboxImage = document.getElementById('lightboxImage');
+        this.lightboxTitle = document.getElementById('lightboxTitle');
+        this.lightboxDescription = document.getElementById('lightboxDescription');
+        this.currentIndexSpan = document.getElementById('currentIndex');
+        this.totalImagesSpan = document.getElementById('totalImages');
+        this.closeLightbox = document.getElementById('closeLightbox');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.lightboxLoader = document.querySelector('.lightbox-loader');
+        
+        this.currentFilter = 'all';
+        this.currentLightboxIndex = 0;
+        this.loadedCount = 8;
+        this.totalItems = this.galleryItems.length;
+        this.allImages = [];
+        this.filteredImages = [];
+        
+        this.init();
+    }
+    
+    init() {
+        this.setupEventListeners();
+        this.initializeItems();
+        this.setupImagesArray();
+        this.setupLightbox();
+        this.checkURLHash();
+    }
+    
+    setupEventListeners() {
+        // Filter buttons
+        this.filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => this.handleFilterClick(btn));
+        });
+        
+        // View buttons for lightbox
+        this.viewButtons.forEach((btn, index) => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.openLightbox(index);
+            });
+        });
+        
+        // Load more button
+        if (this.loadMoreBtn) {
+            this.loadMoreBtn.addEventListener('click', () => this.loadMoreImages());
+        }
+        
+        // Close lightbox on overlay click
+        this.lightboxModal.addEventListener('click', (e) => {
+            if (e.target === this.lightboxModal || e.target.classList.contains('lightbox-overlay')) {
+                this.closeLightboxModal();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => this.handleKeyboardNavigation(e));
+    }
+    
+    initializeItems() {
+        // Set initial visible items
+        this.galleryItems.forEach((item, index) => {
+            item.style.setProperty('--item-index', index);
+            
+            if (index >= this.loadedCount) {
+                item.style.display = 'none';
+                item.style.opacity = '0';
+            }
+        });
+        
+        // Add animation delays
+        setTimeout(() => {
+            document.querySelectorAll('.gallery-item:not([style*="display: none"])').forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.classList.add('visible');
+            });
+        }, 100);
+    }
+    
+    setupImagesArray() {
+        this.allImages = Array.from(this.galleryItems).map(item => ({
+            src: item.querySelector('.view-btn').getAttribute('data-src'),
+            title: item.querySelector('.overlay-text h5').textContent,
+            description: item.querySelector('.overlay-text p').textContent,
+            category: item.getAttribute('data-category'),
+            element: item
+        }));
+        
+        this.filteredImages = [...this.allImages];
+        this.updateImageCounters();
+    }
+    
+    updateImageCounters() {
+        this.totalImagesSpan.textContent = this.filteredImages.length;
+    }
+    
+    handleFilterClick(button) {
+        // Remove active class from all buttons
+        this.filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Get filter value
+        this.currentFilter = button.getAttribute('data-filter');
+        
+        // Filter items
+        this.filterItems();
+        
+        // Update URL hash
+        history.pushState(null, null, `#gallery-${this.currentFilter}`);
+    }
+    
+    filterItems() {
+        let visibleCount = 0;
+        
+        this.galleryItems.forEach((item) => {
+            const category = item.getAttribute('data-category');
+            const shouldShow = this.currentFilter === 'all' || category === this.currentFilter;
+            
+            if (shouldShow && visibleCount < this.loadedCount) {
+                item.style.display = 'block';
+                item.classList.add('visible');
+                item.style.animationDelay = `${visibleCount * 0.05}s`;
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+                item.classList.remove('visible');
+            }
+        });
+        
+        // Update filtered images array
+        this.filteredImages = this.allImages.filter(img => 
+            this.currentFilter === 'all' || img.category === this.currentFilter
+        );
+        
+        this.updateImageCounters();
+        
+        // Update load more button visibility
+        this.updateLoadMoreButton();
+    }
+    
+    updateLoadMoreButton() {
+        const remainingItems = this.getRemainingItemsCount();
+        
+        if (remainingItems <= 0) {
+            this.loadMoreBtn.style.display = 'none';
+        } else {
+            this.loadMoreBtn.style.display = 'block';
+            this.loadMoreBtn.innerHTML = `<i class="fas fa-images me-2"></i> Load More (${remainingItems} remaining)`;
+        }
+    }
+    
+    getRemainingItemsCount() {
+        const totalFiltered = Array.from(this.galleryItems).filter(item => {
+            const category = item.getAttribute('data-category');
+            return this.currentFilter === 'all' || category === this.currentFilter;
+        }).length;
+        
+        return Math.max(0, totalFiltered - this.loadedCount);
+    }
+    
+    loadMoreImages() {
+        this.loadMoreBtn.classList.add('loading');
+        
+        // Simulate loading delay
+        setTimeout(() => {
+            // Find next up to 4 hidden items that match the current filter
+            const nextHiddenMatches = Array.from(this.galleryItems).filter(item => {
+                const category = item.getAttribute('data-category');
+                const matches = this.currentFilter === 'all' || category === this.currentFilter;
+                return matches && item.style.display === 'none';
+            }).slice(0, 4);
+            
+            nextHiddenMatches.forEach(item => {
+                item.style.display = 'block';
+                item.classList.add('visible');
+                item.style.animationDelay = '0.2s';
+            });
+            
+            // Increase loadedCount by the number just shown
+            this.loadedCount += nextHiddenMatches.length;
+            
+            this.updateLoadMoreButton();
+            this.loadMoreBtn.classList.remove('loading');
+        }, 600);
+    }
+    
+    setupLightbox() {
+        this.closeLightbox.addEventListener('click', () => this.closeLightboxModal());
+        this.prevBtn.addEventListener('click', () => this.showPreviousImage());
+        this.nextBtn.addEventListener('click', () => this.showNextImage());
+    }
+    
+    openLightbox(index) {
+        this.currentLightboxIndex = index;
+        this.updateLightbox();
+        this.lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    updateLightbox() {
+        if (this.filteredImages.length === 0) return;
+        
+        const currentImage = this.filteredImages[this.currentLightboxIndex];
+        
+        // Show loader
+        this.lightboxLoader.classList.add('active');
+        this.lightboxImage.classList.remove('loaded');
+        
+        // Preload image
+        const img = new Image();
+        img.src = currentImage.src;
+        
+        img.onload = () => {
+            this.lightboxImage.src = currentImage.src;
+            this.lightboxTitle.textContent = currentImage.title;
+            this.lightboxDescription.textContent = currentImage.description;
+            this.currentIndexSpan.textContent = this.currentLightboxIndex + 1;
+            
+            // Hide loader and show image
+            setTimeout(() => {
+                this.lightboxLoader.classList.remove('active');
+                this.lightboxImage.classList.add('loaded');
+            }, 300);
+            
+            this.updateNavButtons();
+        };
+        
+        img.onerror = () => {
+            console.error('Failed to load image:', currentImage.src);
+            this.lightboxLoader.classList.remove('active');
+        };
+    }
+    
+    showPreviousImage() {
+        if (this.currentLightboxIndex > 0) {
+            this.currentLightboxIndex--;
+            this.updateLightbox();
+        }
+    }
+    
+    showNextImage() {
+        if (this.currentLightboxIndex < this.filteredImages.length - 1) {
+            this.currentLightboxIndex++;
+            this.updateLightbox();
+        }
+    }
+    
+    updateNavButtons() {
+        // Previous button
+        if (this.currentLightboxIndex === 0) {
+            this.prevBtn.disabled = true;
+            this.prevBtn.setAttribute('aria-disabled', 'true');
+        } else {
+            this.prevBtn.disabled = false;
+            this.prevBtn.setAttribute('aria-disabled', 'false');
+        }
+        
+        // Next button
+        if (this.currentLightboxIndex === this.filteredImages.length - 1) {
+            this.nextBtn.disabled = true;
+            this.nextBtn.setAttribute('aria-disabled', 'true');
+        } else {
+            this.nextBtn.disabled = false;
+            this.nextBtn.setAttribute('aria-disabled', 'false');
+        }
+    }
+    
+    closeLightboxModal() {
+        this.lightboxModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        
+        // Reset image
+        setTimeout(() => {
+            this.lightboxImage.classList.remove('loaded');
+            this.lightboxImage.src = '';
+        }, 300);
+    }
+    
+    handleKeyboardNavigation(e) {
+        if (!this.lightboxModal.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                this.closeLightboxModal();
+                break;
+            case 'ArrowLeft':
+                this.showPreviousImage();
+                break;
+            case 'ArrowRight':
+                this.showNextImage();
+                break;
+        }
+    }
+    
+    checkURLHash() {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#gallery-')) {
+            const filter = hash.replace('#gallery-', '');
+            const button = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+            
+            if (button) {
+                setTimeout(() => button.click(), 100);
+            }
+        }
+    }
+}
+
+// Initialize gallery when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const gallery = new Gallery();
+    
+    // Lazy load images
+    const lazyImages = document.querySelectorAll('.gallery-image img[loading="lazy"]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.src;
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+    
+    // Add click event to gallery items for better UX
+    document.querySelectorAll('.gallery-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (!e.target.closest('.view-btn')) {
+                const viewBtn = this.querySelector('.view-btn');
+                if (viewBtn) {
+                    const index = Array.from(document.querySelectorAll('.view-btn')).indexOf(viewBtn);
+                    gallery.openLightbox(index);
+                }
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
